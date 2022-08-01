@@ -1,0 +1,40 @@
+.rf-classic-text {
+    //font-family: Roboto;
+    font-weight: $font__weight__regular;
+    padding-bottom: 30px;
+    color: $color__text__main;
+
+    @media screen and (max-width: $md){
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    &.rf-white {
+        color: #fff;
+    }
+
+    &.rf-gray {
+        color: $color__text__gray;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+    ul, ol {
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    &.rf_light_wrapper{
+        background-color: #fff;
+        padding: 50px 50px 30px 50px;
+        border-radius: $border__radius_classic__box__mini;
+    }
+}

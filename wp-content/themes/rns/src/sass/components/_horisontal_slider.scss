@@ -1,0 +1,24 @@
+.rf_horisontal_one_image_slider {
+    margin-bottom: 60px;
+    cursor: grab;
+}
+
+.rf_horisontal_slider_bottom_navigation {
+    display: flex;
+    overflow: auto;
+    margin-bottom: 60px;
+    //flex-grow: 1;
+    .rf_item {
+        flex-grow: 1;
+        height: 5px;
+        background-color: $color__light;
+        &.rf_active {
+            background-color: $color__secondary;
+            cursor: default;
+        }
+        &:hover {
+            background-color: $color__secondary;
+            cursor: pointer;
+        }
+    }
+}

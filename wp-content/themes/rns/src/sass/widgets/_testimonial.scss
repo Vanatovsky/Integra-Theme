@@ -1,0 +1,41 @@
+.rf_testimonial_box{
+    margin-bottom: 30px;
+    padding-top:40px;
+    .rf_wrapper{
+        padding: 100px 30px 30px;
+        position: relative;
+        box-shadow: 0px 64px 200px 0px rgba(0, 0, 0, .08);
+        border-radius: $border__radius__classic__button;
+
+        .rf_ava_box{
+            position: absolute;
+            top:-53px;
+            width: 130px;
+            height: 130px;
+            background-position: center center;
+            border-radius: $border__radius__classic__button;
+            background-size: cover;
+        }
+        .rf_text{
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .rf_country{
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: $font__weight__bold;
+        }
+        .rf_name{
+            font-size: 14px;
+        }
+        .rf_rating{
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            span{
+                color:#f0ad4e;
+            }
+        }
+    }
+}

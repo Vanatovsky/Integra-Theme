@@ -1,0 +1,20 @@
+/*!
+Theme Name: Clear Dynamics
+Theme URI: https://theme.business-dynamics.ru/
+Author: Vanatovsky
+Author URI: https://run-seo.ru
+Description: Cool template for everything
+Version: 1.0.0
+Tested up to: 7.3
+Requires PHP: 7.3
+Tags: woocommerce
+*/
+
+@import "generic/main";
+@import "components/main";
+@import "widgets/main";
+@import "extra/woo/main";
+@import "extra/slick/main";
+@import "extra/xforwoo/main";
+@import "extra/sweetalert/style";
+//@import "extra/fontawesome/main";

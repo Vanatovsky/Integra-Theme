@@ -1,0 +1,123 @@
+.btn,
+.btn-large {
+    font-weight: $font__weight__bold;
+}
+
+.btn.rf_primary,
+.btn-large.rf_primary {
+    background-color: $color__primary;
+    &:hover {
+        background-color: $color__primary__dark;
+    }
+}
+
+.btn.rf_secondary,
+.btn-large.rf_secondary {
+    background-color: $color__secondary;
+    &:hover {
+        background-color: $color__secondary_dark;
+    }
+}
+
+.btn.rf_third,
+.btn-large.rf_third {
+    background-color: $color__third;
+    &:hover {
+        background-color: $color__third__dark;
+    }
+}
+
+.btn.rf_primary_white,
+.btn-large.rf_primary_white {
+    background-color: #fff;
+    border: 2px solid $color__primary;
+    color: $color__primary;
+    box-shadow: none !important;
+    line-height: 32px;
+    font-weight: $font__weight__bold;
+    &:hover {
+        background-color: #fff !important;
+        border: 2px solid $color__primary__dark;
+        color: $color__primary__dark;
+    }
+}
+
+.btn.rf_primary_white:focus,
+.btn.rf_primary_white:active,
+.btn-large.rf_primary_white:focus,
+.btn-large.rf_primary_white:active {
+    background-color: #fff !important;
+}
+
+.btn.rf_secondary_white,
+.btn-large.rf_secondary_white {
+    background-color: #fff;
+    border: 2px solid $color__secondary;
+    color: $color__secondary;
+    box-shadow: none !important;
+    line-height: 32px;
+    font-weight: $font__weight__bold;
+    &:hover {
+        background-color: #fff !important;
+        color: $color__secondary_dark;
+        border: 2px solid $color__secondary_dark;
+    }
+}
+
+.btn.rf_secondary_white:focus,
+.btn.rf_secondary_white:active,
+.btn-large.rf_secondary_white:focus,
+.btn-large.rf_secondary_white:active {
+    background-color: #fff !important;
+}
+
+.btn.rf_third_white,
+.btn-large.rf_third_white {
+    background-color: #fff;
+    border: 2px solid $color__third;
+    color: $color__third;
+    box-shadow: none !important;
+    line-height: 32px;
+    font-weight: $font__weight__bold;
+    &:hover {
+        background-color: #fff !important;
+        border: 2px solid $color__third__dark;
+        color: $color__third__dark;
+    }
+}
+
+.btn.rf_third_white:focus,
+.btn.rf_third_white:active {
+    background-color: #fff !important;
+}
+
+.btn-large.rf_primary_white,
+.btn-large.rf_secondary_white,
+.btn-large.rf_third_white {
+    line-height: 48px;
+}
+
+.rf_hidden_inside {
+    position: relative;
+    input {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .wpcf7-spinner {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 3;
+    }
+}
+
+.btn_w100 {
+    width: 100%;
+}

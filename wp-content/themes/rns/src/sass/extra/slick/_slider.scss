@@ -1,0 +1,434 @@
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slick-slider {
+    .slick-slide {
+        outline: none;
+        &:focus {
+            outline: none;
+            outline-color: rgba(255, 255, 255, 0);
+            box-shadow: none;
+        }
+        &.slick-active {
+            outline: none;
+            &:focus {
+                outline: none;
+                outline-color: rgba(255, 255, 255, 0);
+                box-shadow: none;
+            }
+        }
+        img {
+            display: inline-block;
+        }
+    }
+}
+
+.slider-st {
+    position: relative;
+    .slick-next,
+    .slick-prev {
+        width: 20px;
+        height: 63px;
+        bottom: 0;
+        z-index: 4;
+        &:before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 63px;
+            //background: url("/wp-content/themes/rns/image/arrow-slider.svg") 0 0 no-repeat;
+            background-size: cover;
+            transition: all .3s;
+        }
+        &:hover {
+            &:before {
+                //background: url("/wp-content/themes/rns/image/arrow-slider-hover.svg") 0 0 no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+    .slick-next {
+        right: -40px;
+        &:before {
+            transform: rotate(180deg);
+        }
+    }
+    .slick-prev {
+        left: -40px;
+    }
+    .slick-dots {
+        line-height: 0;
+        z-index: 3;
+        bottom: -23px;
+        li {
+            width: 6px;
+            height: 6px;
+            margin: 0 12px;
+            padding: 0;
+            button {
+                width: 6px;
+                height: 6px;
+                border: none;
+                background: rgba(255, 255, 255, 0.43);
+                border-radius: 50%;
+                padding: 0;
+                &:before {
+                    content: '';
+                    display: none;
+                }
+                &:hover {
+                    background: $color__dark;
+                }
+            }
+            &.slick-active {
+                button {
+                    background: #ffffff;
+                }
+            }
+        }
+    }
+    &.slider-cat {
+        .slick-next,
+        .slick-prev {
+            &:before {
+                //background: url("/wp-content/themes/rns/image/arrow-slider-cat.svg") 0 0 no-repeat;
+                background-size: cover;
+            }
+            &:hover {
+                &:before {
+                    //background: url("/wp-content/themes/rns/image/arrow-slider-cat-hover.svg") 0 0 no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}
+
+.slider-card {
+    position: relative;
+    box-shadow: 0 0 11px rgba(155, 155, 155, 0.25);
+    background: #ffffff;
+    .slide {
+        padding-top: 66px;
+        padding-bottom: 54px;
+        padding-left: 6px;
+        padding-right: 60px;
+    }
+    .wr-des {
+        padding-left: 18px;
+    }
+}
+
+.slider-card-accessory,
+.slider-card-series {
+    background: #ffffff;
+    border-radius: 4px;
+    transition: all .3s;
+    &:hover {
+        box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.25);
+    }
+    .slide {
+        padding: 38px 30px 36px 0;
+    }
+    .card-product-item {
+        .price {
+            font-size: 36px;
+            font-weight: $font__weight__light;
+        }
+        .inner-text {
+            min-height: 120px;
+        }
+        .wr-des {
+            .ttl {
+                font-size: 20px;
+                font-weight: $font__weight__medium;
+                color: $color__dark;
+                min-height: 60px;
+            }
+        }
+        .des-footer {
+            margin-top: 0;
+        }
+    }
+}
+
+.wr-control,
+.wr-control-accessory,
+.wr-control-series {
+    display: inline-block;
+    position: relative;
+    min-width: 130px;
+    height: 19px;
+    margin: 0 auto;
+    vertical-align: top;
+    .slick-next,
+    .slick-prev {
+        position: absolute;
+        width: 28px;
+        height: 19px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 28px;
+            height: 19px;
+            //background: url("/wp-content/themes/rns/image/control-arr.svg") 0 0 no-repeat;
+            background-size: cover;
+            transition: all .3s;
+        }
+        &:hover {
+            &:before {
+                //background: url("/wp-content/themes/rns/image/control-arr-hover.svg") 0 0 no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+    .slick-next {
+        right: 0;
+        transform: rotate(180deg) translate(0, 50%);
+        &:before {
+            left: inherit;
+            right: 0;
+        }
+    }
+    .slick-prev {
+        left: 0;
+    }
+    .slick-dots {
+        width: auto;
+        position: relative;
+        bottom: inherit;
+        height: 19px;
+        font-size: 0;
+        line-height: 19px;
+        margin: 0 30px;
+        li {
+            width: 6px;
+            height: 19px;
+            margin: 0 5px;
+            &.slick-active {
+                button {
+                    background: $color__dark;
+                }
+            }
+            button {
+                padding: 0;
+                width: 6px;
+                height: 6px;
+                background: #d1d1d1;
+                border-radius: 50%;
+                transition: all .3s;
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .wr-slider-card {
+        text-align: center;
+    }
+    .slider-st {
+        .slick-next,
+        .slick-prev {
+            width: 10px;
+            height: 33px;
+            top: 38%;
+            &:before {
+                width: 10px;
+                height: 33px;
+            }
+            &:hover {
+                &:before {
+                    //background: url("/wp-content/themes/rns/image/arrow-slider.svg") 0 0 no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        .slick-next {
+            right: 0;
+        }
+        .slick-prev {
+            left: 0;
+        }
+        .slick-dots {
+            display: none !important;
+        }
+    }
+    .slider-card {
+        padding: 45px 27px;
+        .wr-des {
+            padding: 24px 0 0;
+        }
+        .slide {
+            padding: 0;
+        }
+    }
+    .wr-control {
+        margin-top: 42px;
+    }
+    .slider-card-accessory,
+    .slider-card-series {
+        .slide {
+            padding: 38px 27px 28px;
+            height: auto;
+        }
+        .card-product-item {
+            height: auto;
+            .price {
+                font-size: 24px;
+                font-weight: $font__weight__light;
+                padding-bottom: 0;
+            }
+            .inner-text {
+                min-height: auto;
+                p {
+                    font-size: 12px;
+                }
+            }
+            .wr-des {
+                height: auto;
+                .ttl {
+                    font-size: 16px;
+                    font-weight: $font__weight__medium;
+                    min-height: auto;
+                    padding-bottom: 15px;
+                    padding-top: 33px;
+                }
+            }
+            .des-footer {
+                display: flex;
+                flex-direction: row;
+                margin-top: 28px;
+                .link-arrow {
+                    padding-right: 27px;
+                }
+            }
+        }
+    }
+    .wr-control,
+    .wr-control-accessory,
+    .wr-control-series {
+        .slick-next,
+        .slick-prev {
+            &:hover {
+                &:before {
+                    //background: url("/wp-content/themes/rns/image/control-arr.svg") 0 0 no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $xs) {
+    .slider-st {
+        .slick-next,
+        .slick-prev {
+            top: 28%;
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+    .slider-st {
+        .slick-next,
+        .slick-prev {
+            width: 10px;
+            height: 33px;
+            &:before {
+                width: 10px;
+                height: 33px;
+            }
+        }
+    }
+    .slider-card {
+        .slide {
+            padding: 34px 29px 42px 2px;
+        }
+    }
+    .wr-control,
+    .wr-control-accessory,
+    .wr-control-series {
+        min-width: 73px;
+        height: 10px;
+        .slick-next,
+        .slick-prev {
+            width: 16px;
+            height: 10px;
+            &:before {
+                width: 16px;
+                height: 10px;
+            }
+        }
+        .slick-dots {
+            height: 10px;
+            line-height: 10px;
+            margin: 0 19px;
+            li {
+                width: 3px;
+                height: 10px;
+                margin: 0 4px;
+                button {
+                    width: 3px;
+                    height: 3px;
+                }
+            }
+        }
+    }
+    .slider-card-accessory,
+    .slider-card-series {
+        .slide {
+            padding: 35px 20px 23px 0;
+            height: 235px;
+        }
+        .card-product-item {
+            height: 100%;
+            .price {
+                font-size: 24px;
+                font-weight: $font__weight__light;
+            }
+            .inner-text {
+                min-height: 70px;
+                p {
+                    font-size: 14px;
+                }
+            }
+            .wr-des {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                .ttl {
+                    font-size: 16px;
+                    font-weight: $font__weight__medium;
+                    min-height: auto;
+                    padding-bottom: 15px;
+                }
+            }
+            .des-footer {
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $xl) {
+    .slider-card {
+        .slide {
+            padding: 29px 29px 29px 6px;
+        }
+    }
+    .slider-card-accessory,
+    .slider-card-series {
+        .card-product-item {
+            .price {
+                font-size: 28px;
+                font-weight: $font__weight__light;
+            }
+        }
+    }
+}

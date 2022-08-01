@@ -1,0 +1,26 @@
+.rf_icon_with_text {
+    margin-top: 30px;
+    margin-bottom: 0;
+
+    .rf_img_box {
+        min-height: 170px;
+        display: flex;
+        align-items: center;
+
+        img {
+            display: table;
+            margin: 0 auto 20px;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-weight: $font__weight__bold;
+        font-size: 20px;
+        color: $color__text__main;
+    }
+
+    a {
+        color: $color__primary__dark;
+    }
+}

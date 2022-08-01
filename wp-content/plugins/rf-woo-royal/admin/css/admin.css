@@ -1,0 +1,201 @@
+#toplevel_page_rf-woo-royal-admin-admin a .wp-menu-image{
+    background-image: url('../images/menu-icon.png') !important;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#toplevel_page_rf-woo-royal-admin-admin a .wp-menu-image::before{
+    content: "";
+}
+
+.rf_classic_admin_form{
+    max-width: 780px;
+}
+.rf_classic_admin_form.is-sending{
+    opacity: .2;
+}
+.rf_classic_admin_form label{
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 25px;
+}
+.rf_classic_admin_form input[type=text], .rf_classic_admin_form textarea{
+    font-size: 18px;
+    margin-bottom: 25px;
+    display: block;
+}
+.rf_classic_admin_form select {
+    font-size: 18px;
+    margin-bottom: 25px;
+    display: block;
+}
+.rf_classic_admin_form select option span:hover{
+    font-weight: bold;
+}
+
+.rf_classic_admin_form input[type=submit]{
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+    padding: 12px 26px;
+    color:#fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border:none;
+    border-radius: 28px;
+    letter-spacing: 3px;
+    text-align: center;
+    background: linear-gradient(135deg, #fa3076 0%, #fa4f30 100%);
+    cursor: pointer;
+}
+.rf_classic_admin_form:hover input[type=submit]{
+    box-shadow: 0px 27px 27px -21px rgba(171, 144, 119, 0.7);
+    position: relative;
+}
+.rf_classic_admin_form.rf_diller_edit_tax input{
+    display: table !important;
+    float: left !important;
+    margin-right: 15px;
+}
+.rf_classic_admin_form.rf_diller_edit_tax input[type=number]{
+    font-size:20px;
+    font-weight: bold;
+}
+.rf_classic_admin_form.rf_diller_edit_tax .rf_admin_submit_box{
+    padding-top: 0 !important;
+    
+}
+
+.rf_admin_submit_box, .rf_admin_fire_box{
+    position: relative;
+    display: table;
+}
+.rf_admin_fire_box img,.rf_admin_submit_box img{
+    position: absolute;
+    display: table;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    width: 0px;
+}
+.rf_admin_fire_box:hover img, .rf_admin_submit_box:hover img{
+    width: 100px;
+    transition: all .8s;
+}
+.rf_admin_fire_box .rf-btn, .rf_admin_submit_box input[type=submit]{
+    position: relative;
+    z-index: 2;
+}
+.rf_admin_fire_box .rf-btn:hover, .rf_admin_submit_box input:hover{
+    background: linear-gradient(135deg, #441972 0%, #721965 100%);
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 16%), 0 4px 20px 0 rgb(0 0 0 / 12%);
+}
+
+.rf_white_admin_container{
+    padding: 30px;
+    border-radius: 10px;
+}
+
+
+.rf-adminka h2{
+    max-width: 85%;
+    background: linear-gradient(135deg, #fa3076 0%, #fa4f30 100%);
+    font-size: 22px;
+    color: #fff;
+    display: block;
+    padding: 20px 40px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.rf-adminka .rf-btn{
+    text-decoration: none;
+    padding: 12px 26px;
+    border-radius: 20px;
+    font-size:14px;
+    font-weight: bold;
+    color:#fff;
+    background: linear-gradient(135deg, #fa3076 0%, #fa4f30 100%);
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+    text-transform: uppercase;
+}
+.rf-adminka .rf-btn:hover{
+    background: linear-gradient(135deg, #441972 0%, #721965 100%);
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 16%), 0 4px 20px 0 rgb(0 0 0 / 12%);
+}
+
+
+.rf_diler_list{
+    max-width: 1500px;
+}
+.rf_diler_list .rf_item{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 3fr 2fr;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.rf_diler_list .rf_item.rf_header{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+.rf_diler_list .rf_item .rf_name{
+    font-weight: bold;
+}
+
+.swal2-popup{
+    box-shadow: 0px 40px 50px 50px rgb(253 253 253 / 10%);
+    border-radius: 50px !important;
+    
+}
+.swal2-container.swal2-center>.swal2-popup{
+    background:linear-gradient(103deg, #9a3f5f, #fa4f30), url('./../images/fire-x.gif');
+    z-index: 1;
+}
+.swal2-container.swal2-center>.swal2-popup::before{
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 200px;
+    height: 375px;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    top: -250px;
+    background-image: url('./../images/fire-x.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -14px 38px;
+}
+.swal2-container.swal2-center>.swal2-popup .swal2-title{
+    color:#fff;
+}
+.swal2-popup .swal2-html-container{
+    color:#fff;
+}
+.swal2-popup .swal2-styled.swal2-confirm{
+    background: linear-gradient(103deg, #2fc570, #158847);
+    color: #fff;
+}
+.swal2-popup .swal2-styled.swal2-cancel{
+    background: linear-gradient(103deg, #b30c0c, #8c1705);
+    color: #fff;
+}
+.swal2-actions button{
+    border-radius: 20px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0,0,0,.3);
+}
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation{
+    background: radial-gradient(circle, rgb(255 250 221) 0%, rgba(237,233,241,1) 35%, transparent 100%) !important;
+}

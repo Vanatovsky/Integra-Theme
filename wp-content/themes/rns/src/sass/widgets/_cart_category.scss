@@ -1,0 +1,96 @@
+.rf-cart-category {
+    border-top: 11px solid $color__primary__dark;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: relative;
+    .rf-img-box {
+        height: 360px;
+        position: relative;
+        img {
+            max-height: 85%;
+            max-width: 85%;
+            position: absolute;
+            margin: auto auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+    .rf-description {
+        position: relative;
+        background-color: $color__dark;
+        height: 180px;
+        padding: 30px;
+        h3 {
+            color: #fff;
+            font-size: 36px;
+            line-height: 36px;
+            font-weight: $font__weight__regular;
+        }
+        .rf-count-items {
+            color: $color__light;
+            padding-bottom: 4px;
+            width: 80%;
+            border-bottom: 2px solid $color__light;
+        }
+        .rf-img-in-description {
+            position: absolute;
+            top: -80px;
+            right: 30px;
+            width: 160px;
+            height: 160px;
+            .rf-img-show-process {
+                width: 90%;
+                margin: auto auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 50%;
+                border: 2px solid $color__light;
+            }
+            .rf-img-show-process-arrow {
+                position: absolute;
+                transform-origin: 0px 100%;
+                top: 25px;
+                left: 80px;
+            }
+        }
+        .rf-arrow-img {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            opacity: 1;
+        }
+    }
+    &:hover {
+        .rf-img-box {
+            img {
+                transition: all .6s;
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+        h3 {
+            color: $color__light;
+        }
+        .rf-count-items {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+        .rf-description {
+            .rf-img-in-description {
+                .rf-img-show-process {
+                    transition: all .6s;
+                    width: 100%;
+                }
+                .rf-img-show-process-arrow {
+                    transition: all linear .2s;
+                    transform: rotate(260deg);
+                }
+            }
+        }
+    }
+}

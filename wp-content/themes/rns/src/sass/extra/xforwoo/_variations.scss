@@ -1,0 +1,187 @@
+.woocommerce-variation-price {
+    display: none !important;
+}
+
+.ivpa-register {
+    display: block;
+    .ivpa-opt.ivpa_attribute {
+        max-width: 250px;
+        min-width: 250px;
+        float: left;
+        margin-right: 1%;
+        clear: none !important;
+        display: table !important;
+    }
+}
+
+.ivpa_attribute,
+.ivpa_custom_option {
+    .ivpa_clicked {
+        .ivpa-addprice {
+            color: $color__primary !important;
+            font-weight: $font__weight__bold !important;
+        }
+    }
+    &.ivpa_color {
+        .ivpa-terms {
+            .ivpa_term {
+                border-radius: 50%;
+                span {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .ivpa_title {
+        color: $color__primary;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: $font__weight__bold;
+        font-size: 12px !important;
+    }
+    .ivpa_select_wrapper {
+        max-width: 95% !important;
+        margin: 15px 0;
+        .ivpa_title {
+            color: $color__text__main;
+        }
+    }
+    .ivpa_desc {
+        color: $color__text__gray;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+}
+
+#ivpa-content {
+    .ivpa-opt.ivpa_custom_option.ivpa_text {
+        position: relative;
+        &.rf_first_option {
+            padding-top: 60px;
+        }
+        .rf_start_extra_option {
+            display: table;
+            position: absolute;
+            top: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: $font__weight__bold;
+            font-size: 13px !important;
+            @media screen and (max-width: $sm) {
+                top: 0;
+            }
+        }
+        .rf_filter_arrow {
+            width: 24px;
+            height: 24px;
+            //background-image: url('/wp-content/themes/rns/image/filter-arrow.svg');
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            cursor: pointer;
+            @media screen and (max-width: $sm) {
+                display: none;
+            }
+        }
+        .ivpa-info-box {
+            display: none;
+        }
+        .ivpa_title {
+            padding-left: 40px;
+            float: left;
+            width: 40%;
+            overflow: hidden;
+            margin-right: 15px;
+            color: $color__text__main;
+            text-transform: none;
+            margin-top: 0;
+            font-size: 15px !important;
+            font-weight: $font__weight__regular;
+            @media screen and (max-width: $sm) {
+                padding-left: 0;
+                width: 50%;
+                font-size: 13px !important;
+            }
+            &::before {
+                content: "";
+                width: 23px;
+                height: 23px;
+                //background-image: url('/wp-content/themes/rns/image/before_options.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                bottom: 3px;
+                left: 0;
+                @media screen and (max-width: $sm) {
+                    display: none;
+                }
+            }
+        }
+        .rf_ivpa_custom_option_choice {
+            color: $color__primary;
+            border-bottom: 1px solid $color__primary;
+            display: table;
+            cursor: pointer;
+            @media screen and (max-width: $sm) {
+                font-size: 13px;
+            }
+        }
+        .ivpa-terms {
+            margin-top: 0px;
+            display: table;
+            position: absolute;
+            right: 0;
+            top: -20px;
+            max-width: 200px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: $box__shadow__main;
+            z-index: 101;
+            &.rf_hidden {
+                display: none;
+            }
+            .ivpa_term {
+                width: calc(100% - 30px);
+                &:hover {
+                    background: $color__primary__dark;
+                    color: #fff !important;
+                    border: 1px solid $color__primary !important;
+                }
+                &.ivpa_hover {
+                    background: $color__primary__dark !important;
+                    color: #fff !important;
+                    border: 1px solid $color__primary !important;
+                }
+            }
+            .ivpa_hover {
+                background-color: $color__medium !important;
+            }
+            .rf_close {
+                content: "";
+                position: absolute;
+                top: -5px;
+                right: -15px;
+                //background-image: url("/wp-content/themes/rns/image/close.svg");
+                border-radius: 50%;
+                height: 30px;
+                width: 30px;
+                background-color: $color__primary;
+                background-position: center;
+                z-index: 10;
+                cursor: pointer;
+                &:hover {
+                    background-color: $color__primary__dark;
+                }
+            }
+            .ivpa_term.ivpa_active.ivpa_clicked {
+                border: 2px solid $color__primary !important;
+                color: #fff !important;
+                background-color: $color__primary !important;
+            }
+        }
+    }
+    .ivpa-prices-add {
+        display: none;
+    }
+}

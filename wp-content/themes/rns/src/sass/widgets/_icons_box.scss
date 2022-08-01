@@ -1,0 +1,22 @@
+.icons-medium-box {
+    padding: $padding__classic__box;
+
+    .textwidget {
+        p {
+            font-weight: $font__weight__bold;
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: $md) {
+            p {
+                font-weight: $font__weight__bold;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .icon-medium {
+        width: $icon-medium-width;
+        margin: 0 auto;
+    }
+}

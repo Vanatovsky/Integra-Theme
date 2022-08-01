@@ -1,0 +1,109 @@
+.rf-open-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+    background-color: rgba(55, 55, 55, 0.8);
+    display: none;
+    opacity: 0;
+
+    .rf-close {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        background: $color__light;
+        display: table;
+        padding: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: $box__shadow__main;
+        color: $color__text__main;
+        z-index: 110;
+
+        img {
+            width: 20px;
+            height: 20px;
+            display: table;
+        }
+
+        &:hover {
+            color: $color__primary;
+        }
+    }
+
+    #rf_img_show {
+        position: absolute;
+        margin: auto auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-width: 95%;
+        max-height: 95%;
+        box-shadow: $box__shadow__main;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .rf-open-image {
+        .rf-close {
+            top: 65px;
+        }
+    }
+}
+
+.owl_show_img {
+    .owl-item {
+        div {
+            position: relative;
+            width: 100vw !important;
+            height: 100vh !important;
+
+            .rf_owl_imgground {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+
+        button {
+            position: absolute;
+            //background: $color__secondary !important;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            outline: none !important;
+
+            span {
+                font-size: 38px;
+                line-height: 38px;
+                display: table;
+                width: 100%;
+            }
+        }
+
+        .owl-prev {
+            left: 50px;
+        }
+
+        .owl-next {
+            right: 50px;
+        }
+    }
+}

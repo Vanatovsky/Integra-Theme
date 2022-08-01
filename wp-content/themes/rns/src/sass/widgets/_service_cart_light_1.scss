@@ -1,0 +1,91 @@
+.rf-service-cart-light-1 {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15);
+    color: $color__text__main;
+    min-height: 605px;
+    border: 2px solid #fff;
+    border-radius: $border__radius__classic__box;
+    &:hover {
+        box-shadow: none;
+        border: 2px solid $color__dark;
+        background-color: $color__light;
+    }
+    .rf-cart-icon {
+        display: table;
+        margin: 0 auto 20px;
+    }
+    h3 {
+        font-weight: $font__weight__bold;
+        color: $color__text__main;
+        font-size: 32px;
+        line-height: 36px;
+    }
+    .rf-btn {
+        display: block;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        width: 120px;
+    }
+    .rf-time-job {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+    .rf-service-option-name {
+        font-size: 16px;
+        line-height: 24px;
+        color: $color__primary;
+        margin-top: 5px;
+    }
+    .rf-old-price {
+        text-decoration-line: line-through;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: $font__weight__bold;
+        color: $color__text__main;
+    }
+    .rf-price {
+        font-weight: $font__weight__bold;
+        font-size: 32px;
+        line-height: 36px;
+        color: $color__primary;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .rf-service-cart-light-1 {
+        h3 {
+            font-size: 22px;
+            line-height: 28px;
+        }
+        .rf-time-job {
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .rf-service-option-name {
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .rf-old-price {
+            font-size: 18px;
+        }
+        .rf-price {
+            font-size: 24px;
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .rf-service-cart-light-1 {
+        min-height: auto;
+        padding-bottom: 50px;
+    }
+}

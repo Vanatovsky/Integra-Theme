@@ -1,0 +1,28 @@
+.menu_h {
+    font-weight: $font__weight__bold;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: $color__text__main;
+}
+
+.rf-mini-menu {
+    padding-left: 0;
+    padding-bottom: 30px;
+    list-style: none;
+
+    li {
+        width: 100%;
+        margin-bottom: 5px;
+        margin-left: 0;
+
+        a {
+            font-size: 14px;
+            color: $color__text__main;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

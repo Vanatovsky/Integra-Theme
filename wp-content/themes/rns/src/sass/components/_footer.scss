@@ -1,0 +1,98 @@
+.top_footer {
+    background-color: #fff;
+    .rf_top_footer_row {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        border-bottom: 2px solid $color__light;
+        .rf_top_footer_menu {
+            padding-top: 10px;
+            ul {
+                display: flex;
+                justify-content: left;
+                li {
+                    padding-right: 50px;
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                    a {
+                        color: $color__secondary;
+                        transition: all .3s;
+                        &:hover {
+                            color: $color__secondary_dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rf_middle_footer_row {
+        padding: 50px 0;
+        border-bottom: 2px solid $color__light;
+        margin-bottom: 50px;
+        .col {
+            margin-bottom: 40px;
+        }
+        .rf_footer_widget_with_icon {
+            position: relative;
+            padding-left: 30px;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            p {
+                margin-bottom: 10px;
+                a {
+                    font-weight: $font__weight__bold;
+                    color: $color__text__main;
+                    transition: all .3s;
+                    &:hover {
+                        color: $color__secondary;
+                    }
+                }
+            }
+        }
+        .rf_youtube_bottom_link {
+            display: block;
+            margin-top: 30px;
+            clear: both;
+        }
+    }
+}
+
+footer {
+    background-color: #fff;
+    #footer_desc {
+        color: $color__text__gray;
+        font-size: 12px;
+        line-height: 135%;
+        font-weight: $font__weight__light;
+        a {
+            color: $color__text__gray;
+            text-decoration: underline;
+        }
+    }
+}
+
+#bottom-right-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 49;
+    padding: 10px;
+    background: $color__dark;
+    border-radius: $border__radius__classic__button;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    a {
+        display: table;
+        img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+    }
+    @media screen and (max-width: $md) {
+        position: absolute;
+    }
+}

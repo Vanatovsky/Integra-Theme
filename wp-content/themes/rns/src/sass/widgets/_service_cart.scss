@@ -1,0 +1,69 @@
+.rf-service-cart {
+    padding: 10px 10px 10px 30px;
+    .rf-img {
+        max-width: 150px;
+        margin: 20px auto;
+        display: table;
+    }
+
+    h2 {
+        font-weight: $font__weight__bold;
+        font-size: 32px;
+        line-height: 36px;
+        text-align: center;
+        color: $color__text__main;
+    }
+
+    p {
+        text-align: center;
+        color: $color__text__main;
+        margin-bottom: 20px;
+        display: block;
+        font-weight: $font__weight__regular;
+    }
+
+    .rf-variants-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 20px 0 30px;
+
+        .rf-item {
+            text-align: center;
+
+            .rf-item-name {
+                font-weight: $font__weight__bold;
+                color: $color__dark;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .rf-old-price {
+                font-weight: $font__weight__bold;
+                color: $color__dark;
+                font-size: 24px;
+                line-height: 28px;
+                text-decoration-line: line-through;
+            }
+
+            .rf-price {
+                font-weight: $font__weight__bold;
+                color: $color__primary;
+                font-size: 32px;
+                line-height: 36px;
+                margin-bottom: 0;
+            }
+
+            .rf-price-desc {
+                font-weight: $font__weight__regular;
+                color: $color__primary;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .rf-btn {
+                display: table;
+                margin: 30px auto 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.rf-command-item {
+    text-align: center;
+
+    .rf-box-image {
+        img {
+            display: table;
+            margin: 0 auto 25px;
+            width: 180px;
+            border-radius: 50%;
+            border: 2px solid $color__primary;
+            box-shadow: $box__shadow__main;
+        }
+
+        &.light img {
+            border: 2px solid $color__light;
+        }
+    }
+
+    .rf-person-name {
+        font-weight: $font__weight__bold;
+        color: $color__text__main;
+        margin-bottom: 10px;
+    }
+
+    .rf-person-work-place {
+        font-size: 13px;
+        color: $color__text__main;
+    }
+}

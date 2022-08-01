@@ -1,0 +1,90 @@
+.address_map_box {
+    box-shadow: $box__shadow__main;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 30px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+
+    .rf-item {
+        padding-right: 10px;
+
+        &:first-child{
+            border-right: 4px solid $color__primary;
+            @media screen and (max-width: $sm){
+                border-right: none;
+            }
+        }
+        &:nth-of-type(2){
+            padding-left: 20px;
+            @media screen and (max-width: $sm){
+                padding-left: 0;
+            }
+        }
+        &.rf_contacts{
+            p{
+                position: relative;
+                padding-left: 45px;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+                display: table;
+                img{
+                    position: absolute;
+                    left:0;
+                    top:-8px;
+                    &.rf_img_time{
+                        left: 1px;
+                    }
+                }
+            }
+        }
+        .rf_name{
+            font-size: 22px;
+            line-height: 28px;
+            font-weight: $font__weight__bold;
+            margin-bottom: 20px;
+        }
+        .rf_type_address{
+            color: $color__primary;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .rf-btn {
+        margin: 10px auto;
+        display: table;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .address_map_box {
+        grid-template-columns: 1fr;
+
+        .rf-item {
+            margin-bottom: 10px;
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .rf-btn {
+            font-size: 12px;
+            display: table;
+        }
+    }
+}

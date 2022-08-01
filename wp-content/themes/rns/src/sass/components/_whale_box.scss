@@ -1,0 +1,384 @@
+#rf_integra_main_whale_box {
+    position: relative;
+    z-index: 1;
+}
+
+#rf_integra_main_whale_box .webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 0;
+}
+
+#whalecanvas {
+    position: relative;
+    left: 0;
+    transition: all .5s;
+    &.opened_page_form_level_2 {
+        left: -350px;
+    }
+}
+
+#bottom_buttons_whale {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+    margin: 0 auto 25px;
+    bottom: 0;
+    transition: all .5s;
+    transform: scale(0);
+    z-index: 1;
+}
+
+#bottom_buttons_whale.open {
+    transform: scale(1);
+}
+
+// #bottom_buttons_whale.open:hover {
+//     //transform: scale(1);
+// }
+#bottom_buttons_whale.close {
+    transform: scale(0);
+}
+
+#bottom_buttons_whale .btn-bot {
+    min-width: 130px;
+    text-align: center;
+    position: relative;
+    font-size: 16px;
+    margin-right: 40px;
+    border-radius: 36px;
+    cursor: pointer;
+    background-color: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+    img {
+        display: inline-block;
+        height: 20px;
+        margin-right: 10px;
+        position: relative;
+        top: 3px;
+    }
+    &:not(.active):hover {
+        background-color: $color__secondary;
+        img {
+            filter: drop-shadow(2px 4px 6px black);
+        }
+    }
+    &.active {
+        box-shadow: 1px 1px 65px #00ffff !important;
+        opacity: .5 !important;
+        cursor: text;
+    }
+}
+
+#bottom_buttons_whale .btn-bot.active:hover {
+    background-color: $color__primary;
+    color: #fff;
+}
+
+#bottom_buttons_whale .btn-bot:not(.active):hover {
+    box-shadow: 1px 1px 65px #2578af;
+}
+
+#bottom_buttons_whale .btn-bot::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    top: 22px;
+    right: -40px;
+    background-color: #fff;
+    position: absolute;
+}
+
+#bottom_buttons_whale .btn-bot:last-child {
+    margin-right: 0;
+}
+
+#bottom_buttons_whale .btn-bot:last-child::after {
+    display: none;
+}
+
+.pages_level_2 {
+    position: fixed;
+    top: 80px;
+    right: -860px;
+    padding: 0;
+    transition: all .5s;
+    &.open {
+        right: 0px;
+    }
+    .rf_item {
+        position: absolute;
+        top: 0;
+        right: -860px;
+        width: 700px;
+        background-color: #fff;
+        color: #333333;
+        transition: all .5s;
+        padding: 80px;
+        height: 100vh;
+        background-image: url("/assets/images/whale-whare-1.png");
+        background-position: 151% 100%;
+        background-repeat: no-repeat;
+        &.open {
+            transition: all .3s;
+            right: 0;
+        }
+        .rf_close_item {
+            transform: rotate(45deg);
+            font-family: 'Times New Roman';
+            position: absolute;
+            right: 25px;
+            top: 0;
+            font-size: 120px;
+            font-weight: 100;
+            color: $color__secondary;
+            cursor: pointer;
+        }
+        .rf_after_header {
+            font-weight: $font__weight__bold;
+            color: $color__secondary;
+        }
+        h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            line-height: 1.05;
+            color: $color__text__dark;
+            font-weight: 100;
+        }
+        .inside_content {
+            padding: 20px 30px 20px 0;
+            margin-bottom: 20px;
+            max-height: 50vh;
+            overflow-y: auto;
+            clear: both;
+            p {
+                margin-bottom: 20px;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+            .rf_grid_logos {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                a {
+                    margin-bottom: 20px;
+                }
+            }
+            .rf_category_listing_whale {
+                &>ul {
+                    &>li {
+                        margin-bottom: 40px;
+                        .rf_top {
+                            display: flex;
+                            justify-content: left;
+                            .rf_img_box {
+                                img {
+                                    height: 135px;
+                                    width: 135px;
+                                }
+                            }
+                            .rf_category_title {
+                                font-size: 22px;
+                                padding: 25px 50px 0 25px;
+                                a {
+                                    color: $color__secondary;
+                                    transition: all .3s;
+                                    position: relative;
+                                    display: block;
+                                    &:hover {
+                                        color: $color__secondary_dark;
+                                    }
+                                    &::after {
+                                        content: '';
+                                        width: 32px;
+                                        height: 32px;
+                                        //background-image: url("/assets/images/icons/arrow-go.svg");
+                                        background-size: contain;
+                                        background-repeat: no-repeat;
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                    }
+                                }
+                            }
+                        }
+                        .rf_bottom {
+                            border-top: 2px solid $color__light;
+                            padding: 15px 0 0 0;
+                            .rf_list_extra_links {
+                                display: flex;
+                                li {
+                                    color: $color__secondary;
+                                    &::after {
+                                        content: "|";
+                                        position: relative;
+                                        padding: 0 5px;
+                                        top: -3px;
+                                    }
+                                    &:last-child::after {
+                                        content: "";
+                                    }
+                                    a {
+                                        color: $color__secondary;
+                                        transition: all .3s;
+                                        &:hover {
+                                            color: $color__secondary_dark;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dg.ac {
+    z-index: 1 !important;
+}
+
+.rf_whale_level_1_modal_contacts {
+    border-radius: $border__radius__classic__box;
+    background-color: #fff;
+    padding: 80px;
+    position: fixed;
+    right: 50px;
+    top: -100vh;
+    width: 700px;
+    transition: all 1.5s;
+    &.open {
+        top: 50px;
+    }
+    .rf_close_item {
+        transform: rotate(45deg);
+        font-family: 'Times New Roman';
+        position: absolute;
+        right: 25px;
+        top: 54px;
+        font-size: 120px;
+        font-weight: 100;
+        color: $color__secondary;
+        cursor: pointer;
+    }
+    .rf_phones_links {
+        margin-bottom: 30px;
+        a {
+            display: block;
+            font-size: 22px;
+            color: $color__text__dark;
+            transition: all .3s;
+            &:hover {
+                color: $color__secondary;
+            }
+        }
+    }
+    .rf_links_conts_list {
+        margin-bottom: 30px;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            li {
+                margin-right: 30px;
+                img {
+                    width: 26px;
+                    height: 26px;
+                    display: table;
+                    margin: 0 auto 10px;
+                }
+                span {
+                    clear: both;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .rf_form_box {
+        max-height: 45vh;
+        overflow-y: auto;
+        padding-right: 25px;
+        .waves-input-wrapper {
+            display: block;
+        }
+        input[type=submit] {
+            display: block;
+            width: 100%;
+            color: #fff;
+            margin-bottom: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+        .row {
+            .col {
+                padding: 0 !important;
+            }
+        }
+    }
+}
+
+.listing_uslug_level_3 {
+    position: fixed;
+    top: 0;
+    right: -700px;
+    background-color: #fff;
+    padding: 160px 60px 80px;
+    width: 700px;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all .5s;
+    &.open {
+        right: 0;
+    }
+    .rf_close_item {
+        transform: rotate(45deg);
+        font-family: 'Times New Roman';
+        position: absolute;
+        right: 25px;
+        right: 75px;
+        top: 135px;
+        font-size: 120px;
+        font-weight: 100;
+        color: $color__secondary;
+        cursor: pointer;
+    }
+    ul {
+        li {
+            display: flex;
+            padding: 20px;
+            .rf_img_box {
+                max-width: 200px;
+                padding-right: 30px;
+                img {
+                    max-width: 140px;
+                    position: relative;
+                    top: 7px;
+                }
+            }
+            .rf_service_main_info {
+                h3 {
+                    font-size: 24px;
+                    padding-bottom: 20px;
+                    border-bottom: 2px solid $color__light;
+                }
+                p {
+                    margin-bottom: 30px;
+                }
+                .rf_action_buttons {
+                    b {
+                        margin-right: 20px;
+                    }
+                }
+            }
+            &:nth-of-type(2n) {
+                background-color: $color__light;
+                h3 {
+                    border-bottom: 2px solid #fff;
+                }
+            }
+        }
+    }
+}

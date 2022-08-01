@@ -1,0 +1,64 @@
+.main-carousel {
+    .slide {
+        a {
+            text-decoration: none !important;
+        }
+
+        .wr-img {
+            img {
+                max-width: 210px;
+                position: relative;
+                display: table;
+                margin: 0 auto;
+                transition: all .3s;
+            }
+        }
+
+        &:hover {
+            .wr-img {
+                img {
+                    top: 10px;
+                }
+            }
+        }
+
+        .wr-des {
+            p {
+                font-weight: $font__weight__bold;
+                max-width: 170px;
+                margin: 0 auto 30px;
+            }
+        }
+    }
+
+    .owl-nav {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+
+        .owl-prev {
+            left: 30px;
+        }
+
+        .owl-next {
+            right: 30px;
+        }
+
+        button {
+            position: absolute;
+            top: -180px;
+            outline: none;
+
+            span {
+                font-size: 60px;
+                width: 60px;
+                height: 60px;
+                line-height: 54px;
+                background-color: $color__secondary;
+                border-radius: 50%;
+                display: table;
+                font-weight: $font__weight__thin;
+            }
+        }
+    }
+}

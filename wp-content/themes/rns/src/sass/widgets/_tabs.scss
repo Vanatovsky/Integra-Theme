@@ -1,0 +1,158 @@
+.rf-tabs-box {
+    width: 100%;
+    border-radius: $border__radius__classic__box;
+    box-shadow: $box__shadow__main;
+    margin: 60px 0;
+    .rf-tabs-header {
+        ul {
+            width: 100%;
+            clear: both;
+            display: flex;
+            padding-left: 0;
+            li {
+                display: flex;
+                flex: 1 1 0px;
+                line-height: 44px;
+                font-size: 14px;
+                text-transform: uppercase;
+                float: left;
+                cursor: pointer;
+                background-color: $color__primary;
+                color: #fff;
+                &.active {
+                    cursor: text;
+                    background-color: $color__light;
+                    span {
+                        color: $color__text__main;
+                    }
+                }
+                span {
+                    width: 100%;
+                    text-align: center;
+                    color: #fff;
+                    font-weight: $font__weight__bold;
+                }
+            }
+        }
+    }
+    .rf-tabs-items {
+        background-color: $color__light;
+        border-bottom-left-radius: $border__radius__classic__box;
+        border-bottom-right-radius: $border__radius__classic__box;
+        font-family: $font__read__text;
+        background-color: #fff;
+        .rf-item {
+            max-width: 100%;
+            padding: 30px;
+            grid-template-columns: 1fr 1fr;
+            display: none;
+            &.visible {
+                display: grid;
+            }
+            &>div {
+                background: #fff;
+                color: $color__text__main;
+                border-radius: $border__radius__classic__box;
+                padding: 30px;
+                &:nth-of-type(2n+1) {
+                    margin-right: 20px;
+                }
+                &:nth-of-type(n+3) {
+                    margin-top: 20px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 20px;
+                }
+                ul {
+                    display: block;
+                    margin-bottom: 30px;
+                    li {
+                        line-height: 24px;
+                        font-size: 16px;
+                    }
+                }
+            }
+            h2 {
+                font-family: $font__main;
+                text-transform: uppercase;
+                font-size: 24px;
+                margin-top: 0;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            .rf_prod_list_attributes {
+                font-size: 14px;
+                margin-bottom: 20px;
+                table {
+                    width: 100%;
+                    tbody {
+                        tr {
+                            background-color: #f2f2f2;
+                            &:nth-of-type(2n) {
+                                background-color: #fff;
+                            }
+                            th {
+                                text-align: left;
+                                padding: 10px;
+                            }
+                            td {
+                                padding: 10px;
+                                p {
+                                    margin-bottom: 0;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .rf-tabs-box {
+        .rf-tabs-header {
+            ul {
+                display: table;
+                li {
+                    line-height: 2;
+                    font-size: 14px;
+                    width: 100%;
+                    span {
+                        font-weight: $font__weight__regular;
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+        .rf-tabs-items {
+            .rf-item {
+                grid-template-columns: 1fr;
+                padding: 0;
+                .rf_prod_list_attributes {
+                    p {
+                        width: auto;
+                        font-size: 13px;
+                        span {
+                            line-height: 1;
+                            max-width: 50%;
+                        }
+                    }
+                }
+                &>div {
+                    &:nth-of-type(2n+1) {
+                        margin-right: 0;
+                    }
+                    &:nth-of-type(n+1) {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

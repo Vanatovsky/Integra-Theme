@@ -1,0 +1,242 @@
+.prdctfltr_woocommerce_ordering {
+    max-width: $width_work_box_desctop;
+    margin: 0 auto !important;
+    //display: table;
+    .prdctfltr_title_selected {
+        background-color: rgba(255, 255, 255, .5);
+        margin-right: 5px;
+    }
+}
+
+.prdctfltr_wc.prdctfltr_woocommerce {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    //background-image: url('/wp-content/themes/rns/image/fon.jpg');
+    @media screen and (max-width: $sm) {
+        padding: 20px 15px 40px;
+    }
+}
+
+.prdctfltr_title_remove {
+    i {
+        color: $color__primary;
+    }
+}
+
+.prdctfltr_terms_customized_select {
+    @media screen and (max-width: $sm) {
+        margin-bottom: 5px !important;
+    }
+}
+
+.prdctfltr_wc_regular .prdctfltr_terms_customized_select.prdctfltr_filter .prdctfltr_regular_title,
+.prdctfltr_wc_regular .prdctfltr_terms_customized_select.prdctfltr_filter .prdctfltr_regular_title {
+    border: 2px solid $color__light !important;
+    font-size: 12px !important;
+    .prdctfltr-down {
+        top: 13px;
+        &::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            //background-image: url('/wp-content/themes/rns/image/filter-arrow.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: table;
+        }
+    }
+    .prdctfltr-up {
+        &::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            //background-image: url('/wp-content/themes/rns/image/filter-arrow.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: table;
+        }
+    }
+}
+
+.prdctfltr_wc.prdctfltr_round .prdctfltr_filter label.prdctfltr_active {
+    &>span:before {
+        border: 1px solid #fff !important;
+        box-shadow: 0px 0px 0px 1px #ccc;
+        background: $color__primary;
+        width: 9px !important;
+        height: 9px !important;
+    }
+    .prdctfltr_customize_name {
+        color: $color__primary;
+    }
+    .prdctfltr_customize_count {
+        border: 1px solid $color__primary;
+        background: $color__primary;
+        color: #fff;
+    }
+}
+
+.prdctfltr_wc {
+    @media screen and (max-width: $sm) {
+        position: sticky !important;
+        top: 80px;
+        z-index: 50;
+    }
+    .prdctfltr_filter_title {
+        background-color: $color__primary;
+        color: #fff;
+        padding: 10px 12px 5px;
+        display: table !important;
+        a {
+            color: #fff;
+            float: left;
+        }
+    }
+    .selectize-control {
+        .selectize-input {
+            border: 2px solid $color__primary;
+            font-weight: $font__weight__bold;
+            color: $color__primary;
+            &::after {
+                margin-top: 0 !important;
+                top: 7px !important;
+                border: none !important;
+                height: 20px !important;
+                width: 20px !important;
+                //background-image: url('/wp-content/themes/rns/image/filter-arrow.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
+    }
+    .pf_rngstyle_thin .irs-from,
+    .pf_rngstyle_thin .irs-to,
+    .pf_rngstyle_thin .irs-single {
+        border-radius: 0px;
+        background: $color__secondary;
+    }
+    .pf_rngstyle_thin .irs-line-mid,
+    .pf_rngstyle_thin .irs-line-left,
+    .pf_rngstyle_thin .irs-line-right,
+    .pf_rngstyle_thin .irs-bar,
+    .pf_rngstyle_thin .irs-bar-edge,
+    .pf_rngstyle_thin .irs-slider {
+        //background-image: url('/wp-content/themes/rns/image/sprite-skin-thin.png');
+    }
+    .irs-grid-pol.small {
+        height: 10px !important;
+        background: #003058;
+    }
+}
+
+.prdctfltr_regular_title {
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.prdctfltr_range {
+    .prdctfltr_aftertitle {
+        display: none;
+    }
+}
+
+.prdctfltr_buttons {
+    text-align: right;
+    .prdctfltr_reset {
+        background-color: $color__primary;
+        text-transform: uppercase !important;
+        letter-spacing: 1px;
+        font-weight: $font__weight__bold;
+        padding: 6px 15px;
+        font-size: 12px;
+        text-transform: lowercase;
+        color: #fff;
+        margin-right: 0 !important;
+        border-radius: 5px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+        &:hover {
+            background-color: $color__primary__dark;
+            color: #fff;
+        }
+    }
+    .prdctfltr_woocommerce_filter_submit {
+        padding: 12px 26px;
+        border-radius: 0px;
+        line-height: 24px;
+        text-decoration: none !important;
+        font-weight: bold;
+        text-align: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        background-color: $color__primary;
+        border: 2px solid $color__primary__dark;
+        color: #fff !important;
+        display: table;
+        width: 208px;
+        &:hover {
+            background-color: $color__primary__dark;
+        }
+    }
+}
+
+.prdctfltr-pagination-load-more {
+    .button {
+        display: table;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .prdctfltr_woocommerce_ordering {
+        .prdctfltr_close_sidebar {
+            padding-top: 90px !important;
+            padding-bottom: 40px;
+        }
+    }
+}
+
+.pl-grid-table {
+    .pl-grid {
+        &::after {
+            //background-image: url('/wp-content/themes/rns/image/loop-sprites.svg') !important;
+        }
+    }
+    .pl-table {
+        &::after {
+            //background-image: url('/wp-content/themes/rns/image/loop-sprites.svg') !important;
+        }
+    }
+    @media screen and (max-width: $sm) {
+        display: none;
+    }
+}
+
+.rf_desctop_filter_box {
+    //background-image: url("/wp-content/themes/rns/image/hero-blog.jpg");
+    .rf-container {
+        position: relative;
+        .woocommerce-result-count {
+            color: $color__text__gray;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: $font__weight__bold;
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            letter-spacing: 3px;
+        }
+    }
+}
+
+.pf_rngstyle_white .irs-from,
+.pf_rngstyle_white .irs-to,
+.pf_rngstyle_white .irs-single {
+    top: -3px;
+    font-size: 12px;
+}

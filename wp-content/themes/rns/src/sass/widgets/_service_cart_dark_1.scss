@@ -1,0 +1,123 @@
+.rf-service-cart-dark-1 {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 30px 20px 20px;
+    color: #fff;
+    min-height: 550px;
+    border-radius: $border__radius__classic__box;
+    background-color: $color__dark;
+    font-weight: $font__weight__bold;
+    background-position: center;
+
+    &.dark {
+        background-color: $color__dark;
+    }
+
+    &:hover {
+        .rf-icon-box {
+            .rf-icon {
+                height: 100px;
+                transition: all .2s;
+            }
+        }
+    }
+
+    .rf-service-name {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 60px;
+        min-height: 72px;
+    }
+
+    .rf-icon-box {
+        width: 100%;
+        height: 150px;
+        position: relative;
+        margin-bottom: 15px;
+
+        .rf-icon, .rf-back {
+            margin: auto auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .rf-icon {
+            height: 90px;
+            z-index: 2;
+        }
+
+        .rf-back {
+            height: 150px;
+            z-index: 1;
+        }
+    }
+
+    .rf-main-desc {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .rf-main-desc-shock {
+        color: $color__primary;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .rf-old-price {
+        font-size: 32px;
+        line-height: 36px;
+        text-decoration-line: line-through;
+        color: $color__primary;
+        position: absolute;
+        left: 0;
+        bottom: 135px;
+        width: 100%;
+    }
+
+    .rf-price {
+        font-size: 32px;
+        line-height: 36px;
+        position: absolute;
+        left: 0;
+        bottom: 100px;
+        width: 100%;
+    }
+
+    .rf-btn {
+        display: block;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: $md) {
+    .rf-service-cart-dark-1 {
+        .rf-service-name {
+            font-size: 22px;
+            line-height: 28px;
+            margin-bottom: 0px;
+            min-height: 72px;
+        }
+
+        .rf-main-desc {
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .rf-old-price {
+            bottom: 180px;
+        }
+
+        .rf-main-desc-shock {
+            font-size: 16px;
+        }
+    }
+}

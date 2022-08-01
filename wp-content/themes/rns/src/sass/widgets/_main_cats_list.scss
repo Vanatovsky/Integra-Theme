@@ -1,0 +1,71 @@
+.rf_main_cats_list_widget{
+    display: flex;
+    justify-content: center;
+    .rf_item{
+        width: 300px;
+        margin: 0 20px 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        padding-bottom: 62px;
+        position: relative;
+        .rf_header{
+            background-color: inherit;
+            border-radius: 50px;
+            padding: 10px 20px 20px 20px;
+            box-shadow: $box__shadow__main;
+            margin-bottom: 20px;
+            position: relative;
+            img{
+                margin-right: 5px;
+                display:inline-block;
+                max-width: 45px;
+                position:relative;
+                top:10px;
+            }
+            b{
+                color:#fff;
+                font-size: 32px;
+                font-weight: $font__weight__bold;
+            }
+            &::after{
+                content:"";
+                position: absolute;
+                width: 50px;
+                height: 20px;
+                background-color: inherit;
+                top:-10px;
+                left:calc((100% - 50px) / 2);
+            }
+        }
+        ul{
+            list-style: none;
+            margin-bottom:40px;
+            li{
+                margin-bottom:10px;
+                a{
+                    color:#fff;
+                    font-size:16px;
+                }
+            }
+        }
+
+        .rf_bottom{
+            position: absolute;
+            bottom: 0;
+            padding:20px;
+            border-top:1px solid #fff;
+            display: block;
+            width:calc(100% - 40px);
+            a{
+                text-align: right;
+                color:#fff;
+                font-size:22px;
+                font-weight: $font__weight__bold;
+                display: block;
+                text-decoration: none;
+            }
+        }
+
+    }
+
+}

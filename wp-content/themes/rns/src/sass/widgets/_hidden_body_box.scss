@@ -1,0 +1,46 @@
+.rf_hidden_body_box {
+    padding: 30px 30px 10px 30px;
+    box-shadow: 0px 30px 50px -20px rgba(0, 0, 0, .26);
+    background: $color__light;
+    margin-right: 15px;
+    border-radius: $border__radius__classic__button;
+    .rf_header {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 20px;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+        &:after {
+            content: '❱';
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 22px;
+            margin-left: 20px;
+            line-height: 18px;
+        }
+    }
+    .rf_body {
+        font-size: 16px;
+        line-height: 28px;
+        display: none;
+    }
+    &.open {
+        .rf_header {
+            &:after {
+                transform: rotate(90deg);
+            }
+        }
+        .rf_body {
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+    &:hover {
+        background: #fdf7e8;
+        .rf_header {
+            color: $color__primary;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+//Удали когда починят плагин
+.floating-cart-item-data {
+    display: none !important;
+}
+
+#floating-cart {
+    //background: url('/wp-content/themes/rns/image/icons/cart_icon.svg') $color__secondary;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    &::before {
+        content: "Корзина";
+        position: absolute;
+        bottom: -45px;
+        color: $color__text__gray;
+        font-size: 8px;
+        padding-left: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .floating-cart-total {
+        top: -7px;
+        right: -7px;
+    }
+}
+
+body {
+    .floating-cart:not(.floating-cart-inline) {
+        @media screen and (max-width: $xs) {
+            left: calc(50vw + 26px) !important;
+        }
+    }
+    #floating-cart::before {
+        @media screen and (max-width: $xs) {
+            padding-left: 3px;
+        }
+    }
+}
+
+.floating-cart {
+    display: none;
+    .floating-cart-content {
+        .floating-cart-items {
+            .floating-cart-item {
+                position: relative;
+                .remove_from_cart_button {
+                    position: absolute;
+                    top: 10px;
+                }
+                .floating-cart-item-summary {
+                    padding-left: 40px;
+                    a {
+                        margin-bottom: 20px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        img {
+                            height: 60px;
+                            width: 60px;
+                        }
+                        &:hover {
+                            color: $color__primary;
+                            text-decoration: none;
+                        }
+                    }
+                    .floating-cart-item-data {
+                        margin-left: 6px;
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+        .floating-cart-links {
+            margin-bottom: 40px;
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: 1px;
+                font-weight: $font__weight__bold;
+                &:hover {
+                    color: $color__primary;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.rf_404_header_box {
+    img {
+        display: table;
+        margin: 40px auto 0px;
+        height: 390px;
+        opacity: 1;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .rf_404_header {
+        font-size: 120px;
+    }
+
+    .rf_404_desc {
+        font-size: 22px;
+        margin-bottom: 50px;
+    }
+
+    .rf_links {
+        text-align: center;
+        margin-bottom: 60px;
+        a{
+            display: inline;
+            margin: 20px 30px;
+        }
+    }
+}

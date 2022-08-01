@@ -1,0 +1,25 @@
+.rf-breadcrumbs {
+    margin-bottom: 0;
+    //margin-top: 30px;
+    font-family: $font__read__text;
+    a,
+    span {
+        line-height: 18px;
+        font-size: 15px;
+    }
+    a {
+        color: $color__text__main;
+        text-decoration: none;
+        font-weight: $font__weight__bold;
+    }
+    span {
+        color: $color__primary;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .rf-breadcrumbs {
+        padding: 0;
+        margin-bottom: 40px;
+    }
+}

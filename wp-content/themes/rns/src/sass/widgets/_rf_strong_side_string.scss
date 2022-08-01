@@ -1,0 +1,25 @@
+.rf_strong_side_string {
+    list-style: none;
+    display: table;
+    float: right;
+    margin-right: 40px;
+
+    li {
+        font-size: 18px;
+        font-weight: $font__weight__bold;
+        margin-bottom: 20px;
+        display: table;
+
+        span {
+            display: table;
+        }
+
+        img {
+            height: 48px;
+            margin-right: 20px;
+            position: relative;
+            top: -5px;
+            float: left;
+        }
+    }
+}

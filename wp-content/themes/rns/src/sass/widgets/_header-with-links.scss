@@ -1,0 +1,34 @@
+.header_with_links {
+    //background-image: url("/wp-content/uploads/2020/10/diagonal_striped_brick.png");
+    width: 100%;
+    padding: 60px 0;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    h1,
+    h2,
+    h3 {
+        color: $color__primary;
+        text-align: center;
+        font-size: 24px;
+        font-weight: $font__weight__bold;
+        margin-bottom: $margin__text__middle;
+    }
+    ul {
+        display: table;
+        margin: 0 auto;
+        li {
+            float: left;
+            a {
+                line-height: 32px;
+                font-size: 16px;
+                color: $color__text__main;
+                font-weight: $font__weight__bold;
+                padding: 0 10px;
+                text-decoration: none;
+                img {
+                    position: relative;
+                    top: 4px;
+                }
+            }
+        }
+    }
+}

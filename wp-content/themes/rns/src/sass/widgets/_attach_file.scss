@@ -1,0 +1,45 @@
+.rf_attach_file_box {
+    margin-top: 30px;
+    .rf_wrapper {
+        box-shadow: 0px 30px 50px -20px rgba(0, 0, 0, .26);
+        display: grid;
+        grid-template-columns: 2fr 5fr 2fr;
+        padding: 30px;
+        border-radius: $border__radius__classic__button;
+        background-color: $color__light;
+        @media screen and (max-width: $sm) {
+            grid-template-columns: 1fr 3fr 2fr;
+        }
+        &:hover {
+            background: #fdf7e8;
+        }
+        .rf_img_box {
+            padding: 0 20px;
+            img {
+                max-height: 60px;
+                display: table;
+                margin: 0 auto;
+            }
+        }
+        .rf_name_n_size {
+            .rf_name {
+                text-decoration: none;
+                color: $color__text__main;
+                font-size: 17px;
+                border-bottom: 1px dashed $color__text__main;
+            }
+            .rf_file_size {
+                padding-top: 20px;
+                color: $color__text__gray;
+            }
+        }
+        .rf_btn_box {
+            display: table;
+            margin-top: 10px;
+            //position: relative;
+            .rf-btn {
+                float: right;
+            }
+        }
+    }
+}

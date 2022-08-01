@@ -1,0 +1,49 @@
+.rf_widget_bundle_icons_676{
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: $sm){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .rf_item{
+        max-width: 250px;
+        padding: 0 20px;
+        @media screen and (max-width:$sm) {
+            max-width: 100%;
+            margin-bottom: 40px;
+        }
+        img{
+            display: table;
+            margin: 0 auto 20px;
+            height: 90px;
+            @media screen and (max-width: $sm){
+                height: 70px;
+            }
+        }
+        p{
+            color: #fff;
+            font-weight: $font__weight__bold;
+            text-align: center;
+            @media screen and (max-width: $sm){
+                font-size: 13px;
+                max-width: 120px;
+                display: table;
+                margin: 0 auto;
+            }
+        }
+
+        &:last-child{
+            @media screen and (max-width: $sm){
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:$sm){
+    #rf_box_565{
+        position: relative;
+        top:-70px;
+    }
+}

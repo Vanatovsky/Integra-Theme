@@ -1,0 +1,45 @@
+.rf_uslugi_listing {
+    //background-image:url("/wp-content/themes/rns/image/banner8.jpg");
+    background-position: center;
+    background-size: cover;
+    .rf-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        @media screen and (max-width: $md) {
+            grid-template-columns: 1fr;
+        }
+        .rf_item {
+            padding: 30px;
+            background-color: rgba(0, 76, 112, .8);
+            &:nth-of-type(2n) {
+                background-color: rgba(255, 255, 255, .3);
+            }
+            .rf_img {
+                height: 200px;
+                display: table;
+                margin: 0 auto 20px;
+            }
+            .rf_header {
+                text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+                color: #fff;
+                font-size: 24px;
+                margin-bottom: 20px;
+                font-weight: $font__weight__bold;
+                line-height: 1;
+            }
+            .rf_excerpt {
+                font-size: 14px;
+                margin-bottom: 20px;
+                color: #fff;
+            }
+            .rf_buttons {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                span {
+                    font-size: 12px;
+                    padding: 6px 17px;
+                }
+            }
+        }
+    }
+}

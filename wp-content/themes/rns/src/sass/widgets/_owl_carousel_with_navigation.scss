@@ -1,0 +1,27 @@
+.owl-carousel-with-navigation{
+    .rf_wrapper_image{
+        padding:20px;
+        .rf-item-slider{
+            background-position: center;
+            background-size: cover;
+            width: calc(100% - 40px);
+            height: 350px;
+            box-shadow: 0px 6px 18px rgba(0,0,0,.14), 0px 9px 30px rgba(0,0,0,.12), 0px 11px 15px rgba(0,0,0,.2);
+            @media screen and (max-width:$sm){
+                width:100%;
+            }
+        }
+    }
+    .owl-nav{
+        display: flex;
+        justify-content: center;
+        button{
+            outline: none !important;
+            box-shadow: none !important;
+            border: none !important;
+            &.disabled{
+                opacity: .5;
+            }
+        }
+    }
+}
