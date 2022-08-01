@@ -167,13 +167,20 @@
                     text-align: center;
                 }
                 input[type=number] {
+                    &::after {
+                        content: "Кол-во";
+                        position: absolute;
+                        left: 0;
+                        width: 50px;
+                        top: -12px;
+                        font-size: 12px;
+                        font-weight: 300;
+                    }
                     width: 40px;
                     padding: 12px 10px;
                     font-size: 18px;
                     font-weight: bold;
                     outline: none !important;
-                    border: 1px solid $color__text__gray;
-                    border-radius: $border__radius__classic__button;
                     margin: 0 auto;
                     display: table;
                 }
