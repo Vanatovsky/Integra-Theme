@@ -128,7 +128,7 @@
 				<div class="rf_item rf_link_with_text rf_question_form">
 					<a href="<?php echo wc_get_cart_url() ?>" class="waves-effect waves-light modal-trigger">
 						<img alt="Запросить КП" src="/wp-content/themes/rns/assets/images/Offer.svg" />
-						<p>Ваша корзина <span><?php echo WC()->cart->get_cart_contents_count(); ?></span></p>
+						<p>Ваша корзина <span class="rf_bage"><?php echo WC()->cart->get_cart_contents_count(); ?></span></p>
 						<p class="rf_cart_price"><?php echo WC()->cart->get_cart_subtotal(); ?></p>
 					</a>
 				</div>
