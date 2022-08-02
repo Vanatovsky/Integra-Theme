@@ -89,59 +89,16 @@ $(document).ready(function() {
 
     })
 
-    // $("#woo_product_counter").on("change", (event) => {
-    //     console.log(event.target.value)
-    //     console.log($(".rf_custom_add_to_cart_box .rf_add_to_cart").data("quantity"))
-    //     $(".rf_custom_add_to_cart_box .rf_add_to_cart").attr("data-quantity", event.target.value)
-    // })
 
-    // $('.rf_add_to_cart_product_page').on("click", function(e) {
+    $('#rf_add_to_cart_trigger').on('click', () => {
+        $('.woocommerce-variation-add-to-cart .single_add_to_cart_button').trigger('click')
+    })
 
-    //     const product_id = $(this).data('product_id')
-    //     const variation_id = $(".rf_first_col_variation .rf_row_item span.rf_add_to_cart").data("variation_id")
-    //     const quantity = $("#woo_product_counter").val()
-    //     const this_button = $(this)
-
-    //     $.ajax({
-    //         url: wc_add_to_cart_params.ajax_url,
-    //         method: 'post',
-    //         data: {
-    //             'action': 'rf_add_to_cart',
-    //             'product_id': product_id,
-    //             'variation_id': variation_id,
-    //             'quantity': quantity
-    //         },
-    //         beforeSend: function() {
-    //             console.log(product_id, variation_id, quantity);
-    //             this_button.text('Добавляем...');
-    //         },
-    //         success: function(returnData) {
-    //             this_button.text('В корзине');
-    //             this_button.addClass('rf_added');
-    //             console.log(returnData);
-    //             if (returnData['error']) {
-    //                 Swal.fire({
-    //                     icon: 'error',
-    //                     title: 'Товар не добавлен',
-    //                     text: 'Что-то пошло не так, мы не смогли добавить этот товар в корзину',
-    //                     footer: '<a href="/shop/">Каталог товаров</a>'
-    //                 });
-    //             } else {
-    //                 Swal.fire({
-    //                     icon: 'success',
-    //                     title: 'Товар добавлен в корзину',
-    //                     text: 'Вы успешно добавили товар в вашу конзину. Закройте это окно для продолжения покупок или перейдите к оформлению заказа',
-    //                     footer: '<a href="/oformlenie-zakaza/">Оформить заказ</a>'
-    //                 });
-    //             }
-
-    //         },
-    //         error: function(xhr, textStatus, errorThrown) {
-    //             alert('Ошибка на сервере');
-    //         },
-    //     });
-
-    // });
-
+    $("#quantity_trigger").on('change', function(el) {
+        const val_this = el.target.value
+        const input_quantity = $('.woocommerce-variation-add-to-cart input[name=quantity]')
+        input_quantity.val(val_this)
+        input_quantity.change()
+    })
 
 });

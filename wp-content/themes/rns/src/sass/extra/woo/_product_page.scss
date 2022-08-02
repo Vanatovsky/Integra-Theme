@@ -154,7 +154,8 @@
         }
         .rf_add_to_cart_info_wrapper {
             padding: 40px 40px 10px 40px;
-            margin-top: 120px;
+            margin-top: 60px;
+            margin-bottom: 60px;
             border-radius: $border__radius__classic__box;
             background-color: $color__secondary__light;
             .rf_delivery_str {
@@ -171,6 +172,13 @@
                 padding-top: 12px;
                 display: block;
                 font-size: 24px;
+            }
+            .rf_cart_added_trigers {
+                display: flex;
+                #quantity_trigger {
+                    width: 50px;
+                    margin-right: 30px;
+                }
             }
         }
         form.cart {
@@ -190,6 +198,7 @@
                     }
                 }
                 .quantity {
+                    display: none !important;
                     position: absolute;
                     right: 200px;
                     max-width: 50px;
@@ -205,6 +214,7 @@
                 }
                 .single_add_to_cart_button {
                     position: absolute;
+                    display: none;
                     right: 0;
                 }
             }

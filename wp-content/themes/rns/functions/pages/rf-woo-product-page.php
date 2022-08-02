@@ -242,8 +242,12 @@ function get_product_content()
                 </div>
 
                 <div class="row">
-                    <div class="col s8">
+                    <div class="col s7">
                         <b class="rf_product_price"><?php echo $product->get_price_html() ?></b>
+                    </div>
+                    <div class="col s5 rf_cart_added_trigers">
+                        <input type="number" id="quantity_trigger" class="input-text qty text" step="1" min="1" max="5000" name="quantity" value="1" title="Кол-во" size="4" placeholder="" inputmode="numeric" autocomplete="off">
+                        <b id="rf_add_to_cart_trigger" class="btn-large rf_third waves-effect">В корзину</b>
                     </div>
 
                 </div>
@@ -273,7 +277,7 @@ function get_product_content()
                     <?php } ?>
                 </div>
 
-                <?php if (count($arr_var_gallery) > 1) { ?>
+                <?php if (count($arr_var_gallery) > 1 and 100 == 7) { ?>
                     <div id="naeiiii888y" class="owl-carousel-product-page-navigation">
                         <?php foreach ($arr_var_gallery as $img_id) {
                             $url_img = wp_get_attachment_url($img_id);
@@ -292,7 +296,7 @@ function get_product_content()
 
     </div>
 
-    <?php if (get_field('name_upsale_group') && 2 == 1) { ?>
+    <?php if (get_field('name_upsale_group') and 2 == 1) { ?>
         <div class="rf-container rf_upsale_listlinks">
             <p><b><?php echo get_field('name_upsale_group') ?></b></p>
             <div class="rf_links">
@@ -311,19 +315,20 @@ function get_product_content()
         </div>
     <?php }  ?>
 
-    <div class='rf-container rf_upsale_listlinks'>
+    <!-- <div class='rf-container rf_upsale_listlinks'>
         <div class="row">
             <div class="col s12">
-                <?php $small_name = get_field('name_upsale_group') ?>
-                <?php if (!$small_name) {
-                    $small_name = "Варианты исполнения и их технические характеристики";
-                }
+                <?php //$small_name = get_field('name_upsale_group') 
                 ?>
-                <p class="rf_name_small"><?php echo $small_name ?></p>
-                <p><b><?php echo get_field('prod_name_in_upsale_group') ?></b></p>
+                <?php //if (!$small_name) {
+                //$small_name = "Варианты исполнения и их технические характеристики";
+                //}
+                ?>
+                <p><b><?php //echo get_field('prod_name_in_upsale_group') 
+                        ?></b></p>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <?php if ($product->is_type('variable')) { ?>
