@@ -11,10 +11,17 @@ let rock, wall, cristal, cristalLight1, cristalLight2, cristalLight3
 let sun, sky, water, pmremGenerator
 
 
-export function createMainDecoration(gui, settings, scene, main_scene_decoration) {
+export function createMainDecoration(gui, settings, scene, main_scene_decoration, backgroundContactsTexture) {
+
+
+    //Create contact plane
+    const contact_plane_background_geometry = new THREE.PlaneBufferGeometry(120, 44)
+    const contact_plane_background_material = new THREE.MeshStandardMaterial({ map: backgroundContactsTexture });
+    const contact_plane_background_mesh = new THREE.Mesh(contact_plane_background_geometry, contact_plane_background_material);
+    contact_plane_background_mesh.position.set(0, 23, -17)
+    scene.add(contact_plane_background_mesh)
 
     //Main Scene (Rock & Wall)
-
     main_scene_decoration.traverse(function(object) {
         if (object.name === 'mainbox') {
             wall = object

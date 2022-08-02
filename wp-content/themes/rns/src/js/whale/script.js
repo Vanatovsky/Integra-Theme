@@ -21,8 +21,6 @@ import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader.js'
 import Stats from 'three/examples/jsm/libs/stats.module.js'
 
 
-
-
 let mouseX, mouseY
 let mouse_ray = new THREE.Vector2()
 
@@ -95,7 +93,7 @@ const scene = new THREE.Scene()
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 55)
 
-camera.position.set(settings.camera_position_x, settings.camera_position_y, 55)
+camera.position.set(settings.camera_position_x, settings.camera_position_y, 31)
 new TWEEN.Tween(camera.position).to({ x: settings.camera_position_x, y: settings.camera_position_y, z: settings.camera_position_z }, 5000).easing(TWEEN.Easing.Sinusoidal.InOut).start()
 
 //camera.lookAt(0, 15, 0)
@@ -217,7 +215,7 @@ const init = () => {
     scene.add(level_2_group)
 
     //Fog
-    scene.fog = new THREE.Fog(settings.fog_color, 0.2, 50);
+    scene.fog = new THREE.Fog(settings.fog_color, 0.2, 40);
     //scene.fog = new THREE.Fog(0xcccccc, 0.5, 18);
 
     const fog_debug = gui.addFolder("Fog")
@@ -241,7 +239,7 @@ const init = () => {
     /**
      * Main Decoration
      */
-    createMainDecoration(gui, settings, scene, main_scene_decoration)
+    createMainDecoration(gui, settings, scene, main_scene_decoration, backgroundContactsTexture)
 
     /**
      * Whale
@@ -314,6 +312,8 @@ gltfLoader.load('/wp-content/themes/rns/assets/models/scene.glb', (gltf) => {
 
 const whaleNormalTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/NORMAL_MAP.jpg')
 const whaleColorTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/Defuse_2K.jpg')
+
+const backgroundContactsTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/vid.jpg')
 
 whaleNormalTexture.flipY = false
 whaleColorTexture.flipY = false
