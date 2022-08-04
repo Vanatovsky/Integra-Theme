@@ -1,8 +1,8 @@
 #modal_main_menu {
     max-height: 100%;
     border-radius: $border__radius__classic__box;
-    background-color: transparent !important;
     .modal-content {
+        padding: 40px 90px;
         background-color: $color__secondary;
         border-radius: $border__radius__classic__box;
         .rf_city {
@@ -11,6 +11,50 @@
             text-align: right;
             width: 100%;
             display: block;
+            margin-bottom: 30px;
+        }
+        .rf_menu {
+            margin-bottom: 40px;
+            &>.menu {
+                &>li {
+                    margin-bottom: 20px;
+                    &>a {
+                        color: #fff;
+                        font-size: 32px;
+                        border-bottom: 1px solid transparent;
+                        &:hover {
+                            border-bottom: 1px solid #fff;
+                        }
+                    }
+                }
+                &>li.menu-item-has-children {
+                    .sub-menu {
+                        padding-left: 70px;
+                        li {
+                            margin-bottom: 10px;
+                            a {
+                                font-size: 14px;
+                                color: #fff;
+                                border-bottom: 1px solid transparent;
+                                &:hover {
+                                    border-bottom: 1px solid #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .rf_cust_footer {
+            color: #fff;
+            font-size: 11px;
         }
     }
+}
+
+.modal-overlay {
+    background-color: rgba(255, 255, 255, 0.01) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 1 !important;
 }

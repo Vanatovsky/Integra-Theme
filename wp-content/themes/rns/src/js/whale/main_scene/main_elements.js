@@ -222,7 +222,7 @@ export function cristalColorAnimationOff(settings) {
 
 export function createWater() {
 
-    const waterGeometry = new THREE.PlaneGeometry(500, 5000)
+    const waterGeometry = new THREE.PlaneGeometry(85, 60)
 
     water = new Water(
         waterGeometry, {

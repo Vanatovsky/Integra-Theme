@@ -7,7 +7,7 @@ export const Settings = {
     first_scene_show: 0,
 
     scene_fog_far: 19,
-    scene_fog_far_level_1: 500,
+    scene_fog_far_level_1: 75,
     scene_fog_far_level_2: 16,
     scene_fog_far_level_3: 15,
     fog_color: 0x2b42,
