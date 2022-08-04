@@ -7,10 +7,10 @@ export const Settings = {
     first_scene_show: 0,
 
     scene_fog_far: 19,
-    scene_fog_far_level_1: 35,
+    scene_fog_far_level_1: 500,
     scene_fog_far_level_2: 16,
     scene_fog_far_level_3: 15,
-    fog_color: 0x3850,
+    fog_color: 0x2b42,
 
     camera_look_at_center: false,
 
@@ -42,7 +42,7 @@ export const Settings = {
     moon_light_level_3_position_z: 1.4,
 
 
-    main_wall_color: 0xcdff,
+    main_wall_color: 0x83f7ff,
 
     rock_color: 0x63686b,
 
@@ -106,6 +106,10 @@ export const Settings = {
     water_level_1_position_y: -1,
     water_level_1_position_z: 1.3,
 
+    sky_background_position_x: 0,
+    sky_background_position_y: 17.8,
+    sky_background_position_z: -21.9,
+    sky_background_position_scale: 1.5,
 
     text_helper_color: 0xffccaa,
     text_color: 0xffffff,

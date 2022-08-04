@@ -15,11 +15,25 @@ export function createMainDecoration(gui, settings, scene, main_scene_decoration
 
 
     //Create contact plane
-    const contact_plane_background_geometry = new THREE.PlaneBufferGeometry(120, 44)
+    const contact_plane_background_geometry = new THREE.PlaneBufferGeometry(60, 20)
     const contact_plane_background_material = new THREE.MeshStandardMaterial({ map: backgroundContactsTexture });
     const contact_plane_background_mesh = new THREE.Mesh(contact_plane_background_geometry, contact_plane_background_material);
-    contact_plane_background_mesh.position.set(0, 23, -17)
+    contact_plane_background_mesh.position.set(settings.sky_background_position_x, settings.sky_background_position_y, settings.sky_background_position_z)
+    contact_plane_background_mesh.scale.x = settings.sky_background_position_scale
+    contact_plane_background_mesh.scale.y = settings.sky_background_position_scale
+    contact_plane_background_mesh.scale.z = settings.sky_background_position_scale
     scene.add(contact_plane_background_mesh)
+
+    let background_sky_debug = gui.addFolder("backgroundSky")
+    background_sky_debug.add(settings, "sky_background_position_x").min(-100).max(100).step(0.01).onChange(() => { contact_plane_background_mesh.position.x = settings.sky_background_position_x })
+    background_sky_debug.add(settings, "sky_background_position_y").min(-100).max(100).step(0.01).onChange(() => { contact_plane_background_mesh.position.y = settings.sky_background_position_y })
+    background_sky_debug.add(settings, "sky_background_position_z").min(-100).max(100).step(0.01).onChange(() => { contact_plane_background_mesh.position.z = settings.sky_background_position_z })
+
+    background_sky_debug.add(settings, "sky_background_position_scale").min(-10).max(10).step(0.01).onChange(() => {
+        contact_plane_background_mesh.scale.x = settings.sky_background_position_scale
+        contact_plane_background_mesh.scale.y = settings.sky_background_position_scale
+        contact_plane_background_mesh.scale.z = settings.sky_background_position_scale
+    })
 
     //Main Scene (Rock & Wall)
     main_scene_decoration.traverse(function(object) {

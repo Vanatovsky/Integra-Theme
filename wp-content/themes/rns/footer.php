@@ -135,6 +135,20 @@
 </div>
 
 
+<!-- Modal Main menu -->
+<div id="modal_main_menu" class="modal modal-small">
+	<div class="modal-content">
+		<div class="top_logo_row row">
+			<div class="col s6">
+				<img alt="<?php echo bloginfo('name') ?>" src="/wp-content/themes/rns/assets/images/logo-integra-white.svg" />
+			</div>
+			<div class="col s6">
+				<b class="rf_city">Нижний Новгород</b>
+			</div>
+		</div>
+	</div>
+</div>
+
 <?php
 if (!is_front_page()) {
 ?>

@@ -60,8 +60,8 @@ let windowHalfY = sizes.height / 2;
 // Debug
 const gui = new dat.GUI()
 const settings = Settings
-gui.close()
-gui.hide()
+    //gui.close()
+    //gui.hide()
 
 // Raycaster
 const raycaster = new THREE.Raycaster()
@@ -93,7 +93,7 @@ const scene = new THREE.Scene()
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 55)
 
-camera.position.set(settings.camera_position_x, settings.camera_position_y, 31)
+camera.position.set(settings.camera_position_x, settings.camera_position_y, -10)
 new TWEEN.Tween(camera.position).to({ x: settings.camera_position_x, y: settings.camera_position_y, z: settings.camera_position_z }, 5000).easing(TWEEN.Easing.Sinusoidal.InOut).start()
 
 //camera.lookAt(0, 15, 0)
@@ -133,6 +133,8 @@ renderer.autoClear = false
 renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
 const renderScene = new RenderPass(scene, camera)
+
+
 
 const bloomPass = new UnrealBloomPass(new THREE.Vector2(sizes.width, sizes.height), 1.5, 0.0, 0.75)
 bloomPass.threshold = settings.bloomThreshold
@@ -175,8 +177,8 @@ fxaaPass.material.uniforms['resolution'].value.y = 1 / (sizes.height * pixelRati
 const finalComposer = new EffectComposer(renderer)
 
 finalComposer.addPass(renderScene)
-finalComposer.addPass(bloomPass)
-finalComposer.addPass(fxaaPass)
+    //finalComposer.addPass(bloomPass)
+    // finalComposer.addPass(fxaaPass)
 
 
 // composer.addPass(bloomPass);
@@ -313,7 +315,7 @@ gltfLoader.load('/wp-content/themes/rns/assets/models/scene.glb', (gltf) => {
 const whaleNormalTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/NORMAL_MAP.jpg')
 const whaleColorTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/Defuse_2K.jpg')
 
-const backgroundContactsTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/vid.jpg')
+const backgroundContactsTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/vid2.jpg')
 
 whaleNormalTexture.flipY = false
 whaleColorTexture.flipY = false

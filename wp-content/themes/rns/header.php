@@ -133,11 +133,13 @@
 					</a>
 				</div>
 				<div class="rf_item">
-					<div class="rf_menu_burger">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
+					<a href="#modal_main_menu" class="modal-trigger">
+						<div class="rf_menu_burger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
