@@ -14,7 +14,7 @@
 
 
 <div id="bottom-right-button">
-	<a href="#">
+	<a href="#top">
 		<img alt="Наверх" src="/wp-content/themes/rns/assets/images/top-white-arrow.svg" />
 	</a>
 </div>
