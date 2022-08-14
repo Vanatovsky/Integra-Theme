@@ -1,4 +1,16 @@
+<?php
 
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Run_Fun
+ */
+
+?>
 
 
 <div id="bottom-right-button">
@@ -143,7 +155,7 @@
 		</div>
 
 		<div class="rf_cust_footer">
-			© 2017– <?php echo date("YYYY") ?>. ООО «Интегра Инжиниринг». Информация, представленная на сайте не является публичной офертой и носит ознакомительный характер.
+			© 2017–2022. ООО «Интегра Инжиниринг». Информация, представленная на сайте не является публичной офертой и носит ознакомительный характер.
 			Если вы не согласны с Политикой обработки персональных данных, покиньте сайт.
 		</div>
 	</div>
