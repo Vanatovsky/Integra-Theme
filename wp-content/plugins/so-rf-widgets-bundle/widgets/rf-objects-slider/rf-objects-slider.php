@@ -33,12 +33,12 @@ class SiteOrigin_Widget_Rf_Objects_Slider_Widget extends SiteOrigin_Widget
 	function get_template_variables($instance, $args)
 	{
 
-		// $objects = get_posts(array(
-		// 	'post_type' => 'object',
-		// ));
+		$objects = get_posts(array(
+			'post_type' => 'object',
+		));
 
 		return array(
-			//'objects' => $objects
+			'objects' => $objects
 		);
 	}
 }
