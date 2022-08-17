@@ -12,6 +12,8 @@ function rf_woocommerce_template_loop_category_title($category)
     $brands = get_field('cat_brands', $category);
 ?>
 
+
+
     <div class="rf_subcategory_item">
 
         <div class="rf_img_box">

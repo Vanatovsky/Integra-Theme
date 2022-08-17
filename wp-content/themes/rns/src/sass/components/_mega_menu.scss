@@ -15,7 +15,7 @@ nav.rf_header_navigation {
     &>.rf-container {
         height: $menu_desctop_height;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 4fr 1fr;
         .logo_box {
             position: relative;
             max-width: 260px;
@@ -33,6 +33,36 @@ nav.rf_header_navigation {
                 z-index: 10;
                 @media screen and (max-width: 1350px) {
                     top: 0px;
+                }
+            }
+        }
+        .rf_middle_box{
+            display: flex;
+            .rf_item:nth-of-type(1){
+                flex-grow: 0;
+            }
+            .rf_item:nth-of-type(2) {
+                flex-grow: 1;
+            }
+            .rf_item{
+                .rf_catalog_menu{
+                    border-radius: 0;
+                    height: $menu_desctop_height;
+                    line-height: $menu_desctop_height;
+                    font-weight: normal;
+                    font-size: 20px;
+                    min-width: 200px;
+                    border: none !important;
+                    box-shadow: none;
+                    img{
+                        margin-right: 10px;
+                        position: relative;
+                        top: 3px;
+                    }
+                    @media screen and (max-width: $sm){
+                        height: $menu_mobile_height;
+                        line-height: $menu_mobile_height;
+                    }
                 }
             }
         }

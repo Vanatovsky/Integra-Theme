@@ -5,7 +5,8 @@ module.exports = {
     mode: 'development',
     entry: {
         bundle: './src/index.js',
-        whale: './src/js/whale/script.js'
+        whale: './src/js/whale/script.js',
+        admin: './src/admin.js'
     },
     // entry: './src/js/whale/script.js',
     output: {

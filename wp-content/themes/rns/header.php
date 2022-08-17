@@ -118,6 +118,16 @@
 					<img class="logo_desctop" src="/wp-content/themes/rns/assets/images/logo-integra-white.svg" alt="<?php echo bloginfo('description') ?>" />
 				</a>
 			</div>
+			<div class="rf_middle_box">
+				<div class="rf_item">
+					<a class="rf_catalog_menu btn-large waves-effect rf-third" href="<?php echo wc_get_page_permalink( 'shop' ) ?>">
+						<img alt="каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" /> Каталог
+					</a>
+				</div>
+				<div class="rf_item rf_h_search">
+					<?php do_shortcode("[live_search_xforwc]") ?>
+				</div>
+			</div>
 			<div class="rf_right_box">
 				<div class="rf_item rf_link_with_text rf_question_form">
 					<a href="#modal_question" class="waves-effect waves-light modal-trigger">
