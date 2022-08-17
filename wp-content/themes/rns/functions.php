@@ -58,8 +58,8 @@ if (!function_exists('rns_setup')) :
 		register_nav_menus(
 			array(
 				'main-menu' => esc_html__('Primary', 'rns'),
-				'footer-1' => esc_html__('Footer_1', 'rns'),
-				'footer-2' => esc_html__('Footer_2', 'rns')
+				'footer' => esc_html__('Footer', 'rns'),
+				'catalog' => esc_html__('Catalog', 'rns')
 			)
 		);
 

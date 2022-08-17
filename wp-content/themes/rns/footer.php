@@ -32,11 +32,10 @@
 				<img alt="Интегра Инжиниринг" src="/wp-content/themes/rns/assets/images/logo-integra-dark.svg" />
 			</div>
 			<div class="col s9 rf_top_footer_menu">
-				<ul>
-					<li><a href="#">Системы водоподготовки</a></li>
-					<li><a href="#">Насосное оборудование</a></li>
-					<li><a href="#">Системы очистки воды</a></li>
-				</ul>
+				<?php wp_nav_menu([
+					'theme_location' => 'footer',
+					'container' => false,
+				]) ?>
 			</div>
 		</div>
 
