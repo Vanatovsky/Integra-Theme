@@ -123,6 +123,12 @@
 					<a class="rf_catalog_menu btn-large waves-effect rf-third" href="<?php echo wc_get_page_permalink( 'shop' ) ?>">
 						<img alt="каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" /> Каталог
 					</a>
+					<div class="rf_catalog_navigation">
+						<?php wp_nav_menu([
+							'theme_location' => 'catalog',
+							'container' => false,
+						]) ?>
+					</div>
 				</div>
 				<div class="rf_item rf_h_search">
 					<?php do_shortcode("[live_search_xforwc]") ?>

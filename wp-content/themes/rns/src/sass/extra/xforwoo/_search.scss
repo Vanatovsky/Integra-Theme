@@ -61,21 +61,57 @@
     top: 10px !important;
     background-image: url("/assets/images/icons/search.svg") !important;
   }
-  .xwc--ls-path {
-    a {
-      color: $color__text__main;
-      font-size: 13px;
-    }
-  }
-  .xwc--ls-title {
-    & > a {
+
+  .xwc--ls-results {
+    border-radius: 0;
+    .xwc--ls-result {
+      display: block;
       color: $color__primary;
-      font-size: 14px;
-      padding-top: 7px;
+      a {
+        color: $color__primary;
+        &:hover {
+          color: $color__secondary;
+        }
+      }
+      .xwc--ls-path {
+        max-width: none;
+        font-size: 11px;
+        height: 40px;
+        font-style: normal;
+        margin-bottom: 10px;
+        .xwc--ls-separator {
+          padding: 0 5px;
+        }
+      }
+      .xwc--ls-title {
+        font-size: 18px;
+        line-height: 20px;
+        .xwc--ls-separator {
+          display: none;
+        }
+        & > a {
+          order: 2;
+        }
+        .xwc--ls-price {
+          width: 170px;
+          font-size: 13px;
+          order: 3;
+          padding-right: 20px;
+        }
+        .xwc--ls-image {
+          order: 1;
+          margin-right: 10px;
+
+          a {
+            img {
+              border-radius: 0;
+              height: auto;
+              width: 90px;
+              border: none !important;
+            }
+          }
+        }
+      }
     }
-  }
-  .xwc--ls-price {
-    padding-top: 7px;
-    font-size: 14px;
   }
 }

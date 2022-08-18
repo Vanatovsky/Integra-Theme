@@ -1,210 +1,211 @@
 nav.rf_header_navigation {
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
-    background-color: $color__primary;
-    position: sticky;
-    top: 0px;
-    z-index: 101;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  background-color: $color__primary;
+  position: sticky;
+  top: 0px;
+  z-index: 101;
+  height: $menu_desctop_height;
+  @media screen and (max-width: $sm) {
+    top: -110px;
+  }
+  @media screen and (max-width: $md) {
+    // height: $menu_mobile_height;
+    // line-height: $menu_mobile_height;
+  }
+  & > .rf-container {
     height: $menu_desctop_height;
-    @media screen and (max-width: $sm) {
-        top: -110px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    .logo_box {
+      position: relative;
+      max-width: 260px;
+      @media screen and (max-width: $sm) {
+        max-width: 120px;
+        top: 100px;
+        left: 26px;
+        width: 120px;
+        position: absolute;
+      }
+      img {
+        position: absolute;
+        top: 20px;
+        width: 197px;
+        z-index: 10;
+        @media screen and (max-width: 1350px) {
+          top: 0px;
+        }
+      }
     }
-    @media screen and (max-width: $md) {
-        // height: $menu_mobile_height;
-        // line-height: $menu_mobile_height;
-    }
-    &>.rf-container {
-        height: $menu_desctop_height;
-        display: grid;
-        grid-template-columns: 1fr 4fr 1fr;
-        .logo_box {
+    .rf_middle_box {
+      display: flex;
+      .rf_item:nth-of-type(1) {
+        flex-grow: 0;
+      }
+      .rf_item:nth-of-type(2) {
+        flex-grow: 1;
+      }
+      .rf_item {
+        position: relative;
+        .rf_catalog_menu {
+          border-radius: 0;
+          height: $menu_desctop_height;
+          line-height: $menu_desctop_height;
+          font-weight: normal;
+          font-size: 20px;
+          width: 260px;
+          border: none !important;
+          box-shadow: none;
+          img {
+            margin-right: 10px;
             position: relative;
-            max-width: 260px;
-            @media screen and (max-width: $sm) {
-                max-width: 120px;
-                top: 100px;
-                left: 26px;
-                width: 120px;
-                position: absolute;
-            }
-            img {
-                position: absolute;
-                top: 20px;
-                width: 197px;
-                z-index: 10;
-                @media screen and (max-width: 1350px) {
-                    top: 0px;
-                }
-            }
+            top: 3px;
+          }
+          @media screen and (max-width: $sm) {
+            height: $menu_mobile_height;
+            line-height: $menu_mobile_height;
+          }
         }
-        .rf_middle_box{
-            display: flex;
-            .rf_item:nth-of-type(1){
-                flex-grow: 0;
-            }
-            .rf_item:nth-of-type(2) {
-                flex-grow: 1;
-            }
-            .rf_item{
-                .rf_catalog_menu{
-                    border-radius: 0;
-                    height: $menu_desctop_height;
-                    line-height: $menu_desctop_height;
-                    font-weight: normal;
-                    font-size: 20px;
-                    min-width: 200px;
-                    border: none !important;
-                    box-shadow: none;
-                    img{
-                        margin-right: 10px;
-                        position: relative;
-                        top: 3px;
-                    }
-                    @media screen and (max-width: $sm){
-                        height: $menu_mobile_height;
-                        line-height: $menu_mobile_height;
-                    }
-                }
-            }
-        }
-        .rf_right_box {
-            display: flex;
-            justify-content: flex-end;
-            .rf_item {
-                padding-top: 30px;
-                &.rf_link_with_text {
-                    display: flex;
-                    padding: 0px 0px 0 10px;
-                    position: relative;
-                    cursor: pointer;
-                    img {
-                        width: 20px;
-                        height: 20px;
-                        margin-right: 10px;
-                        float: left;
-                        position: relative;
-                        top: -2px;
-                    }
-                    a {
-                        padding: 22px 30px;
-                        white-space: nowrap;
-                    }
-                    p {
-                        color: #fff;
-                        line-height: 20px;
-                        font-size: 13px;
-                        //text-transform: uppercase;
-                        transition: all .2s;
-                        margin-right: 20px;
-                        .rf_bage {
-                            display: table;
-                            position: absolute;
-                            right: 0px;
-                            top: 14px;
-                            width: 18px;
-                            height: 18px;
-                            background-color: $color__third;
-                            color: #fff;
-                            font-size: 11px;
-                            text-align: center;
-                            border-radius: 50%;
-                            line-height: 18px;
-                        }
-                    }
-                    &:hover {
-                        p {
-                            color: $color__secondary;
-                        }
-                    }
-                    .rf_cart_price {
-                        position: absolute;
-                        right: 0;
-                        font-size: 12px;
-                        color: $color__text__gray;
-                    }
-                }
-                .rf_menu_burger {
-                    padding: 0 20px;
-                    span {
-                        width: 30px;
-                        height: 3px;
-                        background-color: #fff;
-                        display: table;
-                        margin-bottom: 5px;
-                        transition: all .3s;
-                        &:nth-of-type(1)::after {
-                            content: "меню";
-                            display: table;
-                            position: absolute;
-                            font-size: 0;
-                            top: -42px;
-                        }
-                    }
-                    &:hover {
-                        cursor: pointer;
-                        span {
-                            position: relative;
-                            transform: rotate(-10deg);
-                            background-color: $color__secondary;
-                            &:nth-of-type(1)::after {
-                                transition: all .3s;
-                                font-size: 13px;
-                                color: #fff;
-                            }
-                            &:nth-of-type(2) {
-                                width: 20px;
-                            }
-                            &:nth-of-type(3) {
-                                width: 10px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
-    // .menu-box {
-    //     .rf-container {
-    //         padding: 0;
-    //         max-width: 100%;
-    //     }
-    //     background-color: $color__dark;
-    //     .mega-menu {
-    //         text-align: right !important;
-    //         background-color: $color__dark !important;
-    //         @media screen and (max-width: $sm) {
-    //             padding-top: 80px !important;
-    //         }
-    //         li {
-    //             a {
-    //                 color: #fff;
-    //                 text-transform: uppercase !important;
-    //                 font-size: 14px !important;
-    //                 &:hover {
-    //                     background-color: $color__primary !important;
-    //                     color: #fff !important;
-    //                 }
-    //             }
-    //             .mega-sub-menu {
-    //                 background: #f1f1f1 !important;
-    //                 li {
-    //                     margin-top: 20px !important;
-    //                     margin-bottom: 5px !important;
-    //                     background: #f1f1f1 !important;
-    //                     a {
-    //                         line-height: 1.2 !important;
-    //                         background: #f1f1f1 !important;
-    //                         &:hover {
-    //                             color: $color__primary !important;
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //         .mega-current-menu-item {
-    //             a {
-    //                 background: $color__primary !important;
-    //             }
-    //         }
-    //     }
-    // }
+    .rf_right_box {
+      display: flex;
+      justify-content: flex-end;
+      .rf_item {
+        padding-top: 30px;
+        &.rf_link_with_text {
+          display: flex;
+          padding: 0px 0px 0 10px;
+          position: relative;
+          cursor: pointer;
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            float: left;
+            position: relative;
+            top: -2px;
+          }
+          a {
+            padding: 22px 30px;
+            white-space: nowrap;
+          }
+          p {
+            color: #fff;
+            line-height: 20px;
+            font-size: 13px;
+            //text-transform: uppercase;
+            transition: all 0.2s;
+            margin-right: 20px;
+            .rf_bage {
+              display: table;
+              position: absolute;
+              right: 0px;
+              top: 14px;
+              width: 18px;
+              height: 18px;
+              background-color: $color__third;
+              color: #fff;
+              font-size: 11px;
+              text-align: center;
+              border-radius: 50%;
+              line-height: 18px;
+            }
+          }
+          &:hover {
+            p {
+              color: $color__secondary;
+            }
+          }
+          .rf_cart_price {
+            position: absolute;
+            right: 0;
+            font-size: 12px;
+            color: $color__text__gray;
+          }
+        }
+        .rf_menu_burger {
+          padding: 0 20px;
+          span {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            display: table;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+            &:nth-of-type(1)::after {
+              content: "меню";
+              display: table;
+              position: absolute;
+              font-size: 0;
+              top: -42px;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+            span {
+              position: relative;
+              transform: rotate(-10deg);
+              background-color: $color__secondary;
+              &:nth-of-type(1)::after {
+                transition: all 0.3s;
+                font-size: 13px;
+                color: #fff;
+              }
+              &:nth-of-type(2) {
+                width: 20px;
+              }
+              &:nth-of-type(3) {
+                width: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // .menu-box {
+  //     .rf-container {
+  //         padding: 0;
+  //         max-width: 100%;
+  //     }
+  //     background-color: $color__dark;
+  //     .mega-menu {
+  //         text-align: right !important;
+  //         background-color: $color__dark !important;
+  //         @media screen and (max-width: $sm) {
+  //             padding-top: 80px !important;
+  //         }
+  //         li {
+  //             a {
+  //                 color: #fff;
+  //                 text-transform: uppercase !important;
+  //                 font-size: 14px !important;
+  //                 &:hover {
+  //                     background-color: $color__primary !important;
+  //                     color: #fff !important;
+  //                 }
+  //             }
+  //             .mega-sub-menu {
+  //                 background: #f1f1f1 !important;
+  //                 li {
+  //                     margin-top: 20px !important;
+  //                     margin-bottom: 5px !important;
+  //                     background: #f1f1f1 !important;
+  //                     a {
+  //                         line-height: 1.2 !important;
+  //                         background: #f1f1f1 !important;
+  //                         &:hover {
+  //                             color: $color__primary !important;
+  //                         }
+  //                     }
+  //                 }
+  //             }
+  //         }
+  //         .mega-current-menu-item {
+  //             a {
+  //                 background: $color__primary !important;
+  //             }
+  //         }
+  //     }
+  // }
 }
