@@ -88,39 +88,22 @@ jQuery(function() {
 
 
 
-
-
     // <<< Слайдеры OWL Carousel
-
-    const objects_slider = $(".rf_object_slider_content");
-    objects_slider.owlCarousel({
-        items: 4,
+    const slider_product_gallery = $('.owl-carousel-product-page');
+    slider_product_gallery.owlCarousel({
+        items: 1,
         loop: false,
         autoplay: false,
-        navigation: false,
+        navigation: true,
         dots: false,
         responsive: {
             0: {
                 items: 1
             },
             768: {
-                items: 3
-            },
-            992:{
-                items: 4
+                items: 1
             }
         }
-    })
-
-
-
-    const slider_product_gallery = $('.owl-carousel-product-page');
-    slider_product_gallery.owlCarousel({
-        items: 4,
-        loop: false,
-        autoplay: false,
-        navigation: true,
-        dots: false,
     });
 
 
