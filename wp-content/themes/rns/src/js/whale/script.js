@@ -57,7 +57,7 @@ const sizes = {
 let windowHalfX = sizes.width / 2;
 let windowHalfY = sizes.height / 2;
 
-// Debug
+// Debug bug
 const gui = new dat.GUI()
 const settings = Settings
     //gui.close()
