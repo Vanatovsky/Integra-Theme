@@ -41,7 +41,6 @@ let level_2_group = new THREE.Group()
 
 let prevTime = Date.now()
 
-//let stats
 
 pointCursorGroup = new THREE.Group()
 pointCursorGroup.position.set(0, 0, 0)
