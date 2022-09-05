@@ -45,6 +45,8 @@ let prevTime = Date.now()
 pointCursorGroup = new THREE.Group()
 pointCursorGroup.position.set(0, 0, 0)
 pointCursorGroup_level3 = new THREE.Group()
+pointCursorGroup.name = 'cursor_group'
+
 
 let text_objs_for_raycaster = []
 
@@ -92,21 +94,19 @@ const scene = new THREE.Scene()
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 55)
 
+
 camera.position.set(settings.camera_position_x, settings.camera_position_y, -10)
 new TWEEN.Tween(camera.position).to({ x: settings.camera_position_x, y: settings.camera_position_y, z: settings.camera_position_z }, 5000).easing(TWEEN.Easing.Sinusoidal.InOut).start()
 
-//camera.lookAt(0, 15, 0)
+
 scene.add(camera)
 
-// const h1 = document.querySelector('h1')
-// h1.classList.add('show')
 
 TW(camera.position, { y: 0 }, 3000, TWEEN.Easing.Back.InOut, () => {
     settings.first_scene_show = 1
-        // h1.classList.add('hide')
-        // setTimeout(() => { h1.classList.add('hide_box') }, 500)
     settings.active_level = 2
 }, 3000)
+
 
 const cameraDebugFolder = gui.addFolder('Camera')
 cameraDebugFolder.add(settings, "camera_position_x").min(-100).max(100).step(0.01).onChange(() => { camera.position.x = settings.camera_position_x })
@@ -217,9 +217,9 @@ const init = () => {
 
     //Fog
     scene.fog = new THREE.Fog(settings.fog_color, 0.2, 40);
-    //scene.fog = new THREE.Fog(0xcccccc, 0.5, 18);
 
     const fog_debug = gui.addFolder("Fog")
+
     fog_debug.addColor(settings, "fog_color").onChange(() => {
         scene.fog.color.set(settings.fog_color)
     })
@@ -233,6 +233,8 @@ const init = () => {
      * Create Water - Sky - Sun
      */
     water = createWater()
+        //water.rotation.y = Math.PI
+
     scene.add(water)
     createSky(settings, scene, renderer, water)
     createLevel2Texts(gui, settings, text_font, level_2_group, pointCursorGroup)
@@ -240,7 +242,7 @@ const init = () => {
     /**
      * Main Decoration
      */
-    createMainDecoration(gui, settings, scene, main_scene_decoration, backgroundContactsTexture)
+    createMainDecoration(gui, settings, scene, main_scene_decoration, backgroundContactsTexture, big4Kcolor, big4Knormal)
 
     /**
      * Whale
@@ -282,16 +284,16 @@ const loaderManager = new THREE.LoadingManager(
 
     // Process
     (itemUrl, itemsLoaded, itemsTotal) => {
-        console.log('itemsTotal', itemsTotal)
-        console.log('itemsLoaded', itemsLoaded)
-        console.log('itemUrl', itemUrl)
+        // console.log('itemsTotal', itemsTotal)
+        // console.log('itemsLoaded', itemsLoaded)
+        // console.log('itemUrl', itemUrl)
     }
 )
 
 const gltfLoader = new GLTFLoader(loaderManager)
 const textureLoader = new THREE.TextureLoader(loaderManager)
 
-gltfLoader.load('/wp-content/themes/rns/assets/models/whale-best.glb', (gltf) => {
+gltfLoader.load('/wp-content/themes/rns/assets/models/whale.glb', (gltf) => {
     whale_model = gltf.scene
     whale_gltf = gltf
     whale_model.traverse(function(object) {
@@ -306,13 +308,21 @@ gltfLoader.load('/wp-content/themes/rns/assets/models/whale-best.glb', (gltf) =>
     animations = gltf.animations
 })
 
-gltfLoader.load('/wp-content/themes/rns/assets/models/scene.glb', (gltf) => {
+gltfLoader.load('/wp-content/themes/rns/assets/models/rocks.glb', (gltf) => {
     main_scene_decoration = gltf.scene
 
 })
 
-const whaleNormalTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/NORMAL_MAP.jpg')
-const whaleColorTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/Defuse_2K.jpg')
+const whaleNormalTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_Normal.png')
+const whaleColorTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_BaseColor.png')
+
+
+const big4Kcolor = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_BaseColor.png')
+big4Kcolor.flipY = false
+
+const big4Knormal = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_Normal.png')
+big4Knormal.flipY = false
+
 
 const backgroundContactsTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/vid2.jpg')
 

@@ -57,7 +57,7 @@ export const textMaterial = new THREE.MeshStandardMaterial({
     //color: 0x38b2ff,
     color: 0x677484,
     fog: true,
-    //opacity: 0.9,
+    //opacity: 0.7,
     transparent: true,
     roughness: 1,
     metalness: 0

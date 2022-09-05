@@ -15,8 +15,9 @@ const text_group_names = ["text", "text_2", "text_3", "text_4", "text_5"]
 let old_active_group_place = {}
 let old_active_group_name
 
-export function raycasterListenerTextesLevel2(settings, scene, camera, raycaster, pointCursorGroup, level_2_group) {
 
+
+export function raycasterListenerTextesLevel2(settings, scene, camera, raycaster, pointCursorGroup, level_2_group) {
 
     let intersects = raycaster.intersectObjects(text_objs_for_raycaster)
 
@@ -47,11 +48,22 @@ export function raycasterListenerTextesLevel2(settings, scene, camera, raycaster
             document.querySelector("canvas.webgl").addEventListener("click", () => openLevel2Page(settings, scene, camera, level_2_group))
 
         }
+
     } else {
 
         settings.active_text_group_level_2_name = ''
         document.querySelector("canvas.webgl").removeEventListener("click", openLevel2Page(settings, scene, camera, level_2_group))
 
+    }
+
+    /**
+     * Cursor change
+     */
+
+    if (intersects.length > 0) {
+        $('canvas').css('cursor', 'pointer');
+    } else {
+        $('canvas').css('cursor', 'default');
     }
 
 
@@ -224,10 +236,10 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
 
     const text_5_group = new THREE.Group()
     const textGeometry_5 = new TextGeometry(
-            `НАШИ
-БРЕНДЫ`, {
+            `ОТОПЛЕНИЕ И
+КОТЕЛЬНЫЕ`, {
                 font: text_font,
-                size: 0.22,
+                size: 0.18,
                 height: .005,
                 curveSegments: 2,
                 bevelEnabled: true,
@@ -385,10 +397,9 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
 
 
 
-export function openLevel2Page(settings, scene, camera, level_2_group) {
+export function openLevel2Page(settings, scene) {
 
     document.removeEventListener("click", openLevel2Page)
-
 
     if (settings.active_text_group_level_2_name) {
 
@@ -416,15 +427,18 @@ export function openLevel2Page(settings, scene, camera, level_2_group) {
         new TWEEN.Tween(text_active_obj.position).to({ x: -1.5, y: -1, z: 1 }, 300).start()
 
         text_group_names.forEach(name_el => {
-            //console.log(name_el)
             if (name_el !== settings.active_text_group_level_2_name) {
                 const text_el = scene.getObjectByName(name_el)
                 new TWEEN.Tween(text_el.scale).to({ x: 0, y: 0, z: 0 }, 300).start()
             }
         });
 
+        /**
+         * out cursor
+         */
 
-
+        const cursor_group = scene.getObjectByName('cursor_group')
+        new TWEEN.Tween(cursor_group.position).to({ x: -0.3, y: -0.3, z: -0.4 }, 500).start()
 
     }
 
@@ -445,13 +459,6 @@ export function closeLevel2Page(settings, camera, scene, level_2_group) {
 
     const canvas_element = document.getElementById('whalecanvas')
     canvas_element.classList.remove('opened_page_form_level_2')
-
-    new TWEEN.Tween(camera.position).to({ x: settings.camera_position_level_2_x, y: settings.camera_position_level_2_y, z: settings.camera_position_level_2_z }, 500)
-        //.easing(TWEEN.Tween.Easing.Circular.Out)
-        .start()
-
-
-
 
     const text_active_obj = scene.getObjectByName(old_active_group_name)
 

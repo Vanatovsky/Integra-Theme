@@ -17,7 +17,7 @@ export function createMainLights(gui, scene) {
     scene.add(new THREE.AmbientLight(0x404040))
 
     // Directional light
-    moonLight = new THREE.DirectionalLight('#ffffff', 2)
+    moonLight = new THREE.DirectionalLight('#ffffff', 3.6)
 
     moonLight.position.set(0, -15, 10.6)
 

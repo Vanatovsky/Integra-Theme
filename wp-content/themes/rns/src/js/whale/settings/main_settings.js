@@ -10,7 +10,7 @@ export const Settings = {
     scene_fog_far_level_1: 75,
     scene_fog_far_level_2: 16,
     scene_fog_far_level_3: 15,
-    fog_color: 0x2b42,
+    fog_color: 0x175060,
 
     camera_look_at_center: false,
 
@@ -29,20 +29,20 @@ export const Settings = {
     mode_animation_camera_level_1: false,
 
 
-    moon_light_level_1_position_x: 33,
-    moon_light_level_1_position_y: 22,
-    moon_light_level_1_position_z: 11,
+    moon_light_level_1_position_x: -12,
+    moon_light_level_1_position_y: 53.5,
+    moon_light_level_1_position_z: -48,
 
-    moon_light_level_2_position_x: 0,
-    moon_light_level_2_position_y: -15,
-    moon_light_level_2_position_z: 10.6,
+    moon_light_level_2_position_x: -16.9,
+    moon_light_level_2_position_y: 8.5,
+    moon_light_level_2_position_z: 19.5,
 
     moon_light_level_3_position_x: -2.3,
     moon_light_level_3_position_y: -1,
     moon_light_level_3_position_z: 1.4,
 
 
-    main_wall_color: 0x83f7ff,
+    main_wall_color: 0x157c7c,
 
     rock_color: 0x63686b,
 
@@ -99,7 +99,7 @@ export const Settings = {
     // ceiling_plane_color: 0x00ffff,
 
     water_position_x: 0,
-    water_position_y: 2.6,
+    water_position_y: 2.4,
     water_position_z: 0,
 
     water_level_1_position_x: 0,
@@ -113,7 +113,7 @@ export const Settings = {
 
     text_helper_color: 0xffccaa,
     text_color: 0xffffff,
-    text_color_hover: 0xffccf1,
+    text_color_hover: 0x26a69a,
 
     text_position_x: -3.3,
     text_position_y: 0.41,
@@ -153,8 +153,8 @@ export const Settings = {
     active_text_group_level_2_name: '',
 
 
-    cursor_level_1_color: 0x8c8c8c,
-    cursor_light_color: 0xffffff,
+    cursor_level_1_color: 0x64d3c5,
+    cursor_light_color: 0xffe0,
     mode_cursor_level_1_activated: false,
     animate_hover_cursor_level_3: false,
 
@@ -163,8 +163,8 @@ export const Settings = {
     cursor_level_3_position_z: -6,
 
 
-    sun_elevation: 4.0,
-    sun_azimuth: -75,
+    sun_elevation: 7.0,
+    sun_azimuth: 0,
 
 
     exposure: 0.5,

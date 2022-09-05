@@ -17,12 +17,12 @@ let animate_position_camera, animate_rotation_camera,
 
 export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer, animations) {
 
-
     /**
      * Play sceleton whale animation
      */
     mixer.clipAction(animations[1]).play()
 
+    moonLightGoToLevel2()
 
     /**
      * Whale position
@@ -33,13 +33,19 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
 
     animate_position_whale_model = new TWEEN.Tween(whale_model.position).to({ x: 0, y: 0, z: 0 }, 7000).easing(TWEEN.Easing.Sinusoidal.Out).start()
         .onComplete(() => {
-            document.querySelector('h1').classList.add("hide")
+            // document.querySelector('h1').classList.add("hide")
             mixer.clipAction(animations[1]).stop()
             mixer.clipAction(animations[0]).play()
             document.querySelector("#bottom_buttons_whale").classList.add('open')
             settings.whale_home = true
             settings.camera_look_at_center = true
         })
+
+
+    setTimeout(() => {
+        const water = scene.getObjectByName('water')
+        water.rotation.y = Math.PI
+    }, 3500)
 
 
 
@@ -59,6 +65,7 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
     if (animate_scene_fog_far !== undefined) {
         animate_scene_fog_far.stop()
     }
+
     animate_scene_fog_far = new TWEEN.Tween(scene.fog).delay(2600).to({ far: settings.scene_fog_far_level_2 }, 1000).easing(TWEEN.Easing.Elastic.In).start()
 
 
@@ -66,12 +73,11 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
      * Close loader
      */
 
-    setTimeout(() => {
-        const loader_box = document.getElementById("rf_loader_box")
-        loader_box.classList.add("loaded")
-        const loader_round_box = document.querySelector("#rf_loader_box .preloader-wrapper")
-        loader_round_box.classList.add("loaded")
-    }, 500)
+    const loader_box = document.getElementById("rf_loader_box")
+    loader_box.classList.add("loaded")
+    const loader_round_box = document.querySelector("#rf_loader_box .preloader-wrapper")
+    loader_round_box.classList.add("loaded")
+
 
 
 }
@@ -109,6 +115,22 @@ export function goToLevel1(settings, scene, camera, whale_model,
 
 
     /**
+     * Water rotation
+     */
+    setTimeout(() => {
+        const water = scene.getObjectByName('water')
+        water.rotation.y = 0
+    }, 300)
+
+    /**
+     * Fog sceen
+     */
+    setTimeout(() => {
+        scene.fog.far = settings.scene_fog_far_level_1
+    }, 300)
+
+
+    /**
      * Camera position
      */
     if (animate_position_camera !== undefined) {
@@ -128,7 +150,7 @@ export function goToLevel1(settings, scene, camera, whale_model,
     if (animate_position_whale_model !== undefined) {
         animate_position_whale_model.stop()
     }
-    animate_position_whale_model = new TWEEN.Tween(whale_model.position).to({ y: 2.6, z: -1.5 }, 2500).easing(TWEEN.Easing.Sinusoidal.Out).start()
+    animate_position_whale_model = new TWEEN.Tween(whale_model.position).to({ y: 2.3, z: -1.5 }, 2500).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
     /**
      * Whale rotation
@@ -148,13 +170,6 @@ export function goToLevel1(settings, scene, camera, whale_model,
         })
 
 
-    /**
-     * Fog sceen
-     */
-    if (animate_scene_fog_far !== undefined) {
-        animate_scene_fog_far.stop()
-    }
-    animate_scene_fog_far = new TWEEN.Tween(scene.fog).delay(1000).to({ far: settings.scene_fog_far_level_1 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
 
 }
@@ -188,6 +203,24 @@ export function goToLevel2(settings, camera, scene,
      * MoonLight
      */
     moonLightGoToLevel2()
+
+    /**
+     * Water rotation
+     */
+    setTimeout(() => {
+        const water = scene.getObjectByName('water')
+        water.rotation.y = Math.PI
+    }, 300)
+
+
+
+    /**
+     * Fog scene
+     */
+    setTimeout(() => {
+        scene.fog.far = settings.scene_fog_far_level_2
+    }, 300)
+
 
 
     /**
@@ -245,13 +278,6 @@ export function goToLevel2(settings, camera, scene,
     particlesGoToLevel2()
 
 
-    /**
-     * Fog scene
-     */
-    if (animate_scene_fog_far !== undefined) {
-        animate_scene_fog_far.stop()
-    }
-    animate_scene_fog_far = new TWEEN.Tween(scene.fog).to({ far: settings.scene_fog_far_level_2 }, 1000).start()
 
 }
 
@@ -303,6 +329,13 @@ export function goToLevel3(settings, camera, scene,
     if (animate_position_camera !== undefined) {
         animate_position_camera.stop()
     }
+
+    /**
+     * Water rotation
+     */
+    const water = scene.getObjectByName('water')
+    water.rotation.y = Math.PI
+
 
     animate_position_camera = new TWEEN.Tween(camera.position).to({ y: -18.5 }, 2000).easing(TWEEN.Easing.Sinusoidal.Out).start()
         .onComplete(() => {
@@ -399,6 +432,7 @@ export function goToLevel3(settings, camera, scene,
     if (animate_scene_fog_far !== undefined) {
         animate_scene_fog_far.stop()
     }
+
     animate_scene_fog_far = new TWEEN.Tween(scene.fog).to({ far: settings.scene_fog_far_level_3 }, 1000).start()
 
 

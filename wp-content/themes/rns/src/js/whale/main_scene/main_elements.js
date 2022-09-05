@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { Settings } from '../settings/main_settings'
 import { Water } from 'three/examples/jsm/objects/Water'
 import { Sky } from 'three/examples/jsm/objects/Sky'
-import { cristalMaterial, mainWallMaterial, rockMaterial } from '../inc/materials';
+import { cristalMaterial, mainWallMaterial } from '../inc/materials';
 import { createRGBString16, goToInitNumber } from '../inc/extra_functions';
 
 
@@ -11,7 +11,7 @@ let rock, wall, cristal, cristalLight1, cristalLight2, cristalLight3
 let sun, sky, water, pmremGenerator
 
 
-export function createMainDecoration(gui, settings, scene, main_scene_decoration, backgroundContactsTexture) {
+export function createMainDecoration(gui, settings, scene, main_scene_decoration, backgroundContactsTexture, big4Kcolor, big4Knormal) {
 
 
     //Create contact plane
@@ -23,6 +23,16 @@ export function createMainDecoration(gui, settings, scene, main_scene_decoration
     contact_plane_background_mesh.scale.y = settings.sky_background_position_scale
     contact_plane_background_mesh.scale.z = settings.sky_background_position_scale
     scene.add(contact_plane_background_mesh)
+
+    //Debug background contacts
+    const folderDebugBackgroudContacts = gui.addFolder("Contacts Background")
+    folderDebugBackgroudContacts.add(settings, "sky_background_position_scale").min(0).max(200).onChange(() => {
+        contact_plane_background_mesh.scale.x = settings.sky_background_position_scale
+        contact_plane_background_mesh.scale.y = settings.sky_background_position_scale
+        contact_plane_background_mesh.scale.z = settings.sky_background_position_scale
+    })
+
+
 
     let background_sky_debug = gui.addFolder("backgroundSky")
     background_sky_debug.add(settings, "sky_background_position_x").min(-100).max(100).step(0.01).onChange(() => { contact_plane_background_mesh.position.x = settings.sky_background_position_x })
@@ -42,13 +52,12 @@ export function createMainDecoration(gui, settings, scene, main_scene_decoration
         }
         if (object.name === 'mainrock') {
             rock = object
-
-            //console.log('mainrock', object.layers)
+                //console.log('mainrock', object.layers)
         }
         if (object.name === 'cristal') {
             cristal = object
-            cristal.layers.enable(settings.layer_bloom_scene)
-            console.log('cristal', cristal.layers)
+                //cristal.layers.enable(settings.layer_bloom_scene)
+                //console.log('cristal', cristal.layers)
         }
     })
 
@@ -68,14 +77,26 @@ export function createMainDecoration(gui, settings, scene, main_scene_decoration
     rock.position.z = -8
     rock.position.x = -4
     rock.position.y = -28
+
+    const rockMaterial = new THREE.MeshStandardMaterial({
+        //color: 0x335533,
+        //roughness: 1,
+        map: big4Kcolor,
+        normalMap: big4Knormal
+            //metalness: 0
+    })
+
     rock.material = rockMaterial
+
+    console.log('rock.material', rock)
+
     scene.add(rock)
 
     //Rock debug
-    const rockDebugFolder = gui.addFolder("Rock")
-    rockDebugFolder.addColor(settings, 'rock_color').onChange(() => {
-        rock.material.color.set(settings.rock_color)
-    })
+    // const rockDebugFolder = gui.addFolder("Rock")
+    // rockDebugFolder.addColor(settings, 'rock_color').onChange(() => {
+    //     rock.material.color.set(settings.rock_color)
+    // })
 
 
     //Cristal
@@ -232,34 +253,33 @@ export function createWater() {
                 texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
             }),
             sunDirection: new THREE.Vector3(),
-            sunColor: 0x00ffff,
+            sunColor: 0xffffff,
             waterColor: Settings.water_color,
-            distortionScale: 3.7,
+            distortionScale: 1.7,
             //fog: false
         }
     )
 
     water.rotation.x = -Math.PI / 2;
+    water.name = 'water'
     water.position.y = Settings.water_position_y
-
-
     return water
 }
 
 
 
 // Skybox
-export function createSky(settings, scene, renderer, water) {
+export function createSky(settings, scene, renderer) {
 
     sun = new THREE.Vector3();
 
     sky = new Sky()
-    sky.scale.setScalar(10000)
+    sky.scale.setScalar(1000)
     scene.add(sky)
 
     const skyUniforms = sky.material.uniforms
 
-    skyUniforms['turbidity'].value = 10
+    skyUniforms['turbidity'].value = 0
     skyUniforms['rayleigh'].value = 2
     skyUniforms['mieCoefficient'].value = 0.005
     skyUniforms['mieDirectionalG'].value = 0.8

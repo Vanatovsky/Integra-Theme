@@ -13,7 +13,7 @@ export function createPointCursor(gui, settings, pointCursorGroup, level_2_group
     point_cursor_mesh.layers.enable(settings.layer_bloom_scene)
 
     // Point Light
-    const pointCursorLight = new THREE.PointLight(settings.cursor_light_color, 2.5, 2)
+    const pointCursorLight = new THREE.PointLight(settings.cursor_light_color, 4, 2, 2)
     pointCursorLight.position.set(-1, 0, .2, 4)
     pointCursorGroup.add(pointCursorLight)
     pointCursorGroup.add(point_cursor_mesh)
@@ -26,6 +26,7 @@ export function createPointCursor(gui, settings, pointCursorGroup, level_2_group
     pointCursorGroup.position.y = 8.5
     pointCursorGroup.position.z = -4
     pointCursorGroup.scale.set(12, 12, 12)
+    pointCursorGroup.rotation.y = Math.PI * -0.35
 
     setTimeout(() => { pointCursorGroup.scale.set(1, 1, 1) }, 4500)
 
