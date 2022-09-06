@@ -31,7 +31,7 @@
 .btn-large.rf_primary_white {
     background-color: #fff;
     border: 2px solid $color__primary;
-    color: $color__primary;
+    color: $color__primary !important;
     box-shadow: none !important;
     line-height: 32px;
     font-weight: $font__weight__bold;

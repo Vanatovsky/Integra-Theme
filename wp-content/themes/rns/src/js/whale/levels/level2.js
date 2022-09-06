@@ -91,8 +91,8 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
      */
     const text_1_group = new THREE.Group()
     const textGeometry = new TextGeometry(
-            `Доставка по
-территории Роccии`, {
+            `Системы
+автоматизации`, {
                 font: text_font,
                 size: 0.15,
                 height: .01,

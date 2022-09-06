@@ -21,7 +21,7 @@
 			<img alt="контакты" src="/wp-content/themes/rns/assets/images/icons/phone-white.svg" /> Контакты
 		</div>
 		<div class="btn-bot btn-large rf_secondary_white active" id="button_to_level_2">
-			<img alt="Каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" /> Каталог
+			Продукция
 		</div>
 		<div class="btn-bot btn-large rf_secondary_white" id="button_to_level_3">
 			<img alt="Услуги" src="/wp-content/themes/rns/assets/images/icons/gear.svg" /> Услуги
@@ -78,59 +78,28 @@
 		<h2>Услуги нашей <br /> компании</h2>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus minus ratione modi aliquam provident dolorum sit illum hic est beatae doloremque nemo, dolor facere commodi assumenda, laboriosam aspernatur dolores quos.</p>
 		<br />
+
+
+
 		<ul>
-			<li>
-				<div class="rf_img_box">
-					<img alt="service" src="/wp-content/themes/rns/assets/images/icons/cheff_montage.svg" />
-				</div>
-				<div class="rf_service_main_info">
-					<h3>Монтаж, шеф-монтаж</h3>
-					<p>Профессиональный монтаж<br /> и сопровождение</p>
-					<div class="rf_action_buttons">
-						<b class="btn waves-effect">Оставить заявку</b>
-						<a href="#" class="btn waves-effect white">Подробнее</a>
+			<?php foreach ($uslugi as $usl) { ?>
+
+				<li>
+					<div class="rf_img_box">
+						<?php $us_thum_url = wp_get_attachment_url(get_post_thumbnail_id($usl->ID)); ?>
+						<img alt="<?php echo $usl->post_title ?>" src="<?php echo $us_thum_url ?>" />
 					</div>
-				</div>
-			</li>
-			<li>
-				<div class="rf_img_box">
-					<img alt="service" src="/wp-content/themes/rns/assets/images/icons/service.svg" />
-				</div>
-				<div class="rf_service_main_info">
-					<h3>Сервисное обслуживание</h3>
-					<p>Постановка на сервис<br /> и гарантийное обслуживание</p>
-					<div class="rf_action_buttons">
-						<b class="btn waves-effect">Оставить заявку</b>
-						<a href="#" class="btn waves-effect white">Подробнее</a>
+					<div class="rf_service_main_info">
+						<h3><?php echo $usl->post_title ?></h3>
+						<p><?php echo get_the_excerpt($usl->ID) ?></p>
+						<div class="rf_action_buttons">
+							<a href="#modal_service_order" class="btn waves-effect modal-trigger">Оставить заявку</a>
+							<a href="<?php echo get_permalink($usl->ID) ?>" class="btn waves-effect rf_primary_white">Подробнее</a>
+						</div>
 					</div>
-				</div>
-			</li>
-			<li>
-				<div class="rf_img_box">
-					<img alt="service" src="/wp-content/themes/rns/assets/images/icons/tech.svg" />
-				</div>
-				<div class="rf_service_main_info">
-					<h3>Техподдержка и обучение</h3>
-					<p>Постановка на сервис<br /> и гарантийное обслуживание</p>
-					<div class="rf_action_buttons">
-						<b class="btn waves-effect">Оставить заявку</b>
-						<a href="#" class="btn waves-effect white">Подробнее</a>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="rf_img_box">
-					<img alt="service" src="/wp-content/themes/rns/assets/images/icons/cheff_montage.svg" />
-				</div>
-				<div class="rf_service_main_info">
-					<h3>Монтаж, шеф-монтаж</h3>
-					<p>Профессиональный монтаж<br /> и сопровождение</p>
-					<div class="rf_action_buttons">
-						<b class="btn waves-effect">Оставить заявку</b>
-						<a href="#" class="btn waves-effect white">Подробнее</a>
-					</div>
-				</div>
-			</li>
+				</li>
+
+			<?php } ?>
 		</ul>
 	</div>
 
@@ -140,85 +109,46 @@
 
 		<div id="text_4" class="rf_item">
 			<span class="rf_close_item">+</span>
-			<h2>Системы<br /> водоподготовки</h2>
+			<h2>Системы очистки воды <br />(водоподготовки)</h2>
 			<div class="inside_content">
 				<div class="rf_category_listing_whale">
 					<ul>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
+						<?php foreach ($cats_4 as $cat) { ?>
+							<?php
+							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
+							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
+							$brands = get_field('cat_brands', $cat);
+							$post_link = get_term_link($cat, 'product_cat');
+
+							?>
+							<li>
+								<div class="rf_top">
+									<div class="rf_img_box">
+										<img alt="категория" src="<?php echo $img_url ?>" />
+									</div>
+									<div class="rf_category_title">
+										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
+									</div>
 								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
+								<div class="rf_bottom">
+									<ul class="rf_list_extra_links">
+										<?php foreach ($brands as $br) { ?>
+											<li>
+												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
+													<?php echo $br->name ?>
+												</a>
+											</li>
+										<?php } ?>
+									</ul>
 								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
+							</li>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>
+
 			<div class="rf_bottom_button_box">
-				<?php
-				$shop_page_url = get_permalink(wc_get_page_id("shop"));
-				?>
+				<?php $shop_page_url = get_permalink(wc_get_page_id("shop")); ?>
 				<a href="<?php echo $shop_page_url ?>" class="btn-large rf_third rf-btn-left-icon waves-effect waves-light pulse">
 					<img alt="Каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" />
 					Полный каталог
@@ -228,52 +158,86 @@
 
 		<div id="text" class="rf_item">
 			<span class="rf_close_item">+</span>
-			<h2>Доставка по<br /> Нижнему Новгороду</h2>
+			<h2>Системы<br /> Автоматизации</h2>
 			<div class="inside_content">
-				<p>Тут инфо о доставке (в идеале с картой) </p>
+
+				<div class="rf_category_listing_whale">
+					<ul>
+						<?php foreach ($cats_1 as $cat) { ?>
+							<?php
+							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
+							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
+							$brands = get_field('cat_brands', $cat);
+							$post_link = get_term_link($cat, 'product_cat');
+
+							?>
+							<li>
+								<div class="rf_top">
+									<div class="rf_img_box">
+										<img alt="<?php echo $cat->name ?>" src="<?php echo $img_url ?>" />
+									</div>
+									<div class="rf_category_title">
+										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
+									</div>
+								</div>
+								<div class="rf_bottom">
+									<ul class="rf_list_extra_links">
+										<?php foreach ($brands as $br) { ?>
+											<li>
+												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
+													<?php echo $br->name ?>
+												</a>
+											</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</li>
+						<?php } ?>
+					</ul>
+				</div>
+
 			</div>
 
 		</div>
 
 		<div id="text_5" class="rf_item">
 			<span class="rf_close_item">+</span>
-			<h2>Проверенные<br /> бренды</h2>
-			<p class="rf_after_header">Главное - надежность!</p>
+			<h2>Отопление и котельные</h2>
+			<!-- <p class="rf_after_header">Главное - надежность!</p> -->
 			<div class="inside_content">
-				<p>Для производства собственной продукции мы используем
-					компоненты только проверенных поставщиков.
-					Также, всё поставляемое готовое оборудование
-					имеет высокую надёжность и доступность расходных
-					материалов и комплектующих.</p>
+				<div class="rf_category_listing_whale">
+					<ul>
+						<?php foreach ($cats_5 as $cat) { ?>
+							<?php
+							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
+							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
+							$brands = get_field('cat_brands', $cat);
+							$post_link = get_term_link($cat, 'product_cat');
 
-				<div class="rf_grid_logos">
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/akvafor.png" />
-					</a>
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/aquapro-logo.png" />
-					</a>
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/Canature.png" />
-					</a>
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/Cintropur.png" />
-					</a>
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/Clack-Corporation.png" />
-					</a>
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/geizer.png" />
-					</a>
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/raifil-logo.png" />
-					</a>
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/Runxin.png" />
-					</a>
-					<a href="#">
-						<img alt="partner logo" src="/wp-content/themes/rns/assets/images/logos/Structural-logo.png" />
-					</a>
+							?>
+							<li>
+								<div class="rf_top">
+									<div class="rf_img_box">
+										<img alt="<?php echo $cat->name ?>" src="<?php echo $img_url ?>" />
+									</div>
+									<div class="rf_category_title">
+										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
+									</div>
+								</div>
+								<div class="rf_bottom">
+									<ul class="rf_list_extra_links">
+										<?php foreach ($brands as $br) { ?>
+											<li>
+												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
+													<?php echo $br->name ?>
+												</a>
+											</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</li>
+						<?php } ?>
+					</ul>
 				</div>
 			</div>
 			<div class="rf_bottom_button_box">
@@ -293,74 +257,36 @@
 			<div class="inside_content">
 				<div class="rf_category_listing_whale">
 					<ul>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
+						<?php foreach ($cats_2 as $cat) { ?>
+							<?php
+							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
+							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
+							$brands = get_field('cat_brands', $cat);
+							$post_link = get_term_link($cat, 'product_cat');
+
+							?>
+							<li>
+								<div class="rf_top">
+									<div class="rf_img_box">
+										<img alt="<?php echo $cat->name ?>" src="<?php echo $img_url ?>" />
+									</div>
+									<div class="rf_category_title">
+										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
+									</div>
 								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
+								<div class="rf_bottom">
+									<ul class="rf_list_extra_links">
+										<?php foreach ($brands as $br) { ?>
+											<li>
+												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
+													<?php echo $br->name ?>
+												</a>
+											</li>
+										<?php } ?>
+									</ul>
 								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
+							</li>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>
@@ -381,74 +307,36 @@
 			<div class="inside_content">
 				<div class="rf_category_listing_whale">
 					<ul>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
+						<?php foreach ($cats_3 as $cat) { ?>
+							<?php
+							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
+							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
+							$brands = get_field('cat_brands', $cat);
+							$post_link = get_term_link($cat, 'product_cat');
+
+							?>
+							<li>
+								<div class="rf_top">
+									<div class="rf_img_box">
+										<img alt="<?php echo $cat->name ?>" src="<?php echo $img_url ?>" />
+									</div>
+									<div class="rf_category_title">
+										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
+									</div>
 								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
+								<div class="rf_bottom">
+									<ul class="rf_list_extra_links">
+										<?php foreach ($brands as $br) { ?>
+											<li>
+												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
+													<?php echo $br->name ?>
+												</a>
+											</li>
+										<?php } ?>
+									</ul>
 								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="rf_top">
-								<div class="rf_img_box">
-									<img alt="категория" src="/wp-content/themes/rns/assets/images/icons/Filter_big_icon.svg" />
-								</div>
-								<div class="rf_category_title">
-									<a href="#">Фильтры механической очистки</a>
-								</div>
-							</div>
-							<div class="rf_bottom">
-								<ul class="rf_list_extra_links">
-									<li><a href="#">Raifil HG</a></li>
-									<li><a href="#">i2-filter PRE</a></li>
-									<li><a href="#">Cintropur</a></li>
-								</ul>
-							</div>
-						</li>
+							</li>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>

@@ -52,7 +52,7 @@
 			background-position: center 90%;
 			top: 0;
 			z-index: 1000;
-			transition: all 2s;
+			transition: all .6s;
 		}
 
 		#rf_loader_box::after {
@@ -64,7 +64,7 @@
 			bottom: 0;
 			z-index: 1000;
 			width: 100vw;
-			transition: all 1s;
+			transition: all .6s;
 		}
 
 		#rf_loader_box.loaded::after,
@@ -120,7 +120,7 @@
 			</div>
 			<div class="rf_middle_box">
 				<div class="rf_item">
-					<a class="rf_catalog_menu btn-large waves-effect rf-third" href="<?php echo wc_get_page_permalink( 'shop' ) ?>">
+					<a class="rf_catalog_menu btn-large waves-effect rf-third" href="<?php echo wc_get_page_permalink('shop') ?>">
 						<img alt="каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" /> Каталог
 					</a>
 					<div class="rf_catalog_navigation">

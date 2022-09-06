@@ -133,6 +133,16 @@
 	</div>
 </div>
 
+<!-- Modal Service Order -->
+<div id="modal_service_order" class="modal modal-fixed-footer modal-small">
+	<div class="modal-content">
+		<h4>Заявка на услугу</h4>
+		<?php echo do_shortcode('[contact-form-7 id="5972" title="Главная контактная форма"]') ?>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect btn-flat">Закрыть окно</a>
+	</div>
+</div>
 
 <!-- Modal Main menu -->
 <div id="modal_main_menu" class="modal modal-small">
@@ -154,7 +164,7 @@
 		</div>
 
 		<div class="rf_cust_footer">
-			© 2017–<?php echo date("Y")?>. ООО «Интегра Инжиниринг». Информация, представленная на сайте не является публичной офертой и носит ознакомительный характер.
+			© 2017–<?php echo date("Y") ?>. ООО «Интегра Инжиниринг». Информация, представленная на сайте не является публичной офертой и носит ознакомительный характер.
 			Если вы не согласны с Политикой обработки персональных данных, покиньте сайт.
 		</div>
 	</div>

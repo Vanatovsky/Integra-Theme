@@ -349,6 +349,7 @@
         li {
             display: flex;
             padding: 20px;
+            margin-bottom: 30px;
             .rf_img_box {
                 max-width: 200px;
                 padding-right: 30px;
@@ -362,13 +363,15 @@
                 h3 {
                     font-size: 24px;
                     padding-bottom: 20px;
+                    padding-top: 0;
+                    margin-top: 0;
                     border-bottom: 2px solid $color__light;
                 }
                 p {
                     margin-bottom: 30px;
                 }
                 .rf_action_buttons {
-                    b {
+                    a {
                         margin-right: 20px;
                     }
                 }

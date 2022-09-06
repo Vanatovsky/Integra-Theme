@@ -45,7 +45,50 @@ class SiteOrigin_Whale_Widget extends SiteOrigin_Widget
 	function get_template_variables($instance, $args)
 	{
 
-		return array();
+		$uslugi = get_posts([
+			'post_type' => "usluga",
+		]);
+
+		$cats_1 = get_terms([
+			'hide_empty' => true,
+			'taxonomy' => 'product_cat',
+			'parent' => 3676
+		]);
+
+		$cats_2 =  get_terms([
+			'hide_empty' => true,
+			'taxonomy' => 'product_cat',
+			'parent' => 3685
+		]);
+
+		$cats_3 = get_terms([
+			'hide_empty' => true,
+			'taxonomy' => 'product_cat',
+			'parent' => 3676
+		]);
+
+		$cats_4 =  get_terms([
+			'hide_empty' => true,
+			'taxonomy' => 'product_cat',
+			'parent' => 3676
+		]);
+
+		$cats_5 = get_terms([
+			'hide_empty' => true,
+			'taxonomy' => 'product_cat',
+			'parent' => 3676
+		]);
+
+
+		return array(
+			'uslugi' => $uslugi,
+			'cats_1' => $cats_1,
+			'cats_2' => $cats_2,
+			'cats_3' => $cats_3,
+			'cats_4' => $cats_4,
+			'cats_5' => $cats_5,
+
+		);
 	}
 }
 
