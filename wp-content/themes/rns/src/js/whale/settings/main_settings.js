@@ -15,7 +15,7 @@ export const Settings = {
     camera_look_at_center: false,
 
     camera_position_x: 0,
-    camera_position_y: 6,
+    camera_position_y: 0,
     camera_position_z: 5,
 
     camera_position_level_2_x: 0,
@@ -42,7 +42,7 @@ export const Settings = {
     moon_light_level_3_position_z: 1.4,
 
 
-    main_wall_color: 0x157c7c,
+    main_wall_color: 0x134242,
 
     rock_color: 0x63686b,
 
@@ -149,9 +149,7 @@ export const Settings = {
     active_level: 0,
     level_animation_start: false,
 
-
     active_text_group_level_2_name: '',
-
 
     cursor_level_1_color: 0x64d3c5,
     cursor_light_color: 0xffe0,
@@ -162,15 +160,17 @@ export const Settings = {
     cursor_level_3_position_y: -19.5,
     cursor_level_3_position_z: -6,
 
+    cursor_can_move: true,
 
-    sun_elevation: 7.0,
+
+    sun_elevation: 8.0,
     sun_azimuth: 0,
 
 
-    exposure: 0.5,
+    exposure: 0.9,
     bloomStrength: 1.0,
     bloomThreshold: .85,
-    bloomRadius: 1,
+    bloomRadius: 1.0,
 
     layer_entire_scene: 0,
     layer_bloom_scene: 1

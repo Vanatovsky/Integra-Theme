@@ -92,14 +92,11 @@ const scene = new THREE.Scene()
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 55)
-
-
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 30)
+camera.name = 'camera1'
 camera.position.set(settings.camera_position_x, settings.camera_position_y, -10)
-new TWEEN.Tween(camera.position).to({ x: settings.camera_position_x, y: settings.camera_position_y, z: settings.camera_position_z }, 5000).easing(TWEEN.Easing.Sinusoidal.InOut).start()
-
-
 scene.add(camera)
+
 
 
 TW(camera.position, { y: 0 }, 3000, TWEEN.Easing.Back.InOut, () => {
@@ -112,8 +109,6 @@ const cameraDebugFolder = gui.addFolder('Camera')
 cameraDebugFolder.add(settings, "camera_position_x").min(-100).max(100).step(0.01).onChange(() => { camera.position.x = settings.camera_position_x })
 cameraDebugFolder.add(settings, "camera_position_y").min(-100).max(100).step(0.01).onChange(() => { camera.position.y = settings.camera_position_y })
 cameraDebugFolder.add(settings, "camera_position_z").min(-100).max(100).step(0.01).onChange(() => { camera.position.z = settings.camera_position_z })
-
-
 
 
 /**
@@ -207,6 +202,9 @@ window.addEventListener('resize', () => {
 
 const init = () => {
 
+
+    new TWEEN.Tween(camera.position).to({ x: settings.camera_position_x, y: settings.camera_position_y, z: settings.camera_position_z }, 5000).start()
+
     //stats = new Stats()
     //document.querySelector('body').appendChild(stats.dom)
 
@@ -216,7 +214,7 @@ const init = () => {
     scene.add(level_2_group)
 
     //Fog
-    scene.fog = new THREE.Fog(settings.fog_color, 0.2, 40);
+    scene.fog = new THREE.Fog(settings.fog_color, 0.2, settings.scene_fog_far);
 
     const fog_debug = gui.addFolder("Fog")
 

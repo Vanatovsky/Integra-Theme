@@ -10,6 +10,7 @@ let level_2_text_group
 let text_objs_for_raycaster = []
 let active_text_group = new THREE.Group()
 let animate_rotation_texts, animate_scale_texts
+let animate_cursor_move
 
 const text_group_names = ["text", "text_2", "text_3", "text_4", "text_5"]
 let old_active_group_place = {}
@@ -27,6 +28,8 @@ export function raycasterListenerTextesLevel2(settings, scene, camera, raycaster
 
     if (intersects.length > 0) {
 
+        $('canvas').css('cursor', 'pointer');
+
         for (const intersect_group of intersects) {
 
             intersect_group.object.parent.children[0].material = textHoverMaterial
@@ -35,36 +38,34 @@ export function raycasterListenerTextesLevel2(settings, scene, camera, raycaster
 
                 settings.active_text_group_level_2_name = intersect_group.object.parent.name
 
-                TW(pointCursorGroup.position, {
-                    x: intersect_group.object.parent.position.x - .2,
-                    y: intersect_group.object.parent.position.y + 0.05,
-                    z: intersect_group.object.parent.position.z
-                }, 1000, TWEEN.Easing.Circular.Out)
+                if (settings.cursor_can_move) {
+                    animate_cursor_move = new TWEEN.Tween(pointCursorGroup.position).to({
+                        x: intersect_group.object.parent.position.x - .2,
+                        y: intersect_group.object.parent.position.y + 0.05,
+                        z: intersect_group.object.parent.position.z
+                    }, 1000).easing(TWEEN.Easing.Circular.Out).start()
+                }
+
+                console.log(settings.cursor_can_move)
 
                 active_text_group = intersect_group.object.parent
 
             }
 
-            document.querySelector("canvas.webgl").addEventListener("click", () => openLevel2Page(settings, scene, camera, level_2_group))
+            document.querySelector("canvas.webgl").addEventListener("click", () => {
+                settings.cursor_can_move = false
+                openLevel2Page(settings, scene, camera, level_2_group)
+            })
 
         }
 
     } else {
-
+        $('canvas').css('cursor', 'default');
         settings.active_text_group_level_2_name = ''
         document.querySelector("canvas.webgl").removeEventListener("click", openLevel2Page(settings, scene, camera, level_2_group))
-
     }
 
-    /**
-     * Cursor change
-     */
 
-    if (intersects.length > 0) {
-        $('canvas').css('cursor', 'pointer');
-    } else {
-        $('canvas').css('cursor', 'default');
-    }
 
 
 }
@@ -77,15 +78,8 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
     /**
      * Fonts
      */
-
-
     const materialPlaneHelterText = new THREE.MeshStandardMaterial({
         visible: false,
-        // transparent: true,
-        // // fog: false,
-        // opacity: 0.2,
-        // color: Settings.text_helper_color,
-        // side: THREE.DoubleSide
     })
 
 
@@ -95,7 +89,6 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
     /**
      * Text 1
      */
-
     const text_1_group = new THREE.Group()
     const textGeometry = new TextGeometry(
             `Доставка по
@@ -268,8 +261,6 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
     /**
      * Text grouping
      */
-
-
     text_objs_for_raycaster = [
         text_1_plane_helper_mesh,
         text_2_plane_helper_mesh,
@@ -299,12 +290,12 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
     if (animate_scale_texts !== undefined) {
         animate_scale_texts.stop()
     }
-    animate_scale_texts = new TWEEN.Tween(level_2_text_group.scale).delay(6000).to({ x: 1, y: 1, z: 1 }, 1500).easing(TWEEN.Easing.Sinusoidal.Out).start()
+    animate_scale_texts = new TWEEN.Tween(level_2_text_group.scale).delay(4000).to({ x: 1, y: 1, z: 1 }, 1500).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
     if (animate_rotation_texts !== undefined) {
         animate_rotation_texts.stop()
     }
-    animate_rotation_texts = new TWEEN.Tween(level_2_text_group.rotation).delay(6000).to({ y: 0 }, 1500).easing(TWEEN.Easing.Sinusoidal.Out).start()
+    animate_rotation_texts = new TWEEN.Tween(level_2_text_group.rotation).delay(4000).to({ y: 0 }, 1500).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
 
     /**
@@ -399,9 +390,13 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
 
 export function openLevel2Page(settings, scene) {
 
+
+
     document.removeEventListener("click", openLevel2Page)
 
     if (settings.active_text_group_level_2_name) {
+
+        animate_cursor_move.stop()
 
         const page_to_show = document.querySelector('#' + settings.active_text_group_level_2_name)
 
@@ -438,7 +433,7 @@ export function openLevel2Page(settings, scene) {
          */
 
         const cursor_group = scene.getObjectByName('cursor_group')
-        new TWEEN.Tween(cursor_group.position).to({ x: -0.3, y: -0.3, z: -0.4 }, 500).start()
+        new TWEEN.Tween(cursor_group.position).to({ x: -0.1, y: -0.3, z: 0.8 }, 500).start()
 
     }
 
@@ -469,6 +464,8 @@ export function closeLevel2Page(settings, camera, scene, level_2_group) {
         }
     });
 
-    new TWEEN.Tween(text_active_obj.position).to(old_active_group_place, 300).start()
+    new TWEEN.Tween(text_active_obj.position).to(old_active_group_place, 300).start().onComplete(() => {
+        settings.cursor_can_move = true
+    })
 
 }

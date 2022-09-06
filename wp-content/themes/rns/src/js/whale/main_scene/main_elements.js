@@ -261,6 +261,7 @@ export function createWater() {
     )
 
     water.rotation.x = -Math.PI / 2;
+    water.rotation.y = Math.PI;
     water.name = 'water'
     water.position.y = Settings.water_position_y
     return water

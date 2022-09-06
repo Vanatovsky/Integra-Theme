@@ -31,7 +31,7 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
         animate_position_whale_model.stop()
     }
 
-    animate_position_whale_model = new TWEEN.Tween(whale_model.position).to({ x: 0, y: 0, z: 0 }, 7000).easing(TWEEN.Easing.Sinusoidal.Out).start()
+    animate_position_whale_model = new TWEEN.Tween(whale_model.position).to({ x: 0, y: 0, z: 0 }, 6000).easing(TWEEN.Easing.Sinusoidal.Out).start()
         .onComplete(() => {
             // document.querySelector('h1').classList.add("hide")
             mixer.clipAction(animations[1]).stop()
@@ -41,11 +41,6 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
             settings.camera_look_at_center = true
         })
 
-
-    setTimeout(() => {
-        const water = scene.getObjectByName('water')
-        water.rotation.y = Math.PI
-    }, 3500)
 
 
 
@@ -72,7 +67,6 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
     /**
      * Close loader
      */
-
     const loader_box = document.getElementById("rf_loader_box")
     loader_box.classList.add("loaded")
     const loader_round_box = document.querySelector("#rf_loader_box .preloader-wrapper")
@@ -102,7 +96,6 @@ export function goToLevel1(settings, scene, camera, whale_model,
     /**
      * Defaults
      */
-
     settings.level_animation_start = true
     document.querySelector('.listing_uslug_level_3').classList.remove('open')
     setActiveButtonByID('button_to_level_1')
@@ -122,6 +115,7 @@ export function goToLevel1(settings, scene, camera, whale_model,
         water.rotation.y = 0
     }, 300)
 
+
     /**
      * Fog sceen
      */
@@ -138,11 +132,13 @@ export function goToLevel1(settings, scene, camera, whale_model,
     }
     animate_position_camera = new TWEEN.Tween(camera.position).to({ x: 0, y: 6, z: 5 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
+
     /**
      * Whale sceleton animations
      */
     mixer.clipAction(animations[0]).stop()
     mixer.clipAction(animations[1]).play()
+
 
     /**
      * Whale position
@@ -151,6 +147,7 @@ export function goToLevel1(settings, scene, camera, whale_model,
         animate_position_whale_model.stop()
     }
     animate_position_whale_model = new TWEEN.Tween(whale_model.position).to({ y: 2.3, z: -1.5 }, 2500).easing(TWEEN.Easing.Sinusoidal.Out).start()
+
 
     /**
      * Whale rotation
@@ -168,9 +165,6 @@ export function goToLevel1(settings, scene, camera, whale_model,
             mixer.clipAction(animations[1]).stop()
             mixer.clipAction(animations[0]).play()
         })
-
-
-
 
 }
 
