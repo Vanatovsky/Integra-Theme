@@ -1,17 +1,5 @@
 <div id="rf_integra_main_whale_box">
 
-	<!-- <script type="x-shader/x-vertex" id="vertexshader">
-
-		varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 ); }
-
-		</script>
-
-	<script type="x-shader/x-fragment" id="fragmentshader">
-
-		uniform sampler2D baseTexture; uniform sampler2D bloomTexture; varying vec2 vUv; void main() { gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) ); }
-
-	</script> -->
-
 	<h1>Интегра <span>инжиниринг</span></h1>
 
 	<canvas id="whalecanvas" class="webgl level2"></canvas>
