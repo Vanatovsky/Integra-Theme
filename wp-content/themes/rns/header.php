@@ -55,6 +55,12 @@
 			transition: all .6s;
 		}
 
+		@media screen and (max-width:960px) {
+			#rf_loader_box::before {
+				background-size: 70% auto;
+			}
+		}
+
 		#rf_loader_box::after {
 			content: "";
 			display: block;

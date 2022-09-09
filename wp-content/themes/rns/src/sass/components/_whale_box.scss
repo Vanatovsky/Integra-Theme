@@ -1,6 +1,7 @@
 #rf_integra_main_whale_box {
     position: relative;
     z-index: 1;
+    min-height: 200vh;
 }
 
 #rf_integra_main_whale_box .webgl {
@@ -46,6 +47,9 @@
         border-top-right-radius: 36px;
         border-top-left-radius: 36px;
         box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        @media screen and (max-width: $md) {
+            padding: 5px;
+        }
         .btn-bot {
             min-width: 130px;
             text-align: center;
@@ -103,25 +107,29 @@
             }
             @media screen and (max-width: $md) {
                 margin-right: 5px;
-                font-size: 12px;
+                font-size: 11px;
                 min-width: auto;
-                padding-right: 15px;
-                padding-left: 15px;
+                padding-right: 10px;
+                padding-left: 10px;
+                img {
+                    top: 19px;
+                    height: 16px;
+                }
                 &:after {
                     top: 25px;
                     width: 7px;
                     right: -7px;
                 }
                 &:first-child {
-                    padding-left: 35px;
+                    padding-left: 23px;
                     img {
-                        left: 5px;
+                        left: 6px;
                     }
                 }
                 &:last-child {
-                    padding-right: 35px;
+                    padding-right: 23px;
                     img {
-                        right: 5px;
+                        right: 6px;
                     }
                 }
             }
@@ -140,6 +148,10 @@
     right: -860px;
     padding: 0;
     transition: all .5s;
+    @media screen and (max-width: $md) {
+        top: 0;
+        //width: 100vw;
+    }
     &.open {
         right: 0px;
     }
@@ -157,7 +169,8 @@
         background-position: 151% 100%;
         background-repeat: no-repeat;
         @media screen and (max-width: $md) {
-            max-width: 100%;
+            width: 100vw;
+            padding: 50px 20px 50px 50px;
         }
         &.open {
             transition: all .3s;
@@ -173,6 +186,9 @@
             font-weight: 100;
             color: #fff;
             cursor: pointer;
+            @media screen and (max-width: $md) {
+                top: -40px;
+            }
         }
         .rf_after_header {
             font-weight: $font__weight__bold;
@@ -184,6 +200,10 @@
             line-height: 1.05;
             color: #fff;
             font-weight: 100;
+            @media screen and (max-width: $md) {
+                font-size: 40px;
+                line-height: 44px;
+            }
         }
         .inside_content {
             padding: 20px 30px 20px 0;
@@ -214,11 +234,13 @@
                                 img {
                                     height: 135px;
                                     width: 135px;
+                                    max-width: none;
+                                    @media screen and (max-width: $md) {}
                                 }
                             }
                             .rf_category_title {
-                                font-size: 22px;
-                                padding: 25px 50px 0 25px;
+                                font-size: 19px;
+                                padding: 29px 50px 0 25px;
                                 a {
                                     color: #fff;
                                     position: relative;
@@ -288,6 +310,15 @@
     transition: all 1.5s;
     &.open {
         top: 50px;
+        @media screen and (max-width: $md) {
+            top: 0;
+        }
+    }
+    @media screen and (max-width: $md) {
+        padding: 0 15px 50px 50px;
+        width: 100%;
+        right: 0;
+        border-radius: 0;
     }
     .rf_close_item {
         transform: rotate(45deg);
@@ -299,6 +330,9 @@
         font-weight: 100;
         color: $color__secondary;
         cursor: pointer;
+        @media screen and (max-width: $md) {
+            top: -40px;
+        }
     }
     .rf_phones_links {
         margin-bottom: 30px;
@@ -369,6 +403,11 @@
     &.open {
         right: 0;
     }
+    @media screen and (max-width: $md) {
+        width: 100%;
+        padding: 50px 15px 50px 50px;
+        overflow-x: hidden;
+    }
     .rf_close_item {
         transform: rotate(45deg);
         font-family: 'Times New Roman';
@@ -380,6 +419,10 @@
         font-weight: 100;
         color: #fff;
         cursor: pointer;
+        @media screen and (max-width: $md) {
+            top: -40px;
+            right: 20px;
+        }
     }
     ul {
         li {
@@ -393,6 +436,9 @@
                     max-width: 140px;
                     position: relative;
                     top: 7px;
+                    @media screen and (max-width: $md) {
+                        max-width: 90px;
+                    }
                 }
             }
             .rf_service_main_info {
@@ -409,6 +455,10 @@
                 .rf_action_buttons {
                     a {
                         margin-right: 20px;
+                        @media screen and (max-width: $md) {
+                            width: 100%;
+                            margin-bottom: 20px;
+                        }
                     }
                 }
             }

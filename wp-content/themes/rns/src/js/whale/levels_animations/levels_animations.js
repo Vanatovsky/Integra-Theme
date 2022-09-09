@@ -87,11 +87,15 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
 export function goToLevel1(settings, scene, camera, whale_model,
     whale_mesh, level_2_group, mixer, animations, pointCursorGroup) {
 
-
     if (settings.level_animation_start || settings.active_level == 1) {
         return false
     }
 
+    /**
+     * Scroll to place
+     */
+    window.scrollTo(0, 200)
+    document.querySelector("body").classList.add("rf_disable_scroll")
 
     /**
      * Defaults
@@ -99,7 +103,6 @@ export function goToLevel1(settings, scene, camera, whale_model,
     settings.level_animation_start = true
     document.querySelector('.listing_uslug_level_3').classList.remove('open')
     setActiveButtonByID('button_to_level_1')
-
 
     /**
      * MoonLight
@@ -185,6 +188,11 @@ export function goToLevel2(settings, camera, scene,
     if (settings.level_animation_start || settings.active_level == 2) {
         return false
     }
+
+    /**
+     * Scroll enable
+     */
+    document.querySelector("body").classList.remove("rf_disable_scroll")
 
     /**
      * Defaults
@@ -303,6 +311,12 @@ export function goToLevel3(settings, camera, scene,
     settings.level_animation_start = true
     setActiveButtonByID('button_to_level_3')
     settings.active_level = 3
+
+    /**
+     * Scroll to place
+     */
+    window.scrollTo(0, 200)
+    document.querySelector("body").classList.add("rf_disable_scroll")
 
     /**
      * MoonLight

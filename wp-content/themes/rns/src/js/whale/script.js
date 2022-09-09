@@ -61,15 +61,20 @@ let windowHalfY = sizes.height / 2;
 // Debug bug
 const gui = new dat.GUI()
 const settings = Settings
-gui.open()
-    //gui.hide()
+    //gui.open()
+gui.hide()
 
 // Raycaster
 const raycaster = new THREE.Raycaster()
 
-// Bloom
-const bloomLayer = new THREE.Layers()
-bloomLayer.set(settings.layer_bloom_scene)
+/**
+ * Change settings for mobile devices
+ */
+if (window.innerWidth <= 960) {
+    settings.camera_position_z = 5.5
+    settings.camera_position_level_2_z = 5.5
+    settings.camera_position_level_3_z = 5.5
+}
 
 
 
@@ -455,37 +460,37 @@ function render() {
 
 }
 
-function disposeMaterial(obj) {
+// function disposeMaterial(obj) {
 
-    if (obj.material) {
+//     if (obj.material) {
 
-        obj.material.dispose();
+//         obj.material.dispose();
 
-    }
+//     }
 
-}
+// }
 
-function darkenNonBloomed(obj) {
+// function darkenNonBloomed(obj) {
 
-    if (obj.isMesh && bloomLayer.test(obj.layers) === false) {
+//     if (obj.isMesh && bloomLayer.test(obj.layers) === false) {
 
-        materials_for_bloom[obj.uuid] = obj.material;
-        obj.material = darkMaterial;
-        //obj.material.visible = false
-    }
+//         materials_for_bloom[obj.uuid] = obj.material;
+//         obj.material = darkMaterial;
+//         //obj.material.visible = false
+//     }
 
-}
+// }
 
-function restoreMaterial(obj) {
+// function restoreMaterial(obj) {
 
-    if (materials_for_bloom[obj.uuid]) {
+//     if (materials_for_bloom[obj.uuid]) {
 
-        obj.material = materials_for_bloom[obj.uuid];
-        delete materials_for_bloom[obj.uuid];
+//         obj.material = materials_for_bloom[obj.uuid];
+//         delete materials_for_bloom[obj.uuid];
 
-    }
+//     }
 
-}
+// }
 
 /**
  * Level changes animations

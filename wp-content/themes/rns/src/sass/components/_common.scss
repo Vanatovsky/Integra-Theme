@@ -11,6 +11,10 @@ body {
     i {
         font-style: normal;
     }
+    &.rf_disable_scroll {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 #primary {

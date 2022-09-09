@@ -395,6 +395,12 @@ export function openLevel2Page(settings, scene) {
 
     if (settings.active_text_group_level_2_name) {
 
+        /**
+         * Scroll to place
+         */
+        window.scrollTo(0, 200)
+        document.querySelector("body").classList.add("rf_disable_scroll")
+
         animate_cursor_move.stop()
 
         const page_to_show = document.querySelector('#' + settings.active_text_group_level_2_name)
@@ -458,6 +464,11 @@ export function closeLevel2Page(settings, camera, scene, level_2_group) {
     for (const el of elements) {
         el.classList.remove('open')
     }
+
+    /**
+     * Scroll
+     */
+    document.querySelector("body").classList.remove("rf_disable_scroll")
 
 
     /**
