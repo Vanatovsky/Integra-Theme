@@ -11,6 +11,7 @@ let text_objs_for_raycaster = []
 let active_text_group = new THREE.Group()
 let animate_rotation_texts, animate_scale_texts
 let animate_cursor_move
+let camera_animation
 
 const text_group_names = ["text", "text_2", "text_3", "text_4", "text_5"]
 let old_active_group_place = {}
@@ -390,8 +391,6 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
 
 export function openLevel2Page(settings, scene) {
 
-
-
     document.removeEventListener("click", openLevel2Page)
 
     if (settings.active_text_group_level_2_name) {
@@ -405,8 +404,18 @@ export function openLevel2Page(settings, scene) {
 
         page_to_show.classList.add('open')
 
-        const canvas_element = document.getElementById('whalecanvas')
-        canvas_element.classList.add('opened_page_form_level_2')
+        /**
+         * Camera move
+         */
+        settings.camera_look_at_center = false
+        const camera = scene.getObjectByName("camera1")
+        if (camera_animation) {
+            camera_animation.stop()
+        }
+        camera_animation = new TWEEN.Tween(camera.position).to({ x: 2, y: camera.position.y, z: camera.position.z }, 500).start()
+
+        //const canvas_element = document.getElementById('whalecanvas')
+        //canvas_element.classList.add('opened_page_form_level_2')
 
         // old_active_group_place = scene.getObjectByName(settings.active_text_group_level_2_name).position.copy()
         const text_active_obj = scene.getObjectByName(settings.active_text_group_level_2_name)
@@ -428,10 +437,10 @@ export function openLevel2Page(settings, scene) {
             }
         });
 
+
         /**
          * out cursor
          */
-
         const cursor_group = scene.getObjectByName('cursor_group')
         new TWEEN.Tween(cursor_group.position).to({ x: -0.1, y: -0.3, z: 0.8 }, 500).start()
 
@@ -450,7 +459,17 @@ export function closeLevel2Page(settings, camera, scene, level_2_group) {
         el.classList.remove('open')
     }
 
-    settings.camera_look_at_center = true
+
+    /**
+     * Camera move
+     */
+    if (camera_animation) {
+        camera_animation.stop()
+    }
+    camera_animation = new TWEEN.Tween(camera.position).to({ x: 0, y: camera.position.y, z: camera.position.z }, 500).start().onComplete(() => {
+        settings.camera_look_at_center = true
+    })
+
 
     const canvas_element = document.getElementById('whalecanvas')
     canvas_element.classList.remove('opened_page_form_level_2')

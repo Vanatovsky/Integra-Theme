@@ -35,7 +35,7 @@
 			width: 100vw;
 			display: block;
 			position: fixed;
-			z-index: 1000;
+			z-index: 1999;
 
 		}
 
@@ -141,7 +141,7 @@
 						<p>Вопрос по продукции</p>
 					</a>
 				</div>
-				<div class="rf_item rf_link_with_text rf_question_form">
+				<div class="rf_item rf_link_with_text">
 					<a href="<?php echo wc_get_cart_url() ?>" class="waves-effect waves-light modal-trigger">
 						<img alt="Запросить КП" src="/wp-content/themes/rns/assets/images/Offer.svg" />
 						<p>Ваша корзина <span class="rf_bage"><?php echo WC()->cart->get_cart_contents_count(); ?></span></p>

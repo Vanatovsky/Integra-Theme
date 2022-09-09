@@ -34,11 +34,13 @@ export const ground_material = new THREE.MeshStandardMaterial({
 
 //Cursor
 export const cursor_level_1_material = new THREE.MeshStandardMaterial({
-    metalness: 0.1,
-    roughness: 0.5,
+    // metalness: 0.1,
+    //roughness: 0.5,
+    transparent: true,
+    opacity: 0.5,
     color: Settings.cursor_level_1_color,
     fog: true,
-    toneMapped: THREE.ACESFilmicToneMapping
+    //toneMapped: THREE.ACESFilmicToneMapping
 })
 
 
@@ -47,6 +49,8 @@ export const cursor_level_3_meterial = new THREE.MeshStandardMaterial({
     roughness: 0.5,
     color: Settings.cursor_level_1_color,
     fog: true,
+    transparent: true,
+    opacity: 0.2,
     //flatShading: true,
 })
 

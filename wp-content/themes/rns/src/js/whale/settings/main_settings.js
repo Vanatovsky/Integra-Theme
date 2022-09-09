@@ -115,7 +115,7 @@ export const Settings = {
     text_color: 0xffffff,
     text_color_hover: 0x26a69a,
 
-    text_position_x: -3.3,
+    text_position_x: -2.7,
     text_position_y: 0.41,
     text_position_z: -0.5,
     text_rotation_coeficent: 0.08,

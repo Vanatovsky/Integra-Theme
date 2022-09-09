@@ -191,6 +191,7 @@ export function goToLevel2(settings, camera, scene,
      */
     settings.level_animation_start = true
     document.querySelector('.listing_uslug_level_3').classList.remove('open')
+    document.querySelector("#bottom_buttons_whale").classList.add('open')
     setActiveButtonByID('button_to_level_2')
 
     /**
@@ -298,7 +299,7 @@ export function goToLevel3(settings, camera, scene,
     /**
      * Defaults
      */
-
+    document.querySelector("#bottom_buttons_whale").classList.remove('open')
     settings.level_animation_start = true
     setActiveButtonByID('button_to_level_3')
     settings.active_level = 3
@@ -331,10 +332,11 @@ export function goToLevel3(settings, camera, scene,
     water.rotation.y = Math.PI
 
 
-    animate_position_camera = new TWEEN.Tween(camera.position).to({ y: -18.5 }, 2000).easing(TWEEN.Easing.Sinusoidal.Out).start()
+    document.querySelector('.listing_uslug_level_3').classList.add('open')
+
+    animate_position_camera = new TWEEN.Tween(camera.position).to({ y: -18.5 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
         .onComplete(() => {
             settings.level_animation_start = false
-            document.querySelector('.listing_uslug_level_3').classList.add('open')
             animate_position_camera = new TWEEN.Tween(camera.position).delay(4000).to({ z: 1.5 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
         })
 

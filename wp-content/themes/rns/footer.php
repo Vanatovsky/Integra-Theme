@@ -28,7 +28,7 @@
 <div class="top_footer">
 	<div class="rf-container">
 		<div class="row rf_top_footer_row">
-			<div class="col s3 rf_footer_logobox">
+			<div class="col m3 s12 rf_footer_logobox">
 				<img alt="Интегра Инжиниринг" src="/wp-content/themes/rns/assets/images/logo-integra-dark.svg" />
 			</div>
 			<div class="col s9 rf_top_footer_menu">

@@ -21,84 +21,117 @@
 }
 
 #bottom_buttons_whale {
+    width: 100vw;
     display: flex;
-    width: 100%;
+    align-items: center;
     justify-content: center;
     position: fixed;
-    margin: 0 auto 25px;
+    margin: 0 auto;
     bottom: 0;
+    left: 0;
+    right: 0;
     transition: all .5s;
-    transform: scale(0);
+    transform: translate(0px, 100px);
     z-index: 1;
-}
-
-#bottom_buttons_whale.open {
-    transform: scale(1);
-}
-
-// #bottom_buttons_whale.open:hover {
-//     //transform: scale(1);
-// }
-#bottom_buttons_whale.close {
-    transform: scale(0);
-}
-
-#bottom_buttons_whale .btn-bot {
-    min-width: 130px;
-    text-align: center;
-    position: relative;
-    font-size: 16px;
-    margin-right: 40px;
-    border-radius: 36px;
-    cursor: pointer;
-    background-color: transparent !important;
-    border: 2px solid #fff !important;
-    color: #fff !important;
-    img {
-        display: inline-block;
-        height: 20px;
-        margin-right: 10px;
-        position: relative;
-        top: 3px;
+    &.open {
+        transform: translate(0px, 0px);
     }
-    &:not(.active):hover {
-        background-color: $color__secondary;
-        img {
-            filter: drop-shadow(2px 4px 6px black);
+    &.close {
+        transform: translate(0px, 100px);
+    }
+    #bottom_buttons_whale_wrap {
+        background-color: rgba(13, 117, 147, 0.5);
+        display: table;
+        padding: 20px;
+        border-top-right-radius: 36px;
+        border-top-left-radius: 36px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        .btn-bot {
+            min-width: 130px;
+            text-align: center;
+            position: relative;
+            font-size: 16px;
+            margin-right: 40px;
+            border-radius: 36px;
+            cursor: pointer;
+            font-weight: $font__weight__bold;
+            text-transform: uppercase;
+            background-color: #fff;
+            border: 1px solid $color__primary;
+            color: $color__primary;
+            img {
+                display: inline-block;
+                height: 30px;
+                position: absolute;
+                top: 11px;
+            }
+            &:not(.active):hover {
+                box-shadow: 1px 1px 65px #2578af;
+                img {
+                    filter: drop-shadow(2px 4px 12px black);
+                }
+            }
+            &.active {
+                box-shadow: 1px 1px 65px #00ffff !important;
+                opacity: .4 !important;
+                cursor: text;
+            }
+            &:first-child {
+                padding-left: 45px;
+                img {
+                    left: 11px;
+                }
+            }
+            &:after {
+                content: "";
+                width: 40px;
+                height: 1px;
+                top: 22px;
+                right: -40px;
+                background-color: #fff;
+                position: absolute;
+            }
+            &:last-child {
+                margin-right: 0;
+                padding-right: 45px;
+                img {
+                    right: 11px;
+                }
+                &:after {
+                    display: none;
+                }
+            }
+            @media screen and (max-width: $md) {
+                margin-right: 5px;
+                font-size: 12px;
+                min-width: auto;
+                padding-right: 15px;
+                padding-left: 15px;
+                &:after {
+                    top: 25px;
+                    width: 7px;
+                    right: -7px;
+                }
+                &:first-child {
+                    padding-left: 35px;
+                    img {
+                        left: 5px;
+                    }
+                }
+                &:last-child {
+                    padding-right: 35px;
+                    img {
+                        right: 5px;
+                    }
+                }
+            }
         }
-    }
-    &.active {
-        box-shadow: 1px 1px 65px #00ffff !important;
-        opacity: .5 !important;
-        cursor: text;
     }
 }
 
 #bottom_buttons_whale .btn-bot.active:hover {
     background-color: $color__primary;
     color: #fff;
-}
-
-#bottom_buttons_whale .btn-bot:not(.active):hover {
-    box-shadow: 1px 1px 65px #2578af;
-}
-
-#bottom_buttons_whale .btn-bot::after {
-    content: "";
-    width: 40px;
-    height: 1px;
-    top: 22px;
-    right: -40px;
-    background-color: #fff;
-    position: absolute;
-}
-
-#bottom_buttons_whale .btn-bot:last-child {
-    margin-right: 0;
-}
-
-#bottom_buttons_whale .btn-bot:last-child::after {
-    display: none;
 }
 
 .pages_level_2 {
@@ -115,7 +148,7 @@
         top: 0;
         right: -860px;
         width: 700px;
-        background-color: #fff;
+        background-color: rgba(13, 117, 147, 0.8);
         color: #333;
         transition: all .5s;
         padding: 80px;
@@ -123,6 +156,9 @@
         background-image: url("/assets/images/whale-whare-1.png");
         background-position: 151% 100%;
         background-repeat: no-repeat;
+        @media screen and (max-width: $md) {
+            max-width: 100%;
+        }
         &.open {
             transition: all .3s;
             right: 0;
@@ -135,7 +171,7 @@
             top: 0;
             font-size: 120px;
             font-weight: 100;
-            color: $color__secondary;
+            color: #fff;
             cursor: pointer;
         }
         .rf_after_header {
@@ -146,7 +182,7 @@
             font-size: 42px;
             margin-bottom: 40px;
             line-height: 1.05;
-            color: $color__text__dark;
+            color: #fff;
             font-weight: 100;
         }
         .inside_content {
@@ -184,12 +220,11 @@
                                 font-size: 22px;
                                 padding: 25px 50px 0 25px;
                                 a {
-                                    color: $color__secondary;
-                                    transition: all .3s;
+                                    color: #fff;
                                     position: relative;
                                     display: block;
                                     &:hover {
-                                        color: $color__secondary_dark;
+                                        color: #ccc;
                                     }
                                     &::after {
                                         content: '';
@@ -222,7 +257,7 @@
                                         content: "";
                                     }
                                     a {
-                                        color: $color__secondary;
+                                        color: #fff;
                                         transition: all .3s;
                                         &:hover {
                                             color: $color__secondary_dark;
@@ -244,11 +279,11 @@
 
 .rf_whale_level_1_modal_contacts {
     border-radius: $border__radius__classic__box;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 80px;
     position: fixed;
     right: 50px;
-    top: -100vh;
+    top: -1200px;
     width: 700px;
     transition: all 1.5s;
     &.open {
@@ -324,12 +359,13 @@
     position: fixed;
     top: 0;
     right: -700px;
-    background-color: #fff;
+    background-color: rgba(13, 117, 147, 0.8);
     padding: 160px 60px 80px;
     width: 700px;
     height: 100vh;
     overflow-y: auto;
     transition: all .5s;
+    color: #fff;
     &.open {
         right: 0;
     }
@@ -342,7 +378,7 @@
         top: 135px;
         font-size: 120px;
         font-weight: 100;
-        color: $color__secondary;
+        color: #fff;
         cursor: pointer;
     }
     ul {
@@ -376,12 +412,12 @@
                     }
                 }
             }
-            &:nth-of-type(2n) {
-                background-color: $color__light;
-                h3 {
-                    border-bottom: 2px solid #fff;
-                }
-            }
+            // &:nth-of-type(2n) {
+            //     background-color: $color__light;
+            //     h3 {
+            //         //border-bottom: 2px solid #fff;
+            //     }
+            // }
         }
     }
 }

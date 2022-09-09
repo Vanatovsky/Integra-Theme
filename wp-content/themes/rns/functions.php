@@ -10,7 +10,7 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.0.72');
+	define('_S_VERSION', '1.0.1');
 }
 
 /**
@@ -334,7 +334,7 @@ add_action('wp_enqueue_scripts', 'rns_scripts');
 
 function enqueue_rf_admin_scripts()
 {
-	wp_enqueue_script('rf-admin-scripts', get_stylesheet_directory_uri().'/assets/admin.js');
+	wp_enqueue_script('rf-admin-scripts', get_stylesheet_directory_uri() . '/assets/admin.js');
 	//wp_enqueue_script('rf-admin-scripts', get_template_directory_uri() . '/js/rf-admin-scripts.js', array('jquery'), _S_VERSION, true);
 }
 add_action('admin_enqueue_scripts', 'enqueue_rf_admin_scripts');

@@ -17,17 +17,18 @@
 	<canvas id="whalecanvas" class="webgl level2"></canvas>
 
 	<div id="bottom_buttons_whale">
-		<div class="btn-bot btn-large rf_secondary_white" style="" id="button_to_level_1">
-			<img alt="контакты" src="/wp-content/themes/rns/assets/images/icons/phone-white.svg" /> Контакты
-		</div>
-		<div class="btn-bot btn-large rf_secondary_white active" id="button_to_level_2">
-			Продукция
-		</div>
-		<div class="btn-bot btn-large rf_secondary_white" id="button_to_level_3">
-			<img alt="Услуги" src="/wp-content/themes/rns/assets/images/icons/gear.svg" /> Услуги
+		<div id="bottom_buttons_whale_wrap">
+			<div class="btn-bot btn-large" style="" id="button_to_level_1">
+				<img alt="Вверх" src="/wp-content/themes/rns/assets/images/icons/Arrow-top.svg" /> Контакты
+			</div>
+			<div class="btn-bot btn-large active" id="button_to_level_2">
+				Продукция
+			</div>
+			<div class="btn-bot btn-large" id="button_to_level_3">
+				Услуги <img alt="Вниз" src="/wp-content/themes/rns/assets/images/icons/Arrow-bottom.svg" />
+			</div>
 		</div>
 	</div>
-
 
 	<div class="rf_whale_level_1_modal_contacts">
 		<h2>Контакты</h2>

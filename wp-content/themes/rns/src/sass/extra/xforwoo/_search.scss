@@ -1,117 +1,114 @@
 .rf_h_search {
-  margin-left: 30px;
-
-  .xwc--ls-has-search {
-    .xwc--ls-button {
-      background-image: url("/assets/images/close.png") !important;
+    margin-left: 30px;
+    @media screen and (max-width: $md) {
+        margin-left: 0;
     }
-  }
-
-  .xwc--ls-element {
-    background: transparent;
-    box-shadow: none;
-    position: relative;
-    margin: 0 auto;
-    border: none;
-
-    &:after {
-      content: "";
-      width: 50px;
-      height: 50px;
-      //background-image: url('/wp-content/themes/rns/image/input-left.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: absolute;
-      display: table;
-      top: -3px;
-      left: -35px;
-      z-index: 10;
+    .xwc--ls-has-search {
+        .xwc--ls-button {
+            background-image: url("/assets/images/close.png") !important;
+        }
     }
-    &:before {
-      content: "";
-      width: 50px;
-      height: 50px;
-      //background-image: url('/wp-content/themes/rns/image/input-right.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: absolute;
-      display: table;
-      top: -3px;
-      right: -47px;
-      z-index: 10;
-    }
-    .xwc--ls-input {
-      font-size: 16px !important;
-      line-height: 45px !important;
-      padding-left: 30px !important;
-      border-bottom: 1px solid #fff !important;
-      color: #fff !important;
-      &::placeholder,
-      &::-webkit-input-placeholder,
-      &::-ms-input-placeholder,
-      &:-moz-placeholder,
-      &::-moz-placeholder,
-      &::-ms-input-placeholder {
-        color: #fff !important;
-      }
-    }
-  }
-
-  .xwc--ls-button {
-    top: 10px !important;
-    background-image: url("/assets/images/icons/search.svg") !important;
-  }
-
-  .xwc--ls-results {
-    border-radius: 0;
-    .xwc--ls-result {
-      display: block;
-      color: $color__primary;
-      a {
-        color: $color__primary;
-        &:hover {
-          color: $color__secondary;
+    .xwc--ls-element {
+        background: transparent;
+        box-shadow: none;
+        position: relative;
+        margin: 0 auto;
+        border: none;
+        &:after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            //background-image: url('/wp-content/themes/rns/image/input-left.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            display: table;
+            top: -3px;
+            left: -35px;
+            z-index: 10;
         }
-      }
-      .xwc--ls-path {
-        max-width: none;
-        font-size: 11px;
-        height: 40px;
-        font-style: normal;
-        margin-bottom: 10px;
-        .xwc--ls-separator {
-          padding: 0 5px;
+        &:before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            //background-image: url('/wp-content/themes/rns/image/input-right.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            display: table;
+            top: -3px;
+            right: -47px;
+            z-index: 10;
         }
-      }
-      .xwc--ls-title {
-        font-size: 18px;
-        line-height: 20px;
-        .xwc--ls-separator {
-          display: none;
-        }
-        & > a {
-          order: 2;
-        }
-        .xwc--ls-price {
-          width: 170px;
-          font-size: 13px;
-          order: 3;
-          padding-right: 20px;
-        }
-        .xwc--ls-image {
-          order: 1;
-          margin-right: 10px;
-
-          a {
-            img {
-              border-radius: 0;
-              height: auto;
-              width: 90px;
-              border: none !important;
+        .xwc--ls-input {
+            font-size: 16px !important;
+            line-height: 45px !important;
+            padding-left: 30px !important;
+            border-bottom: 1px solid #fff !important;
+            color: #fff !important;
+            &::placeholder,
+            &::-webkit-input-placeholder,
+            &::-ms-input-placeholder,
+            &:-moz-placeholder,
+            &::-moz-placeholder,
+            &::-ms-input-placeholder {
+                color: #fff !important;
             }
-          }
         }
-      }
     }
-  }
+    .xwc--ls-button {
+        top: 10px !important;
+        background-image: url("/assets/images/icons/search.svg") !important;
+    }
+    .xwc--ls-results {
+        border-radius: 0;
+        .xwc--ls-result {
+            display: block;
+            color: $color__primary;
+            a {
+                color: $color__primary;
+                &:hover {
+                    color: $color__secondary;
+                }
+            }
+            .xwc--ls-path {
+                max-width: none;
+                font-size: 11px;
+                height: 40px;
+                font-style: normal;
+                margin-bottom: 10px;
+                .xwc--ls-separator {
+                    padding: 0 5px;
+                }
+            }
+            .xwc--ls-title {
+                font-size: 18px;
+                line-height: 20px;
+                .xwc--ls-separator {
+                    display: none;
+                }
+                &>a {
+                    order: 2;
+                }
+                .xwc--ls-price {
+                    width: 170px;
+                    font-size: 13px;
+                    order: 3;
+                    padding-right: 20px;
+                }
+                .xwc--ls-image {
+                    order: 1;
+                    margin-right: 10px;
+                    a {
+                        img {
+                            border-radius: 0;
+                            height: auto;
+                            width: 90px;
+                            border: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

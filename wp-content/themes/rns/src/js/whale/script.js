@@ -61,7 +61,7 @@ let windowHalfY = sizes.height / 2;
 // Debug bug
 const gui = new dat.GUI()
 const settings = Settings
-    //gui.close()
+gui.open()
     //gui.hide()
 
 // Raycaster
@@ -311,14 +311,14 @@ gltfLoader.load('/wp-content/themes/rns/assets/models/rocks.glb', (gltf) => {
 
 })
 
-const whaleNormalTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_Normal.png')
-const whaleColorTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_BaseColor.png')
+const whaleNormalTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_Normal.jpg')
+const whaleColorTexture = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_BaseColor.jpg')
 
 
-const big4Kcolor = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_BaseColor.png')
+const big4Kcolor = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_BaseColor.jpg')
 big4Kcolor.flipY = false
 
-const big4Knormal = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_Normal.png')
+const big4Knormal = textureLoader.load('/wp-content/themes/rns/assets/textures/whale/whale-the-best7_DefaultMaterial_Normal.jpg')
 big4Knormal.flipY = false
 
 
