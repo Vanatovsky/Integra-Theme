@@ -418,7 +418,7 @@ export function openLevel2Page(settings, scene) {
         if (camera_animation) {
             camera_animation.stop()
         }
-        camera_animation = new TWEEN.Tween(camera.position).to({ x: 2, y: camera.position.y, z: camera.position.z }, 500).start()
+        camera_animation = new TWEEN.Tween(camera.position).to({ x: 2, y: camera.position.y, z: camera.position.z }, 500).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
         //const canvas_element = document.getElementById('whalecanvas')
         //canvas_element.classList.add('opened_page_form_level_2')

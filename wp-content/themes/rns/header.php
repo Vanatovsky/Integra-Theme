@@ -43,7 +43,7 @@
 			content: "";
 			display: block;
 			width: 100vw;
-			height: 60vh;
+			height: 50vh;
 			position: fixed;
 			background-color: #002550;
 			background-image: url("/wp-content/themes/rns/assets/images/logo-integra-white.svg");
@@ -64,7 +64,7 @@
 		#rf_loader_box::after {
 			content: "";
 			display: block;
-			height: 40vh;
+			height: 50vh;
 			position: fixed;
 			background-color: #002550;
 			bottom: 0;

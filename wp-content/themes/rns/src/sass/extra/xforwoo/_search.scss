@@ -39,6 +39,9 @@
             top: -3px;
             right: -47px;
             z-index: 10;
+            @media screen and (max-width: $md) {
+                right: 0;
+            }
         }
         .xwc--ls-input {
             font-size: 16px !important;

@@ -22,7 +22,18 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
      */
     mixer.clipAction(animations[1]).play()
 
+
+    /**
+     * light
+     */
     moonLightGoToLevel2()
+
+    /**
+     * Camera
+     */
+    const camera = scene.getObjectByName("camera1")
+    new TWEEN.Tween(camera.position).to({ x: settings.camera_position_level_2_x, y: settings.camera_position_level_2_y, z: settings.camera_position_level_2_z }, 4500).start()
+
 
     /**
      * Whale position
@@ -133,7 +144,7 @@ export function goToLevel1(settings, scene, camera, whale_model,
     if (animate_position_camera !== undefined) {
         animate_position_camera.stop()
     }
-    animate_position_camera = new TWEEN.Tween(camera.position).to({ x: 0, y: 6, z: 5 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
+    animate_position_camera = new TWEEN.Tween(camera.position).to({ x: settings.camera_position_x, y: settings.camera_position_y, z: settings.camera_position_z }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
 
     /**
@@ -244,7 +255,7 @@ export function goToLevel2(settings, camera, scene,
         animate_position_camera.stop()
     }
 
-    animate_position_camera = new TWEEN.Tween(camera.position).to({ x: 0, y: 0.1, z: 5 }).easing(TWEEN.Easing.Sinusoidal.Out).start()
+    animate_position_camera = new TWEEN.Tween(camera.position).to({ x: settings.camera_position_level_2_x, y: settings.camera_position_level_2_y, z: settings.camera_position_level_2_z }).easing(TWEEN.Easing.Sinusoidal.Out).start()
         .onComplete(() => {
 
             settings.level_animation_start = false,
@@ -338,6 +349,11 @@ export function goToLevel3(settings, camera, scene,
     if (animate_position_camera !== undefined) {
         animate_position_camera.stop()
     }
+    animate_position_camera = new TWEEN.Tween(camera.position).to({ y: settings.camera_position_level_3_y }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
+        .onComplete(() => {
+            settings.level_animation_start = false
+            animate_position_camera = new TWEEN.Tween(camera.position).delay(4000).to({ z: 1.5 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
+        })
 
     /**
      * Water rotation
@@ -348,11 +364,7 @@ export function goToLevel3(settings, camera, scene,
 
     document.querySelector('.listing_uslug_level_3').classList.add('open')
 
-    animate_position_camera = new TWEEN.Tween(camera.position).to({ y: -18.5 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
-        .onComplete(() => {
-            settings.level_animation_start = false
-            animate_position_camera = new TWEEN.Tween(camera.position).delay(4000).to({ z: 1.5 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
-        })
+
 
 
 

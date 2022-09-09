@@ -15,16 +15,16 @@ export const Settings = {
     camera_look_at_center: false,
 
     camera_position_x: 0,
-    camera_position_y: 0,
-    camera_position_z: 5,
+    camera_position_y: 6,
+    camera_position_z: 4.5,
 
     camera_position_level_2_x: 0,
     camera_position_level_2_y: 0,
-    camera_position_level_2_z: 5,
+    camera_position_level_2_z: 4.5,
 
     camera_position_level_3_x: 0,
     camera_position_level_3_y: -18.5,
-    camera_position_level_3_z: 5,
+    camera_position_level_3_z: 4.5,
 
     mode_animation_camera_level_1: false,
 
@@ -115,7 +115,7 @@ export const Settings = {
     text_color: 0xffffff,
     text_color_hover: 0x26a69a,
 
-    text_position_x: -2.7,
+    text_position_x: -3.36,
     text_position_y: 0.41,
     text_position_z: -0.5,
     text_rotation_coeficent: 0.08,

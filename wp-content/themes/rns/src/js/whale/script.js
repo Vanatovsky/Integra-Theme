@@ -62,18 +62,36 @@ let windowHalfY = sizes.height / 2;
 const gui = new dat.GUI()
 const settings = Settings
     //gui.open()
-gui.hide()
+    //gui.hide()
 
 // Raycaster
 const raycaster = new THREE.Raycaster()
+
+
 
 /**
  * Change settings for mobile devices
  */
 if (window.innerWidth <= 960) {
+    //camera
     settings.camera_position_z = 5.5
     settings.camera_position_level_2_z = 5.5
     settings.camera_position_level_3_z = 5.5
+
+    //texts
+    settings.text_position_x = -2.04
+    settings.text_position_y = 0.93
+
+    settings.text_2_position_x = -1.5
+
+    settings.text_3_position_x = -0.1
+    settings.text_3_position_y = 1.5
+
+    settings.text_4_position_x = -0.06
+    settings.text_4_position_y = -0.89
+
+    settings.text_5_position_x = -0.9
+    settings.text_5_position_y = 1.57
 }
 
 
@@ -99,15 +117,15 @@ const scene = new THREE.Scene()
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 30)
 camera.name = 'camera1'
-camera.position.set(settings.camera_position_x, settings.camera_position_y, -10)
+camera.position.set(settings.camera_position_x, 0, -10)
 scene.add(camera)
 
 
 
-TW(camera.position, { y: 0 }, 3000, TWEEN.Easing.Back.InOut, () => {
-    settings.first_scene_show = 1
-    settings.active_level = 2
-}, 3000)
+// TW(camera.position, { y: 0 }, 3000, TWEEN.Easing.Back.InOut, () => {
+//     settings.first_scene_show = 1
+//     settings.active_level = 2
+// }, 3000)
 
 
 const cameraDebugFolder = gui.addFolder('Camera')
@@ -207,8 +225,6 @@ window.addEventListener('resize', () => {
 
 const init = () => {
 
-
-    new TWEEN.Tween(camera.position).to({ x: settings.camera_position_x, y: settings.camera_position_y, z: settings.camera_position_z }, 5000).start()
 
     //stats = new Stats()
     //document.querySelector('body').appendChild(stats.dom)
