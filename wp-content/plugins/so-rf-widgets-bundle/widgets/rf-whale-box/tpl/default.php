@@ -83,7 +83,7 @@
 						<p><?php echo get_the_excerpt($usl->ID) ?></p>
 						<div class="rf_action_buttons">
 							<a href="#modal_service_order" class="btn waves-effect modal-trigger">Оставить заявку</a>
-							<a href="<?php echo get_permalink($usl->ID) ?>" class="btn waves-effect rf_primary_white">Подробнее</a>
+							<a href="<?php echo get_permalink($usl->ID) ?>" class="btn waves-effect rf_secondary">Подробнее</a>
 						</div>
 					</div>
 				</li>

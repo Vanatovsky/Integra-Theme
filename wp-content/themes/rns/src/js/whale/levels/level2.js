@@ -53,17 +53,30 @@ export function raycasterListenerTextesLevel2(settings, scene, camera, raycaster
 
             }
 
-            document.querySelector("canvas.webgl").addEventListener("click", () => {
-                settings.cursor_can_move = false
-                openLevel2Page(settings, scene, camera, level_2_group)
-            })
+            if (!settings.mobile_version) {
+                document.querySelector("canvas.webgl").addEventListener("click", () => {
+                    settings.cursor_can_move = false
+                    openLevel2Page(settings, scene, camera, level_2_group)
+                })
+            } else {
+                if (!settings.opening_page_level_2) {
+                    settings.cursor_can_move = false
+                    settings.opening_page_level_2 = true
+                    openLevel2Page(settings, scene, camera, level_2_group)
+                }
+            }
+
 
         }
 
     } else {
         $('canvas').css('cursor', 'default');
         settings.active_text_group_level_2_name = ''
-        document.querySelector("canvas.webgl").removeEventListener("click", openLevel2Page(settings, scene, camera, level_2_group))
+        if (!settings.mobile_version) {
+            settings.cursor_can_move = true
+            document.querySelector("canvas.webgl").removeEventListener("click", openLevel2Page(settings, scene, camera, level_2_group))
+        }
+
     }
 
 
@@ -109,7 +122,7 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
     const text = new THREE.Mesh(textGeometry, textMaterial)
         //text.layers.enable(settings.layer_bloom_scene)
     const text_1_plane_helper_mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 0.5, 2), materialPlaneHelterText)
-    text_1_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
+        //text_1_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
     text_1_plane_helper_mesh.position.x += 1
     text_1_group.position.x = settings.text_position_x
     text_1_group.position.y = settings.text_position_y
@@ -142,7 +155,7 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
     const text_2 = new THREE.Mesh(textGeometry_2, textMaterial)
     text_2.layers.enable(settings.layer_bloom_scene)
     const text_2_plane_helper_mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(1.2, 0.4, 2), materialPlaneHelterText)
-    text_2_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
+        //text_2_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
     text_2_plane_helper_mesh.position.x += 0.6
     text_2_group.position.x = settings.text_2_position_x
     text_2_group.position.y = settings.text_2_position_y
@@ -176,7 +189,7 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
     const text_3 = new THREE.Mesh(textGeometry_3, textMaterial)
     text_3.layers.enable(settings.layer_bloom_scene)
     const text_3_plane_helper_mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(1.8, 0.5, 2), materialPlaneHelterText)
-    text_3_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
+        //text_3_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
     text_3_plane_helper_mesh.position.x += 0.9
     text_3_group.position.x = settings.text_3_position_x
     text_3_group.position.y = settings.text_3_position_y
@@ -210,9 +223,9 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
         )
         //textGeometry_4.center()
     const text_4 = new THREE.Mesh(textGeometry_4, textMaterial)
-    text_4.layers.enable(settings.layer_bloom_scene)
+        //text_4.layers.enable(settings.layer_bloom_scene)
     const text_4_plane_helper_mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(1.5, 0.5, 2), materialPlaneHelterText)
-    text_4_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
+        //text_4_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
     text_4_plane_helper_mesh.position.x += 0.75
     text_4_group.position.x = settings.text_4_position_x
     text_4_group.position.y = settings.text_4_position_y
@@ -245,9 +258,9 @@ export async function createLevel2Texts(gui, settings, text_font, level_2_group)
         )
         //textGeometry_5.center()
     const text_5 = new THREE.Mesh(textGeometry_5, textMaterial)
-    text_5.layers.enable(settings.layer_bloom_scene)
+        //text_5.layers.enable(settings.layer_bloom_scene)
     const text_5_plane_helper_mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(1.5, 0.5, 2), materialPlaneHelterText)
-    text_5_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
+        //text_5_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
     text_5_plane_helper_mesh.position.x += 0.75
     text_5_group.position.x = settings.text_5_position_x
     text_5_group.position.y = settings.text_5_position_y
@@ -401,7 +414,10 @@ export function openLevel2Page(settings, scene) {
         window.scrollTo(0, 200)
         document.querySelector("body").classList.add("rf_disable_scroll")
 
-        animate_cursor_move.stop()
+        if (animate_cursor_move) {
+            animate_cursor_move.stop()
+        }
+
 
         const page_to_show = document.querySelector('#' + settings.active_text_group_level_2_name)
 
@@ -413,12 +429,14 @@ export function openLevel2Page(settings, scene) {
         /**
          * Camera move
          */
-        settings.camera_look_at_center = false
-        const camera = scene.getObjectByName("camera1")
-        if (camera_animation) {
-            camera_animation.stop()
+        if (!settings.mobile_version) {
+            settings.camera_look_at_center = false
+            const camera = scene.getObjectByName("camera1")
+            if (camera_animation) {
+                camera_animation.stop()
+            }
+            camera_animation = new TWEEN.Tween(camera.position).to({ x: 2, y: camera.position.y, z: camera.position.z }, 500).easing(TWEEN.Easing.Sinusoidal.Out).start()
         }
-        camera_animation = new TWEEN.Tween(camera.position).to({ x: 2, y: camera.position.y, z: camera.position.z }, 500).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
         //const canvas_element = document.getElementById('whalecanvas')
         //canvas_element.classList.add('opened_page_form_level_2')
@@ -450,6 +468,10 @@ export function openLevel2Page(settings, scene) {
         const cursor_group = scene.getObjectByName('cursor_group')
         new TWEEN.Tween(cursor_group.position).to({ x: -0.1, y: -0.3, z: 0.8 }, 500).start()
 
+        setTimeout(() => {
+            settings.opening_page_level_2 = false
+        }, 1000)
+
     }
 
 
@@ -474,13 +496,14 @@ export function closeLevel2Page(settings, camera, scene, level_2_group) {
     /**
      * Camera move
      */
-    if (camera_animation) {
-        camera_animation.stop()
+    if (!settings.mobile_version) {
+        if (camera_animation) {
+            camera_animation.stop()
+        }
+        camera_animation = new TWEEN.Tween(camera.position).to({ x: 0, y: camera.position.y, z: camera.position.z }, 500).start().onComplete(() => {
+            settings.camera_look_at_center = true
+        })
     }
-    camera_animation = new TWEEN.Tween(camera.position).to({ x: 0, y: camera.position.y, z: camera.position.z }, 500).start().onComplete(() => {
-        settings.camera_look_at_center = true
-    })
-
 
     const canvas_element = document.getElementById('whalecanvas')
     canvas_element.classList.remove('opened_page_form_level_2')

@@ -2,6 +2,8 @@ import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
 
 export const Settings = {
 
+    mobile_version: false,
+
     water_color: 0x00ffff,
     water_rotation_x: 0.5,
     first_scene_show: 0,
@@ -173,6 +175,8 @@ export const Settings = {
     bloomRadius: 1.0,
 
     layer_entire_scene: 0,
-    layer_bloom_scene: 1
+    layer_bloom_scene: 1,
+
+    opening_page_level_2: false
 
 }

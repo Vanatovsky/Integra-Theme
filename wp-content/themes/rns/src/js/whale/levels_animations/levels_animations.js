@@ -50,6 +50,7 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
             document.querySelector("#bottom_buttons_whale").classList.add('open')
             settings.whale_home = true
             settings.camera_look_at_center = true
+            settings.opening_page_level_2 = false
         })
 
 
@@ -112,8 +113,10 @@ export function goToLevel1(settings, scene, camera, whale_model,
      * Defaults
      */
     settings.level_animation_start = true
+    settings.opening_page_level_2 = true
     document.querySelector('.listing_uslug_level_3').classList.remove('open')
     setActiveButtonByID('button_to_level_1')
+
 
     /**
      * MoonLight
@@ -279,6 +282,7 @@ export function goToLevel2(settings, camera, scene,
     animate_position_whale_model = new TWEEN.Tween(whale_model.position).to({ x: 0, y: 0, z: 0 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start().onComplete(() => {
         mixer.clipAction(animations[1]).stop()
         mixer.clipAction(animations[0]).play()
+        settings.opening_page_level_2 = false
     })
 
     /**
@@ -290,8 +294,6 @@ export function goToLevel2(settings, camera, scene,
     animate_rotation_whale_model = new TWEEN.Tween(whale_model.rotation).to({ y: 0.8 }, 1000).easing(TWEEN.Easing.Sinusoidal.Out).start()
 
     particlesGoToLevel2()
-
-
 
 }
 
@@ -320,6 +322,7 @@ export function goToLevel3(settings, camera, scene,
      */
     document.querySelector("#bottom_buttons_whale").classList.remove('open')
     settings.level_animation_start = true
+    settings.opening_page_level_2 = true
     setActiveButtonByID('button_to_level_3')
     settings.active_level = 3
 

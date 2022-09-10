@@ -62,7 +62,7 @@ let windowHalfY = sizes.height / 2;
 const gui = new dat.GUI()
 const settings = Settings
     //gui.open()
-    //gui.hide()
+gui.hide()
 
 // Raycaster
 const raycaster = new THREE.Raycaster()
@@ -73,10 +73,14 @@ const raycaster = new THREE.Raycaster()
  * Change settings for mobile devices
  */
 if (window.innerWidth <= 960) {
+
+    //mobile trigger
+    settings.mobile_version = true
+
     //camera
-    settings.camera_position_z = 5.5
-    settings.camera_position_level_2_z = 5.5
-    settings.camera_position_level_3_z = 5.5
+    settings.camera_position_z = 6
+    settings.camera_position_level_2_z = 6
+    settings.camera_position_level_3_z = 6
 
     //texts
     settings.text_position_x = -2.04

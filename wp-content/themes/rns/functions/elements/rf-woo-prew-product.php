@@ -58,7 +58,11 @@ function rf_open_product_item()
             <?php echo $product->get_price_html() ?>
         </div>
 
-        <b class="btn waves_effect">Выбрать вариант</b>
+        <?php if ($product->is_type('variation')) { ?>
+            <b class="btn waves_effect">Выбрать вариант</b>
+        <?php } else { ?>
+            <a class="btn waves_effect" href="?add-to-cart=<?php echo $product->get_ID() ?>">В корзину</a>
+        <?php } ?>
 
     </div>
 
