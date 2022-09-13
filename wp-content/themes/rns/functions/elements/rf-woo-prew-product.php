@@ -55,10 +55,14 @@ function rf_open_product_item()
         </div>
 
         <div class="rf_price">
-            <?php echo $product->get_price_html() ?>
+            <?php if ($product->get_price()) { ?>
+                <?php echo $product->get_price_html() ?>
+            <?php } else { ?>
+                <b class="rf_know_price waves-light modal-trigger">Узнать цену</b>
+            <?php } ?>
         </div>
 
-        <?php if ($product->is_type('variation')) { ?>
+        <?php if ($product->is_type('variable')) { ?>
             <b class="btn waves_effect">Выбрать вариант</b>
         <?php } else { ?>
             <a class="btn waves_effect" href="?add-to-cart=<?php echo $product->get_ID() ?>">В корзину</a>

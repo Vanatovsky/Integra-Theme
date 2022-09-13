@@ -10,6 +10,7 @@ function rf_woocommerce_template_loop_category_title($category)
     $thumb_ID = get_term_meta($category->term_id, 'thumbnail_id', true);
     $url = wp_get_attachment_image_url($thumb_ID, 'medium');
     $brands = get_field('cat_brands', $category);
+    //print_r($brands);
 ?>
 
 
@@ -20,17 +21,19 @@ function rf_woocommerce_template_loop_category_title($category)
             <span></span>
             <img class="rf_thumbnail" alt="<?php echo $category->name ?>" src="<?php echo $url ?>" />
         </div>
-        
+
 
         <h2 class="woocommerce-loop-category__title">
             <?php echo esc_html($category->name); ?>
         </h2>
-        
-        <div class="list_brands">
-            <?php foreach ($brands as $br) { ?>
-                <a class="rf_brand_link" href="#"><?php echo $br->name?></a>
-            <?php } ?>
-        </div>
+
+        <?php if ($brands) { ?>
+            <div class="list_brands">
+                <?php foreach ($brands as $br) { ?>
+                    <a class="rf_brand_link" href="#"><?php echo $br->name ?></a>
+                <?php } ?>
+            </div>
+        <?php } ?>
 
     </div>
 <?php

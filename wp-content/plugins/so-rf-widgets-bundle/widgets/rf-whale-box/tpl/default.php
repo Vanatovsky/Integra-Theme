@@ -1,7 +1,5 @@
 <div id="rf_integra_main_whale_box">
 
-	<h1>Интегра <span>инжиниринг</span></h1>
-
 	<canvas id="whalecanvas" class="webgl level2"></canvas>
 
 	<div id="bottom_buttons_whale">

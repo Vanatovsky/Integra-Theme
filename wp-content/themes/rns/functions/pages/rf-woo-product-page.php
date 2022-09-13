@@ -187,6 +187,9 @@ function get_product_content()
 
         <div class="rf_left">
             <h1><?php echo get_the_title() ?></h1>
+
+            <p class="rf_excerpt"><?php echo get_the_excerpt() ?></p>
+
             <div class="rf_main_attributes">
                 <?php
                 //Вывод аттрибутов которые не учавствуют в вариативности
@@ -211,9 +214,6 @@ function get_product_content()
             </div>
 
 
-
-
-            <!-- remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40); -->
 
             <?php
             add_action('rf_custom_description', 'woocommerce_template_single_add_to_cart', 10);
@@ -277,17 +277,6 @@ function get_product_content()
                     <?php } ?>
                 </div>
 
-                <?php if (count($arr_var_gallery) > 1 and 100 == 7) { ?>
-                    <div id="naeiiii888y" class="owl-carousel-product-page-navigation">
-                        <?php foreach ($arr_var_gallery as $img_id) {
-                            $url_img = wp_get_attachment_url($img_id);
-                        ?>
-                            <div class="rf_ssl_item">
-                                <img class="rf-item-slider" alt="<?= the_title() ?>" src="<?= $url_img ?>" />
-                            </div>
-                        <?php } ?>
-                    </div>
-                <?php } ?>
 
             </div>
         </div>

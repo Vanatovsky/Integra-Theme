@@ -106,7 +106,7 @@ jQuery(function() {
             768: {
                 items: 3
             },
-            992:{
+            992: {
                 items: 4
             }
         }
@@ -116,11 +116,11 @@ jQuery(function() {
 
     const slider_product_gallery = $('.owl-carousel-product-page');
     slider_product_gallery.owlCarousel({
-        items: 4,
+        items: 1,
         loop: false,
-        autoplay: false,
-        navigation: true,
-        dots: false,
+        autoplay: true,
+        navigation: false,
+        dots: true,
     });
 
 
