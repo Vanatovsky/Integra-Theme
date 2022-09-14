@@ -68,9 +68,9 @@
 				</div>
 			</div>
 			<div class="col m12 l6 xl3">
-				<b class="rf_callback_form btn-large">Обратная связь</b>
-				<a class="rf_youtube_bottom_link" href="https://youtube.com">
-					<img alt="YouTube" src="/wp-content/themes/rns/assets/images/youtube_logo.svg" />
+				<a href="#modal_question" class="rf_callback_form btn-large modal-trigger">Обратная связь</a>
+				<a class="rf_youtube_bottom_link" href="https://www.youtube.com/channel/UCn8Y9xWMRu1kreeXyCIxUKw" target="_blank">
+					<img alt="YouTube канал Интегра Инжиниринг" src="/wp-content/themes/rns/assets/images/youtube_logo.svg" />
 				</a>
 			</div>
 		</div>
@@ -138,6 +138,18 @@
 	<div class="modal-content">
 		<h4>Заявка на услугу</h4>
 		<?php echo do_shortcode('[contact-form-7 id="5972" title="Главная контактная форма"]') ?>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect btn-flat">Закрыть окно</a>
+	</div>
+</div>
+
+
+<!-- Modal know Price -->
+<div id="modal_know_price" class="modal modal-fixed-footer modal-small">
+	<div class="modal-content">
+		<h4>Запрос цены товара</h4>
+		<?php echo do_shortcode('[contact-form-7 id="6713" title="Запрос цены товара"]') ?>
 	</div>
 	<div class="modal-footer">
 		<a href="#!" class="modal-close waves-effect btn-flat">Закрыть окно</a>

@@ -11,7 +11,7 @@ jQuery(function() {
 
     setTimeout(() => {
         $("#rf_loader_box").addClass('loaded')
-    }, 5000)
+    }, 8000)
 
 
     $('.leftside label').each((ind, elem) => {
@@ -423,15 +423,19 @@ jQuery(function() {
     // });
     // >>>
 
-    $('.over-hide-box').click(function() {
-        openHiddenContact($(this).parent('div'));
-    });
+    // $('.over-hide-box').click(function() {
+    //     openHiddenContact($(this).parent('div'));
+    // });
 
-    $("#rf_by_1_click_btn").on("click", () => {
-        $("#rf_name_good_for_form").text($("h1").text());
-        console.log($("h1").text(), "by 1 click");
-        openModal("#sale_form");
-    });
+    // $("#rf_by_1_click_btn").on("click", () => {
+    //     $("#rf_name_good_for_form").text($("h1").text());
+    //     console.log($("h1").text(), "by 1 click");
+    //     openModal("#sale_form");
+    // });
+
+    $(".rf_know_price").on("click", function() {
+        $("#rf_product_name_cf").val($(this).data("product"))
+    })
 
 
     $('.grid_toggle i').click(function() {

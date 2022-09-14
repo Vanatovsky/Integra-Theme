@@ -13,7 +13,7 @@ $(document).ready(function() {
     // $('.woocommerce-variation-add-to-cart-disabled').removeClass("woocommerce-variation-add-to-cart-disabled").addClass("woocommerce-variation-add-to-cart-enabled")
 
 
-    $('.rf_add_to_cart').on("click", function(e) {
+    $('.rf_add_to_cart:not(.not_added)').on("click", function(e) {
 
         e.preventDefault(); // Prevent the click from going to the link
 

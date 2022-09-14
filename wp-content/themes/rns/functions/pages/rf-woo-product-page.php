@@ -242,12 +242,21 @@ function get_product_content()
                 </div>
 
                 <div class="row">
-                    <div class="col s7">
-                        <b class="rf_product_price"><?php echo $product->get_price_html() ?></b>
+                    <div class="col m7 s12">
+                        <?php
+                        $price_num = $product->get_price()
+                        ?>
+                        <?php if ($price_num > 0) { ?>
+                            <b class="rf_product_price"><?php echo $product->get_price_html() ?></b>
+                        <?php } else { ?>
+                            <a href="#modal_know_price" data-product="<?php echo get_the_title() ?>" class="rf_know_price btn-large waves-light modal-trigger">Узнать цену</a>
+                        <?php } ?>
                     </div>
-                    <div class="col s5 rf_cart_added_trigers">
-                        <input type="number" id="quantity_trigger" class="input-text qty text" step="1" min="1" max="5000" name="quantity" value="1" title="Кол-во" size="4" placeholder="" inputmode="numeric" autocomplete="off">
-                        <b id="rf_add_to_cart_trigger" class="btn-large rf_third waves-effect">В корзину</b>
+                    <div class="col m5 s12 rf_cart_added_trigers">
+                        <?php if ($price_num > 0) { ?>
+                            <input type="number" id="quantity_trigger" class="input-text qty text" step="1" min="1" max="5000" name="quantity" value="1" title="Кол-во" size="4" placeholder="" inputmode="numeric" autocomplete="off">
+                            <b id="rf_add_to_cart_trigger" class="btn-large rf_third waves-effect">В корзину</b>
+                        <?php } ?>
                     </div>
 
                 </div>
@@ -359,9 +368,17 @@ function get_product_content()
                                         </div>
                                     <?php } ?>
 
-                                    <span data-json-attributes='<?php echo $col_data[3] ?>' data-product_id="<?php echo $col_data[1] ?>" data-quantity="1" data-variation_id="<?php echo $col_data[2] ?>" data-variation-desc="<?php echo $col_data[0] ?>" data-price-prod="<?php echo strip_tags($col_data[array_key_last($col_data)]) ?>" class="rf_add_to_cart btn waves-effect rf_third">
-                                        В корзину
-                                    </span>
+                                    <?php $price_var = $col_data[sizeof($col_data) - 1]; ?>
+
+                                    <?php if ($price_var !== "<b> - </b>") { ?>
+                                        <span data-json-attributes='<?php echo $col_data[3] ?>' data-product_id="<?php echo $col_data[1] ?>" data-quantity="1" data-variation_id="<?php echo $col_data[2] ?>" data-variation-desc="<?php echo $col_data[0] ?>" data-price-prod="<?php echo strip_tags($col_data[array_key_last($col_data)]) ?>" class="rf_add_to_cart btn waves-effect rf_third">
+                                            В корзину
+                                        </span>
+                                    <?php } else { ?>
+                                        <span data-json-attributes='<?php echo $col_data[3] ?>' data-product_id="<?php echo $col_data[1] ?>" data-quantity="1" data-variation_id="<?php echo $col_data[2] ?>" data-variation-desc="<?php echo $col_data[0] ?>" data-price-prod="<?php echo strip_tags($col_data[array_key_last($col_data)]) ?>" class="rf_add_to_cart not_added btn waves-effect rf_third">
+                                            <a href="#modal_know_price" data-product="<?php echo $col_data[0] ?>" class="rf_know_price waves-light modal-trigger">Узнать цену</a>
+                                        </span>
+                                    <?php } ?>
 
                                 </div>
                             <?php } else { ?>

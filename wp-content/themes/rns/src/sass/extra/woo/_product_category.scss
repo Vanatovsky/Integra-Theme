@@ -2,8 +2,8 @@
     // background: $color__light;
     @media screen and (max-width: $sm) {
         .rf-container {
-            padding-left: 0;
-            padding-right: 0;
+            padding-left: 15px;
+            padding-right: 15px;
             max-width: 100%;
             overflow: hidden;
         }
@@ -13,72 +13,84 @@
 .products {
     .product-category {
         .rf_subcategory_item {
-            margin-right:40px;
+            margin-right: 40px;
             margin-bottom: 60px;
-            .rf_img_box{
+            @media screen and (max-width: $sm) {
+                margin-right: 5px;
+                margin-left: 5px;
+                margin-bottom: 50px;
+            }
+            .rf_img_box {
                 position: relative;
-                img{
+                img {
                     display: table;
-                    margin:0 auto;
+                    margin: 0 auto;
                 }
-                span{
+                span {
                     transition: all .4s;
                     position: absolute;
                     top: 0;
-                    left:0;
-                    right:0;
-                    bottom:0;
-                    margin:auto;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
                     background-image: url("/assets/images/rectangle-blue.svg");
                     background-position: center;
                     background-repeat: no-repeat;
-                    background-size:contain;
+                    background-size: contain;
                     transform: scale(0);
                 }
             }
-        
             h2 {
                 font-size: 20px;
                 color: $color__primary;
                 border-top: 2px solid $color__light;
-                padding-top:20px;
+                padding-top: 20px;
+                @media screen and (max-width: $sm) {
+                    padding-top: 10px;
+                    font-size: 18px;
+                    text-align: center;
+                    margin-bottom: 5px;
+                }
                 mark {
                     display: none;
                 }
             }
-
-            .list_brands{
-                a.rf_brand_link{
-                    color:$color__secondary;
-                    font-weight:$font__weight__bold;
-                    &:hover{
-                        color:$color__primary;
+            .list_brands {
+                @media screen and (max-width: $sm) {
+                    text-align: center;
+                }
+                a.rf_brand_link {
+                    color: $color__secondary;
+                    font-weight: $font__weight__bold;
+                    &:hover {
+                        color: $color__primary;
                     }
-                    &::after{
+                    &::after {
                         content: "|";
                         display: inline-block;
                         margin-left: 5px;
                     }
-                    &:last-child{
-                        &::after{
-                            content:"";
+                    &:last-child {
+                        &::after {
+                            content: "";
                         }
+                    }
+                    @media screen and (max-width: $sm) {
+                        font-size: 12px;
                     }
                 }
             }
-
-
-            &:hover{
-                .rf_img_box{
-                    span{
+            &:hover {
+                .rf_img_box {
+                    span {
                         transform: scale(1.1);
                     }
                 }
-                h2{
-                    color:$color__secondary;
+                h2 {
+                    color: $color__secondary;
                 }
             }
-
         }
     }
 }
@@ -89,10 +101,17 @@
     margin: 0 auto 30px;
     font-size: 32px;
     @media screen and (max-width: $sm) {
-        font-size: 26px;
+        font-size: 22px;
         line-height: 28px;
         //text-transform: uppercase;
         letter-spacing: 1px;
+    }
+}
+
+.woocommerce-result-count {
+    @media screen and (max-width: $sm) {
+        font-size: 12px;
+        text-align: center;
     }
 }
 

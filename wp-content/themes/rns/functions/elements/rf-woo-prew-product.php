@@ -58,7 +58,7 @@ function rf_open_product_item()
             <?php if ($product->get_price()) { ?>
                 <?php echo $product->get_price_html() ?>
             <?php } else { ?>
-                <b class="rf_know_price waves-light modal-trigger">Узнать цену</b>
+                <a href="#modal_know_price" data-product="<?php echo get_the_title() ?>" class="rf_know_price waves-light modal-trigger">Узнать цену</a>
             <?php } ?>
         </div>
 

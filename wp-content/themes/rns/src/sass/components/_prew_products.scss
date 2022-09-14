@@ -10,7 +10,7 @@
         grid-template-columns: 1fr 1fr;
     }
     @media screen and (max-width: $xs) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     .rf_product_prew_item {
         border-bottom: 3px solid $color__light;
@@ -39,6 +39,9 @@
             margin-bottom: 0;
             font-size: 18px;
             min-height: 80px;
+            @media screen and (max-width: $sm) {
+                font-size: 16px;
+            }
         }
         .rf_descr {
             color: $color__text__main;
@@ -50,6 +53,18 @@
             font-weight: $font__weight__bold;
             color: $color__text__main;
             margin-bottom: 20px;
+            @media screen and (max-width: $sm) {
+                font-size: 17px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .rf_know_price {
+                font-size: 14px;
+                position: relative;
+                z-index: 20;
+                display: table;
+                color: $color__third;
+            }
         }
         .rf_cont {
             .rf_product_thubnail {
@@ -58,6 +73,11 @@
                 img {
                     max-height: 200px;
                 }
+            }
+        }
+        .btn {
+            @media screen and (max-width: $sm) {
+                font-size: 11px;
             }
         }
     }

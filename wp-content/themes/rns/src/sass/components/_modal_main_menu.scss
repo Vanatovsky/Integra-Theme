@@ -1,10 +1,16 @@
 #modal_main_menu {
-    max-height: 100%;
+    max-height: 80vh;
     border-radius: $border__radius__classic__box;
+    @media screen and (max-width: $sm) {
+        width: 94%;
+    }
     .modal-content {
         padding: 40px 90px;
         background-color: $color__secondary;
         border-radius: $border__radius__classic__box;
+        @media screen and (max-width: $md) {
+            padding: 40px 50px;
+        }
         .rf_city {
             font-size: 12px;
             color: #fff;
@@ -30,6 +36,9 @@
                 &>li.menu-item-has-children {
                     .sub-menu {
                         padding-left: 70px;
+                        @media screen and (max-width: $sm) {
+                            padding-left: 20px;
+                        }
                         li {
                             margin-bottom: 10px;
                             a {

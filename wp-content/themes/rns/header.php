@@ -36,7 +36,6 @@
 			display: block;
 			position: fixed;
 			z-index: 1999;
-
 		}
 
 		#rf_loader_box::before {
@@ -49,7 +48,7 @@
 			background-image: url("/wp-content/themes/rns/assets/images/logo-integra-white.svg");
 			background-size: 20% auto;
 			background-repeat: no-repeat;
-			background-position: center 90%;
+			background-position: center 60%;
 			top: 0;
 			z-index: 1000;
 			transition: all .6s;

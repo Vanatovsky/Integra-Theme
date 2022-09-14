@@ -46,8 +46,11 @@ main .pl-grid-table {
         }
         @media screen and (max-width: $sm) {
             line-height: 22px;
-            margin: 45px auto 0;
-            font-size: 12px;
+            margin: 45px auto 20px;
+            a,
+            span {
+                font-size: 11px;
+            }
         }
         a {
             color: $color__text__gray;

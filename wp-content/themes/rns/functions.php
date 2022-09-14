@@ -1,5 +1,11 @@
 <?php
 
+
+//Удалить после обновления Woocommerce
+error_reporting(0);
+
+
+
 /**
  * Run Fun functions and definitions
  *
@@ -10,8 +16,11 @@
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.0.148');
+	define('_S_VERSION', '1.0.149');
 }
+
+
+
 
 /**
  * RF Tubs

@@ -82,6 +82,9 @@
         }
         .rf_product_main_slider {
             position: relative;
+            @media screen and (max-width: $sm) {
+                margin-bottom: 60px;
+            }
             div {
                 .rf-item-slider {
                     max-height: 450px;
@@ -189,16 +192,29 @@
             .rf_choose_product_str {
                 font-size: 13px;
             }
+            .rf_know_price {
+                font-weight: $font__weight__bold;
+                font-size: 18px;
+            }
             .rf_product_price {
                 padding-top: 12px;
                 display: block;
                 font-size: 24px;
+                @media screen and (max-width: $sm) {
+                    margin-bottom: 30px;
+                }
             }
             .rf_cart_added_trigers {
                 display: flex;
                 #quantity_trigger {
                     width: 50px;
                     margin-right: 30px;
+                }
+                @media screen and (max-width: $sm) {
+                    .btn,
+                    .btn-large {
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -359,7 +375,8 @@
                     padding-left: 10px;
                     text-align: left;
                     @media screen and (max-width: $sm) {
-                        height: 40px;
+                        height: 45px;
+                        white-space: nowrap;
                     }
                 }
             }
@@ -413,6 +430,11 @@
                         display: table;
                         margin: 0 auto;
                         max-height: 100px;
+                    }
+                }
+                .rf_add_to_cart {
+                    a {
+                        color: #fff;
                     }
                 }
                 .btn-small {
