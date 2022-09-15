@@ -248,6 +248,10 @@ export function goToLevel2(settings, camera, scene,
     }
     animate_position_cursor = new TWEEN.Tween(pointCursorGroup.position).to({ x: 0, y: 14, z: 0 }, 1000).start()
 
+    if (animate_scale_cursor !== undefined) {
+        animate_scale_cursor.stop()
+    }
+    animate_scale_cursor = new TWEEN.Tween(pointCursorGroup.scale).to({ x: 1, y: 1, z: 1 }, 1000).start()
 
 
 
