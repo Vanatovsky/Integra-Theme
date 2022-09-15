@@ -25,7 +25,7 @@ export function createPointCursor(gui, settings, pointCursorGroup, level_2_group
 
     pointCursorGroup.position.y = 8.5
     pointCursorGroup.position.z = -4
-    pointCursorGroup.scale.set(12, 12, 12)
+    pointCursorGroup.scale.set(1, 1, 1)
     pointCursorGroup.rotation.y = Math.PI * -0.35
 
     setTimeout(() => { pointCursorGroup.scale.set(1, 1, 1) }, 4500)

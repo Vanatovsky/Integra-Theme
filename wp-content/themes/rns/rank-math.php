@@ -18,14 +18,23 @@ add_filter('rank_math/frontend/breadcrumb/items', function ($crumbs, $class) {
         array_splice($crumbs, 1, 0, $cat_page_element_arr);
     }
 
-    // if (get_post_type() == "object") {
-    //     $obj_page_element_arr = [[
-    //         0 => 'Объекты',
-    //         1 => get_permalink(6795),
-    //         'hide_in_schema' => ''
-    //     ]];
-    //     array_splice($crumbs, 1, 1, $obj_page_element_arr);
-    // }
+    if (get_post_type() == "object") {
+        $obj_page_element_arr = [[
+            0 => 'Объекты',
+            1 => get_permalink(6795),
+            'hide_in_schema' => ''
+        ]];
+        array_splice($crumbs, 1, 1, $obj_page_element_arr);
+    }
+
+    if (get_post_type() == "usluga") {
+        $us_page_element_arr = [[
+            0 => 'Услуги',
+            1 => "/#services",
+            'hide_in_schema' => ''
+        ]];
+        array_splice($crumbs, 1, 1, $us_page_element_arr);
+    }
 
     return $crumbs;
 }, 10, 2);

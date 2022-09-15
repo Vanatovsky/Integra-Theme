@@ -19,7 +19,7 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader.js'
 import Stats from 'three/examples/jsm/libs/stats.module.js'
-
+import { firstAnimationWhaleAndCamera } from './levels_animations/levels_animations';
 
 let mouseX, mouseY
 let mouse_ray = new THREE.Vector2()
@@ -283,6 +283,25 @@ const init = () => {
     createPointCursor(gui, settings, pointCursorGroup, level_2_group)
 
 
+    /**
+     * First Animation
+     */
+    switch (document.location.hash) {
+        case "#services":
+            goToLevel3(settings, camera, scene, whale_model, pointCursorGroup, mixer, animations)
+            break;
+        case "#contacts":
+            goToLevel1(settings, scene, camera, whale_model,
+                whale_mesh, level_2_group, mixer, animations, pointCursorGroup)
+            break;
+        default:
+            firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer, animations)
+            break;
+    }
+
+
+
+
 
     //Animation
     tick()
@@ -520,10 +539,6 @@ function render() {
 document.querySelector('#button_to_level_1').addEventListener('click', () => {
     goToLevel1(settings, scene, camera, whale_model,
         whale_mesh, level_2_group, mixer, animations, pointCursorGroup)
-
-    let modal_contacts = document.querySelector(".rf_whale_level_1_modal_contacts")
-    modal_contacts.classList.add('open')
-    document.querySelector('#bottom_buttons_whale').classList.add('close')
 })
 
 // Level 2

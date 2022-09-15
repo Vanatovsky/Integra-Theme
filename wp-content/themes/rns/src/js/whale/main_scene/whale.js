@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { TW } from '../inc/extra_functions';
 import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
-import { firstAnimationWhaleAndCamera } from '../levels_animations/levels_animations';
+// import { firstAnimationWhaleAndCamera } from '../levels_animations/levels_animations';
 
 
 
@@ -24,7 +24,9 @@ export function createWhale(settings, mixer, animations, scene, level_2_group, w
     whale_model.position.y = 2.5
     level_2_group.add(whale_model)
 
-    firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer, animations)
+
+
+    // firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer, animations)
 
 
 }

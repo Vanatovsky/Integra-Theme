@@ -17,6 +17,7 @@ let animate_position_camera, animate_rotation_camera,
 
 export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer, animations) {
 
+
     /**
      * Play sceleton whale animation
      */
@@ -50,7 +51,6 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
             document.querySelector("#bottom_buttons_whale").classList.add('open')
             settings.whale_home = true
             settings.camera_look_at_center = true
-            settings.opening_page_level_2 = false
         })
 
 
@@ -76,18 +76,12 @@ export function firstAnimationWhaleAndCamera(settings, whale_model, scene, mixer
     animate_scene_fog_far = new TWEEN.Tween(scene.fog).delay(2600).to({ far: settings.scene_fog_far_level_2 }, 1000).easing(TWEEN.Easing.Elastic.In).start()
 
 
-    /**
-     * Close loader
-     */
-    const loader_box = document.getElementById("rf_loader_box")
-    loader_box.classList.add("loaded")
-    const loader_round_box = document.querySelector("#rf_loader_box .preloader-wrapper")
-    loader_round_box.classList.add("loaded")
-
+    if (!settings.first_animation_complete) {
+        firstWhenOpenPage(settings)
+    }
 
 
 }
-
 
 
 
@@ -123,6 +117,13 @@ export function goToLevel1(settings, scene, camera, whale_model,
      */
     moonLightGoToLevel1()
 
+
+    /**
+     * Open Form
+     */
+    let modal_contacts = document.querySelector(".rf_whale_level_1_modal_contacts")
+    modal_contacts.classList.add('open')
+    document.querySelector('#bottom_buttons_whale').classList.add('close')
 
     /**
      * Water rotation
@@ -182,6 +183,10 @@ export function goToLevel1(settings, scene, camera, whale_model,
             mixer.clipAction(animations[1]).stop()
             mixer.clipAction(animations[0]).play()
         })
+
+    if (!settings.first_animation_complete) {
+        firstWhenOpenPage(settings)
+    }
 
 }
 
@@ -299,6 +304,10 @@ export function goToLevel2(settings, camera, scene,
 
     particlesGoToLevel2()
 
+    if (!settings.first_animation_complete) {
+        firstWhenOpenPage(settings)
+    }
+
 }
 
 
@@ -319,6 +328,11 @@ export function goToLevel3(settings, camera, scene,
 
     if (settings.level_animation_start || settings.active_level == 3) {
         return false
+    }
+
+    if (!settings.first_animation_complete) {
+        camera.position.set(settings.camera_position_level_2_x, settings.camera_position_level_2_y, settings.camera_position_level_2_z)
+        firstWhenOpenPage(settings)
     }
 
     /**
@@ -467,6 +481,8 @@ export function goToLevel3(settings, camera, scene,
 
     particlesGoToLevel3()
 
+
+
 }
 
 
@@ -483,4 +499,23 @@ export function hoverOutUslugaLevel3(settings, whale_model, pointCursorGroup) {
     settings.animate_hover_cursor_level_3 = false
     settings.cristal_animate_up = false
     settings.cristal_animate_down = true
+}
+
+
+
+function firstWhenOpenPage(settings) {
+
+    /**
+     * Close loader
+     */
+    const loader_box = document.getElementById("rf_loader_box")
+    loader_box.classList.add("loaded")
+    const loader_round_box = document.querySelector("#rf_loader_box .preloader-wrapper")
+    loader_round_box.classList.add("loaded")
+
+    setTimeout(() => { settings.opening_page_level_2 = false }, 3000)
+
+    settings.whale_home = true
+    settings.camera_look_at_center = true
+    settings.first_animation_complete = true
 }

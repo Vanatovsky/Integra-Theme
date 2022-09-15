@@ -2,6 +2,8 @@ import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
 
 export const Settings = {
 
+    first_animation_complete: false,
+
     mobile_version: false,
 
     water_color: 0x00ffff,
