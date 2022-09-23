@@ -141,14 +141,13 @@
 			</div>
 			<div class="rf_right_box">
 				<div class="rf_item rf_link_with_text rf_question_form">
-					<a href="#modal_question" class="waves-effect waves-light modal-trigger">
-						<img alt="Задать вопрос" src="/wp-content/themes/rns/assets/images/Question1.svg" />
-						<p>Вопрос по продукции</p>
+					<a href="tel:<?php echo get_theme_mod("rns_tel") ?>" class="waves-effect waves-light">
+						<?php echo get_theme_mod("rns_tel") ?>
 					</a>
 				</div>
 				<div class="rf_item rf_link_with_text">
-					<a href="<?php echo wc_get_cart_url() ?>" class="waves-effect waves-light modal-trigger">
-						<img alt="Запросить КП" src="/wp-content/themes/rns/assets/images/Offer.svg" />
+					<a href="<?php echo wc_get_cart_url() ?>" class="waves-effect waves-light">
+						<img alt="Запросить КП" src="/wp-content/themes/rns/assets/images/icons/cart.svg" />
 						<p>Ваша корзина <span class="rf_bage"><?php echo WC()->cart->get_cart_contents_count(); ?></span></p>
 						<p class="rf_cart_price"><?php echo WC()->cart->get_cart_subtotal(); ?></p>
 					</a>
