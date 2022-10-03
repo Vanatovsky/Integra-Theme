@@ -16,7 +16,7 @@ error_reporting(0);
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.0.152');
+	define('_S_VERSION', '1.0.12');
 }
 
 
@@ -305,6 +305,10 @@ function rns_scripts()
 	//WHALE (only for main page)
 	if (is_front_page()) {
 		wp_enqueue_script('whale-bundle', get_template_directory_uri() . '/assets/whale.js', array(), _S_VERSION, true);
+	}
+
+	if (is_product()) {
+		wp_enqueue_script('whale-cart-bundle', get_template_directory_uri() . '/assets/whale_in_cart.js', array(), _S_VERSION, true);
 	}
 
 	//BUNDLE

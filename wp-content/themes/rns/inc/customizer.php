@@ -56,6 +56,41 @@ function rns_customize_register($wp_customize)
 		)
 	);
 
+	//Третий телефон
+	$wp_customize->add_setting('rns_tel_3', [
+		'default' => '8 800-0000-00-00',
+	]);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'rns_tel_3',
+			[
+				'label' => 'Третий номер телефона',
+				'section' => 'another_section',
+				'setting' => 'rns_tel_3'
+			]
+		)
+	);
+
+	//Четвертый телефон
+	$wp_customize->add_setting('rns_tel_4', [
+		'default' => '8 800-0000-00-00',
+	]);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'rns_tel_4',
+			[
+				'label' => 'Четверты номер телефона',
+				'section' => 'another_section',
+				'setting' => 'rns_tel_3'
+			]
+		)
+	);
+
+
+
+
 	//Контактная почта
 	$wp_customize->add_setting('rns_email', [
 		'default' => 'info@sitename.ru',
@@ -97,50 +132,50 @@ function rns_customize_register($wp_customize)
 		'title'      => 'Run Fun социальные сети',
 		'priority'   => 11,
 	));
-	//Дзен
-	$wp_customize->add_setting('rns_soc_dzen', [
-		'default' => '',
+	//Viber
+	$wp_customize->add_setting('rns_soc_viber', [
+		'default' => '#',
 	]);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'rns_soc_dzen',
+			'rns_soc_viber',
 			[
-				'label' => 'YandexDzen',
+				'label' => 'Viber',
 				'section' => 'social_section',
-				'setting' => 'rns_soc_dzen'
+				'setting' => 'rns_soc_viber'
 			]
 		)
 	);
 
-	//YouTube
-	$wp_customize->add_setting('rns_soc_youtube', [
-		'default' => '',
+	//Whatsapp
+	$wp_customize->add_setting('rns_soc_whatsapp', [
+		'default' => '#',
 	]);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'rns_soc_youtube',
+			'rns_soc_whatsapp',
 			[
-				'label' => 'Youtube',
+				'label' => 'Whatsapp',
 				'section' => 'social_section',
-				'setting' => 'rns_soc_youtube'
+				'setting' => 'rns_soc_whatsapp'
 			]
 		)
 	);
 
-	//Instagram
-	$wp_customize->add_setting('rns_soc_instagram', [
-		'default' => '',
+	//Telegram
+	$wp_customize->add_setting('rns_soc_telegram', [
+		'default' => '#',
 	]);
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'rns_soc_instagram',
+			'rns_soc_telegram',
 			[
 				'label' => 'Instagram',
 				'section' => 'social_section',
-				'setting' => 'rns_soc_instagram'
+				'setting' => 'rns_soc_telegram'
 			]
 		)
 	);

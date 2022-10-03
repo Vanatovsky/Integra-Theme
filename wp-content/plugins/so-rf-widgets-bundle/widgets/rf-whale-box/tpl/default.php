@@ -21,25 +21,25 @@
 
 		<span class="rf_close_item">+</span>
 		<div class="rf_phones_links">
-			<a href="tel:<?php echo get_theme_mod("rns_tel") ?>"><?php echo get_theme_mod("rns_tel") ?></a>
-			<a href="tel:<?php echo get_theme_mod("rns_tel_2") ?>"><?php echo get_theme_mod("rns_tel_2") ?> (бесплатно)</a>
+			<a href="tel:<?php echo get_theme_mod("rns_tel") ?>"><?php echo get_theme_mod("rns_tel") ?> (бесплатно)</a>
+			<a href="tel:<?php echo get_theme_mod("rns_tel_2") ?>"><?php echo get_theme_mod("rns_tel_2") ?></a>
 		</div>
 		<div class="rf_links_conts_list">
 			<ul>
 				<li>
-					<a href="#">
+					<a href="<?php echo get_theme_mod("rns_soc_whatsapp") ?>">
 						<img alt="whatsapp" src="/wp-content/themes/rns/assets/images/icons/whatsapp.svg" />
 						<span>whatsapp</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="<?php echo get_theme_mod("rns_soc_telegram") ?>">
 						<img alt="telegram" src="/wp-content/themes/rns/assets/images/icons/telegramm.svg" />
 						<span>telegram</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="<?php echo get_theme_mod("rns_soc_viber") ?>">
 						<img alt="viber" src="/wp-content/themes/rns/assets/images/icons/viber.svg" />
 						<span>viber</span>
 					</a>
@@ -63,7 +63,11 @@
 		<span class="rf_close_item">+</span>
 
 		<h2>Услуги нашей <br /> компании</h2>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus minus ratione modi aliquam provident dolorum sit illum hic est beatae doloremque nemo, dolor facere commodi assumenda, laboriosam aspernatur dolores quos.</p>
+		<p>«Интегра Инжиниринг» – это группа компаний,
+включающая в себя производственный блок,
+монтажную и сервисную службы, два
+интернет-магазина по продаже промышленной
+и бытовой инженерной сантехники</p>
 		<br />
 
 

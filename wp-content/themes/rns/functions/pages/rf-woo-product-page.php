@@ -229,7 +229,7 @@ function get_product_content()
                     <div class="col s12">
                         <?php
                         $values = $product->get_default_attributes();
-                        $default_attr_str = "<b>По-умолчанию:</b> - ";
+                        $default_attr_str = "<b>Выбрано:</b> - ";
                         foreach ($values as $key => $value) {
                             $name_attr = wc_attribute_label($key);
                             $term_attr = get_term_by("slug", $value, $key);
@@ -270,6 +270,19 @@ function get_product_content()
         <div class="rf_right">
             <div class="rf_product_main_slider">
 
+                <?php $sku = $product->get_sku() ? $product->get_sku() : "-" ?>
+                <p class="rf_sku"><b>Артикул:</b> <?php echo $sku ?></p>
+
+                <div class="rf_brand_image_box">
+                    <?php
+                        $brands = get_the_terms($product->get_id(),'product_brand');
+                        $imageBrandURL = wp_get_attachment_image_url(get_term_meta($brands[0]->term_id, 'thumbnail_id', true), 'medium');
+                    ?>
+                    <?php if (count($brands) > 0) { ?>
+                    <img class="rf_brand_image" alt="brand" src="<?php echo $imageBrandURL ?>" />
+                    <?php } ?>
+                </div>
+                
                 <?php if ($is_new) { ?>
                     <img alt="Новинка" class="rf_new" src="/wp-content/themes/rns/image/icons/new.svg" />
                 <?php } ?>
@@ -281,7 +294,7 @@ function get_product_content()
                     ?>
                         <div>
                             <img data-full="<?= $url_img ?>" class="rf-can-open-image rf-item-slider" alt="<?= the_title() ?>" src="<?= $url_img ?>" />
-                            <span><?php echo $image_alt ?></span>
+                            <span class="rf_bottom_img_exception"><?php echo $image_alt ?></span>
                         </div>
                     <?php } ?>
                 </div>
@@ -526,10 +539,13 @@ function get_product_content()
     <div class="rf_product_text_content_box">
         <div class="rf-container">
             <div class="row rf_product_text_content">
-                <div class="col s12 m6">
+                <div class="col s12 m6 rf_box_with_whale_white">
                     <p class="rf_header">Подробное описание</p>
+
+                    <canvas class="whale_product_webgl"></canvas>
+
                 </div>
-                <div class="col s12 m6"><?php the_content() ?></div>
+                <div class="col s12 m6 rf_box_with_content_text"><?php the_content() ?></div>
             </div>
         </div>
     </div>

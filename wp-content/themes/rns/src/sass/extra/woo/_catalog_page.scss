@@ -1,204 +1,207 @@
 .rf_top_cats_content {
-    background-color: $color__medium;
-    padding-top: 40px;
-    padding-bottom: 50px;
-    border-bottom: 4px solid $color__dark;
-    border-top: 1px solid $color__dark;
-    .rf_short_desc_top_cat {
-        line-height: 28px;
-        max-width: 900px;
-        font-size: 16px;
-    }
+  background-color: $color__medium;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  border-bottom: 4px solid $color__dark;
+  border-top: 1px solid $color__dark;
+  .rf_short_desc_top_cat {
+    line-height: 28px;
+    max-width: 900px;
+    font-size: 16px;
+  }
 }
 
 main .pl-grid-table {
-    float: none;
+  float: none;
 }
 
 #primary {
-    nav.rank-math-breadcrumb {
-        margin-bottom: 40px;
-        max-width: $width_work_box_desctop;
-        background-color: #fff !important;
-        color: $color__text__main;
-        box-shadow: none;
-        display: flex;
-        p {
-            font-size: 14px;
-            a:nth-of-type(1) {
-                padding-left: 50px;
-                position: relative;
-                &:after {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 40px;
-                    height: 20px;
-                    display: inline-block;
-                    background-image: url("/assets/images/Whale-icon.svg");
-                }
-            }
+  nav.rank-math-breadcrumb {
+    margin-bottom: 10px;
+    margin-top: 40px;
+    max-width: $width_work_box_desctop;
+    background-color: #fff !important;
+    color: $color__text__main;
+    box-shadow: none;
+    display: flex;
+    p {
+      line-height: 20px;
+      font-size: 14px;
+      padding-left: 50px;
+      a:nth-of-type(1) {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -50px;
+          width: 40px;
+          height: 20px;
+          display: inline-block;
+          background-image: url("/assets/images/Whale-icon.svg");
         }
-        @media screen and (max-width: $xl) {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        @media screen and (max-width: $sm) {
-            line-height: 22px;
-            margin: 45px auto 20px;
-            a,
-            span {
-                font-size: 11px;
-            }
-        }
-        a {
-            color: $color__text__gray;
-            font-weight: $font__weight__bold;
-            text-decoration: none;
-        }
+      }
     }
+    @media screen and (max-width: $xl) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media screen and (max-width: $sm) {
+      line-height: 22px;
+      margin: 45px auto 20px;
+      a,
+      span {
+        font-size: 11px;
+      }
+    }
+    a {
+      color: $color__text__gray;
+      font-weight: $font__weight__bold;
+      text-decoration: none;
+    }
+  }
 }
 
 .woocommerce-products-header {
-    color: $color__text__main;
-    margin-bottom: 15px;
-    .term-description {
-        background-color: #fff;
-        display: table;
-        padding: 25px;
-        border-radius: 5px;
-        p {
-            max-width: 720px;
-            margin-bottom: 20px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
+  color: $color__text__main;
+  margin-bottom: 15px;
+  .term-description {
+    background-color: #fff;
+    display: table;
+    padding: 25px;
+    border-radius: 5px;
+    p {
+      max-width: 720px;
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-    @media screen and (max-width: $sm) {
-        & {
-            max-width: 100%;
-            display: block;
-        }
+  }
+  @media screen and (max-width: $sm) {
+    & {
+      max-width: 100%;
+      display: block;
     }
+  }
 }
 
 .rf_choice_top_content,
 .rf_choice_bottom_content {
-    color: $color__text__main;
-    padding-top: 30px;
-    h2 {
-        font-size: 24px;
-    }
-    h3 {
-        font-size: 22px;
-    }
-    h4 {
-        font-size: 20px;
-    }
-    h5 {
-        font-size: 18px;
-    }
-    h6 {
-        font-size: 16px;
-    }
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: $font__weight__bold;
-        margin-bottom: 20px;
-    }
-    p {
-        margin-bottom: 15px;
-    }
+  color: $color__text__main;
+  padding-top: 30px;
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  h6 {
+    font-size: 16px;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $font__weight__bold;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 15px;
+  }
 }
 
 .rf_choice_bottom_content {
-    margin-top: 40px;
-    display: block;
+  margin-top: 40px;
+  display: block;
 }
 
 .woocommerce-products-header {
-    .term-description {
-        margin-bottom: 30px;
-        font-family: $font__read__text;
-    }
+  .term-description {
+    margin-bottom: 30px;
+    font-family: $font__read__text;
+  }
 }
 
 .woocommerce-ordering {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .woocommerce-result-count {
-    font-size: 18px;
-    color: $color__text__main;
-    font-weight: bold;
-    margin-bottom: 4px;
-    text-align: right;
+  font-size: 14px;
+  color: $color__text__gray;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-align: left;
+  margin-bottom: 40px;
 }
 
 .woocommerce-ordering {
-    select {
-        color: $color__text__main;
-        padding: 5px 24px 5px 12px;
-        border: 1px solid $color__medium;
-        font-size: 12px;
-        border-radius: 15px;
-    }
+  select {
+    color: $color__text__main;
+    padding: 5px 24px 5px 12px;
+    border: 1px solid $color__medium;
+    font-size: 12px;
+    border-radius: 15px;
+  }
 }
 
 .widget-title {
-    margin-bottom: 10px;
-    .prdctfltr_widget_title {
-        font-weight: $font__weight__bold;
-        color: $color__text__main;
-    }
+  margin-bottom: 10px;
+  .prdctfltr_widget_title {
+    font-weight: $font__weight__bold;
+    color: $color__text__main;
+  }
 }
 
 a.pf_ajax_css-spinner-full-03 {
-    color: $color__primary__dark;
+  color: $color__primary__dark;
 }
 
 .so-widget-rf-woo-products {
-    padding-top: 0px;
-    padding-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .rf_top_cats_list {
-    display: table;
-    @media screen and (max-width: $md) {
-        display: block;
-    }
+  display: table;
+  @media screen and (max-width: $md) {
+    display: block;
+  }
 }
 
 .rf_cat_seo_text {
-    font-size: 16px;
-    line-height: 28px;
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    @media screen and (max-width: $sm) {
-        grid-template-columns: 1fr;
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: $sm) {
+    grid-template-columns: 1fr;
+  }
+  .rf_item {
+    img {
+      height: auto !important;
     }
-    .rf_item {
-        img {
-            height: auto !important;
-        }
-    }
-    .rf_item:nth-of-type(1) {
-        padding-right: 20px;
-    }
-    .rf_item:nth-of-type(2) {
-        padding-left: 20px;
-    }
-    p {
-        margin-bottom: 20px;
-    }
+  }
+  .rf_item:nth-of-type(1) {
+    padding-right: 20px;
+  }
+  .rf_item:nth-of-type(2) {
+    padding-left: 20px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
 }
 
-.woocommerce-products-header {
-    padding: 15px;
-}
+// .woocommerce-products-header {
+//   //padding: 15px;
+// }

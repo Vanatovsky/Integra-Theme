@@ -49,10 +49,10 @@
 			<div class="col m12 l6 xl3">
 				<div class="rf_footer_widget_with_icon">
 					<img alt="телефон" src="/wp-content/themes/rns/assets/images/icons/phone_dark.svg" />
-					<p>Офис: <a href="tel:8(831) 4-123-788">(831) 4-123-788</a></p>
-					<p>Бухгалтерия: <a href="tel:8(831) 4-226-521">(831) 4-226-521</a></p>
-					<p>Сервисная служба: <a href="tel:8(831) 4-133-137">(831) 4-133-137</a></p>
-					<p>Отдел продаж: <a href="tel:8-800-201-05-10">8-800-201-05-10 (бесплатный)</a></p>
+					<p>Офис: <a href="tel:<?php echo get_theme_mod("rns_tel_2") ?>"><?php echo get_theme_mod("rns_tel_2") ?></a></p>
+					<p>Бухгалтерия: <a href="tel:<?php echo get_theme_mod("rns_tel_3") ?>"><?php echo get_theme_mod("rns_tel_3") ?></a></p>
+					<p>Сервисная служба: <a href="tel:<?php echo get_theme_mod("rns_tel_4") ?>"><?php echo get_theme_mod("rns_tel_4") ?></a></p>
+					<p>Отдел продаж: <a href="tel:<?php echo get_theme_mod("rns_tel") ?>"><?php echo get_theme_mod("rns_tel") ?> (бесплатный)</a></p>
 				</div>
 			</div>
 			<div class="col m12 l6 xl3">

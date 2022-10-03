@@ -90,7 +90,7 @@ do_action('woocommerce_before_cart'); ?>
                             </div>
 
                             <div class="rf_item product-price" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
-                                <p class="rf_cart_item_light_text">1 шт.</p>
+                                <p class="rf_cart_item_light_text">Цена 1 шт.</p>
                                 <?php
                                 echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                                 ?>
@@ -99,7 +99,7 @@ do_action('woocommerce_before_cart'); ?>
                             <div class="rf_item product-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                                 <?php
                                 if ($_product->is_sold_individually()) {
-                                    $product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key);
+                                    $product_quantity = sprintf('1 <input type="hidden" variant="filled" name="cart[%s][qty]" value="1" />', $cart_item_key);
                                 } else {
                                     $product_quantity = woocommerce_quantity_input(
                                         array(
@@ -119,7 +119,7 @@ do_action('woocommerce_before_cart'); ?>
                             </div>
 
                             <div class="rf_item product-subtotal" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
-                                <p class="rf_cart_item_light_text">Подытог</p>
+                                <p class="rf_cart_item_light_text">Подытог:</p>
                                 <?php
                                 echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                                 ?>
