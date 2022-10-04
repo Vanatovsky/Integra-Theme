@@ -470,15 +470,15 @@ jQuery(function () {
     openAccordionItem(item_box);
   });
 
-  $(".wc-proceed-to-checkout a").addClass(["rf-btn", "rf-btn-success"]);
+  $(".wc-proceed-to-checkout a").addClass(["btn-large", "success"]);
   $(
     ".checkout_coupon.woocommerce-form-coupon .button[name=apply_coupon]"
-  ).addClass(["rf-btn", "rf-btn-primary"]);
-  $("#place_order").addClass(["rf-btn", "rf-btn-success"]);
-  $(".button.wc-backward").addClass(["rf-btn", "rf-btn-success"]);
+  ).addClass(["btn", "primary"]);
+  $("#place_order").addClass(["btn", "success", "btn_order_complete"]);
+  $(".button.wc-backward").addClass(["btn", "success"]);
 
   $("body").on("updated_checkout", function () {
-    $("#place_order").addClass(["rf-btn", "rf-btn-success"]);
+    $("#place_order").addClass(["btn-large", "success", "btn_order_complete"]);
   });
 
   // let x_ext_4897 = 0;

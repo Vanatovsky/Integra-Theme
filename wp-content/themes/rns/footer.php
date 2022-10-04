@@ -49,10 +49,11 @@
 			<div class="col m12 l6 xl3">
 				<div class="rf_footer_widget_with_icon">
 					<img alt="телефон" src="/wp-content/themes/rns/assets/images/icons/phone_dark.svg" />
-					<p>Офис: <a href="tel:<?php echo get_theme_mod("rns_tel_2") ?>"><?php echo get_theme_mod("rns_tel_2") ?></a></p>
-					<p>Бухгалтерия: <a href="tel:<?php echo get_theme_mod("rns_tel_3") ?>"><?php echo get_theme_mod("rns_tel_3") ?></a></p>
+					<p>Горячая линия: <a href="tel:<?php echo get_theme_mod("rns_tel") ?>"><?php echo get_theme_mod("rns_tel") ?> (бесплатный)</a></p>
+					<p>Отдел продаж: <a href="tel:<?php echo get_theme_mod("rns_tel_2") ?>"><?php echo get_theme_mod("rns_tel_2") ?></a></p>
+					<p>Инженеры: <a href="tel:<?php echo get_theme_mod("rns_tel_3") ?>"><?php echo get_theme_mod("rns_tel_3") ?></a></p>
 					<p>Сервисная служба: <a href="tel:<?php echo get_theme_mod("rns_tel_4") ?>"><?php echo get_theme_mod("rns_tel_4") ?></a></p>
-					<p>Отдел продаж: <a href="tel:<?php echo get_theme_mod("rns_tel") ?>"><?php echo get_theme_mod("rns_tel") ?> (бесплатный)</a></p>
+					
 				</div>
 			</div>
 			<div class="col m12 l6 xl3">
@@ -64,7 +65,7 @@
 				<div class="rf_footer_widget_with_icon">
 					<img alt="кран" src="/wp-content/themes/rns/assets/images/icons/kran_dark.svg" />
 					<p>ИМ “Интегра Водный мир”: <a href="https://i2-shop.ru">i2-shop.ru</a></p>
-					<p>Интегра Строй-центр: <a href="https://i2-ww.ru">i2-ww.ru</a></p>
+					<p>“Интегра Стройцентр”: <a href="https://i2-ww.ru">i2-ww.ru</a></p>
 				</div>
 			</div>
 			<div class="col m12 l6 xl3">

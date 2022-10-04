@@ -138,12 +138,6 @@ add_action('after_setup_theme', 'rns_content_width', 0);
 
 
 
-add_filter('before_render_common_meta', 'my_ff_fu');
-function my_ff_fu($val)
-{
-	print_r($val);
-	return $val . '223323223323322332322332';
-}
 
 
 /**

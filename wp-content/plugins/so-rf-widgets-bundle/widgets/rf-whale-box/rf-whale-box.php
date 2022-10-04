@@ -52,7 +52,7 @@ class SiteOrigin_Whale_Widget extends SiteOrigin_Widget
 		$cats_1 = get_terms([
 			'hide_empty' => true,
 			'taxonomy' => 'product_cat',
-			'parent' => 3676
+			'parent' => 4021
 		]);
 
 		$cats_2 =  get_terms([
@@ -64,7 +64,7 @@ class SiteOrigin_Whale_Widget extends SiteOrigin_Widget
 		$cats_3 = get_terms([
 			'hide_empty' => true,
 			'taxonomy' => 'product_cat',
-			'parent' => 3676
+			'parent' => 4020
 		]);
 
 		$cats_4 =  get_terms([
@@ -76,7 +76,7 @@ class SiteOrigin_Whale_Widget extends SiteOrigin_Widget
 		$cats_5 = get_terms([
 			'hide_empty' => true,
 			'taxonomy' => 'product_cat',
-			'parent' => 3676
+			'parent' => 3684
 		]);
 
 

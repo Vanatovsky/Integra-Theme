@@ -26,7 +26,7 @@ defined('ABSPATH') || exit;
 
 	<?php else : ?>
 
-		<h3>Данные заказа</h3>
+		<h2>Оформление заказа</h2>
 
 	<?php endif; ?>
 

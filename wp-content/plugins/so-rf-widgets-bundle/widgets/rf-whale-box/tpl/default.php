@@ -186,9 +186,16 @@
 						<?php } ?>
 					</ul>
 				</div>
-
 			</div>
-
+			<div class="rf_bottom_button_box">
+				<?php
+				$shop_page_url = get_permalink(wc_get_page_id("shop"));
+				?>
+				<a href="<?php echo $shop_page_url ?>" class="btn-large rf_third rf-btn-left-icon waves-effect waves-light pulse">
+					<img alt="Каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" />
+					Полный каталог
+				</a>
+			</div>
 		</div>
 
 		<div id="text_5" class="rf_item">
@@ -342,6 +349,7 @@
 			</div>
 		</div>
 
+		<div id="pages_level_2_closer"></div>
 	</div>
 
 </div>

@@ -1,0 +1,38 @@
+.woocommerce-form-login-toggle {
+  display: none;
+}
+tfoot .cart-subtotal {
+  display: none;
+}
+.form-row-wide.create-account {
+  display: none;
+}
+
+.woocommerce-checkout-review-order-table {
+  .cart_item {
+    .product-name {
+      .variation {
+        dt {
+          display: none;
+        }
+        dt {
+          &:first {
+            display: table !important;
+          }
+        }
+        dd {
+          display: none;
+        }
+        dd {
+          &:first-of-type {
+            display: table !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wc_payment_methods {
+  display: none;
+}
