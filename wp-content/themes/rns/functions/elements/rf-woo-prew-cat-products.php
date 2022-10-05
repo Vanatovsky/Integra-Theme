@@ -30,7 +30,7 @@ function rf_woocommerce_template_loop_category_title($category)
         <?php if ($brands) { ?>
             <div class="list_brands">
                 <?php foreach ($brands as $br) { ?>
-                    <a class="rf_brand_link" href="#"><?php echo $br->name ?></a>
+                    <a class="rf_brand_link" href="<?php echo get_term_link($br, 'product_brand') ?>"><?php echo $br->name ?></a>
                 <?php } ?>
             </div>
         <?php } ?>

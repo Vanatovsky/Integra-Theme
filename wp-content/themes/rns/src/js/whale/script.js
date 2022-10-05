@@ -708,13 +708,14 @@ const close_btns = document.querySelectorAll(
 
 for (let cl_btn of close_btns) {
   cl_btn.addEventListener("click", () => {
-    closeLevel2Page(settings, camera, scene, level_2_group);
+    closeLevel2Page(settings, scene);
   });
 }
 
 const close_contacts_buttons = document.querySelector(
   ".rf_whale_level_1_modal_contacts .rf_close_item"
 );
+
 close_contacts_buttons.addEventListener("click", () => {
   goToLevel2(
     settings,
@@ -737,6 +738,7 @@ close_contacts_buttons.addEventListener("click", () => {
 const close_services_button = document.querySelector(
   ".listing_uslug_level_3 .rf_close_item"
 );
+
 close_services_button.addEventListener("click", () => {
   goToLevel2(
     settings,

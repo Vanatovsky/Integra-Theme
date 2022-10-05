@@ -7,7 +7,7 @@ nav.rf_header_navigation {
   height: $menu_desctop_height;
   @media screen and (max-width: $md) {
     margin-bottom: 80px;
-    position: relative;
+    position: fixed;
     height: auto;
   }
   & > .rf-container {
@@ -25,6 +25,7 @@ nav.rf_header_navigation {
       margin-right: 0px;
       padding-right: 0px;
     }
+
     .logo_box {
       position: relative;
       max-width: 260px;

@@ -121,6 +121,12 @@ class SiteOrigin_Widget_Button2_Widget extends SiteOrigin_Widget
 						'description' => __('Run this Javascript when the button is clicked. Ideal for tracking.', 'so-widgets-bundle'),
 					),
 
+					'open_modal' => array(
+						'type' => 'text',
+						'label' => 'Модальное окно',
+						'description' => "Введите ярлык модального окна, которое хотите вызвать",
+					),
+
 					'rel' => array(
 						'type' => 'text',
 						'label' => __('Rel attribute', 'so-widgets-bundle'),
@@ -185,6 +191,7 @@ class SiteOrigin_Widget_Button2_Widget extends SiteOrigin_Widget
 			'button_attributes' => $button_attributes,
 			'href' => !empty($instance['url']) ? $instance['url'] : '#',
 			'onclick' => !empty($attributes['onclick']) ? $attributes['onclick'] : '',
+			'modal' => !empty($attributes['open_modal']) ? $attributes['open_modal'] : '',
 			'text' => $instance['text'],
 			'btn_type' => $instance['btn_type'],
 			'btn_size' => $instance['btn_size'],

@@ -125,6 +125,10 @@ class SiteOrigin_Widget_Hero_Box_V2_Widget extends SiteOrigin_Widget
 						'type' => 'link',
 						'label' => 'Ссылка с кнопки',
 					),
+					'btn_modal' => array(
+						'type' => 'text',
+						'label' => 'Модальное окно',
+					),
 					'btn_type' => [
 						'type' => 'select',
 						'label' => 'Вид кнопки',

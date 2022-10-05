@@ -24,6 +24,7 @@ main .pl-grid-table {
     color: $color__text__main;
     box-shadow: none;
     display: flex;
+    height: auto;
     p {
       line-height: 20px;
       font-size: 14px;
@@ -48,7 +49,7 @@ main .pl-grid-table {
     }
     @media screen and (max-width: $sm) {
       line-height: 22px;
-      margin: 45px auto 20px;
+      margin: 45px auto 45px;
       a,
       span {
         font-size: 11px;

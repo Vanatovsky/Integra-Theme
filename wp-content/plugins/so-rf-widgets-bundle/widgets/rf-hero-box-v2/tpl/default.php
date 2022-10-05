@@ -65,9 +65,21 @@
 
 				<?php if ($button['btn_text']) { ?>
 					<?php if (!$button['btn_onclick']) { ?>
-						<a class="btn-large rf-<?= $button['btn_type'] ?>" href="<?php echo sow_esc_url($button['btn_link']) ?>"><?= $button['btn_text'] ?></a>
+						<a 
+						class="btn-large rf-<?= $button['btn_type'] ?> <?php if ($button['btn_modal']) { ?> modal-trigger <?php } ?>" 
+						href="<?php 
+						if ($button['btn_modal']) {
+							  echo "#".$button['btn_modal'];  
+						} else {
+							  echo sow_esc_url($button['btn_link']); 
+						} ?>"
+						>
+						<?= $button['btn_text'] ?>
+					</a>
 					<?php } else { ?>
-						<b class="btn-large rf-<?= $button['btn_type'] ?>" onclick="<?php echo $button['btn_onclick'] ?>"><?= $button['btn_text'] ?></b>
+						<b 
+						class="btn-large rf-<?= $button['btn_type'] ?>" 
+						onclick="<?php echo $button['btn_onclick'] ?>"><?= $button['btn_text'] ?></b>
 					<?php } ?>
 				<?php } ?>
 

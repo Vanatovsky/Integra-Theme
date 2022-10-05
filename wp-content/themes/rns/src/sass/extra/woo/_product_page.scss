@@ -364,7 +364,7 @@
 
 .rf_variation_attr_table_outer {
   position: relative;
-  padding-top: 120px;
+  padding-top: 150px;
   overflow-x: auto;
   margin-bottom: 60px;
   .rf_variation_attr_table {
@@ -448,13 +448,21 @@
         }
         .rf_img_variation_in_table {
           position: absolute;
-          top: -120px;
+          top: -150px;
           width: calc(100% - 60px);
           img {
             display: table;
             margin: 0 auto;
             max-height: 100px;
           }
+        }
+        .rf_article_in_vars {
+          font-size: 11px;
+          position: absolute;
+          top: -50px;
+          width: calc(100% - 60px);
+          text-align: center;
+          display: block;
         }
         .rf_add_to_cart {
           a {

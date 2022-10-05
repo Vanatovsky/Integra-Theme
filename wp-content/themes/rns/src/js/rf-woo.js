@@ -85,9 +85,7 @@ $(document).ready(function () {
   });
 
   $("#rf_add_to_cart_trigger").on("click", () => {
-    $(".woocommerce-variation-add-to-cart .single_add_to_cart_button").trigger(
-      "click"
-    );
+    $(".single_add_to_cart_button").trigger("click");
   });
 
   $("#quantity_trigger").on("change", function (el) {

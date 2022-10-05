@@ -30,8 +30,6 @@ add_action('woocommerce_after_single_product_summary', 'rf_close_div', 21);
 
 
 
-
-
 //Контент карточки
 add_action('woocommerce_single_product_summary', 'get_product_content', 5);
 function get_product_content()
@@ -42,6 +40,7 @@ function get_product_content()
     $arr_var_gallery = [];
 
     $url = wp_get_attachment_url(get_post_thumbnail_id($product->ID));
+
     if ($url) {
         $arr_var_gallery[] = get_post_thumbnail_id($product->ID);
     }
@@ -136,7 +135,7 @@ function get_product_content()
     //Создадим массив с данными вариаций
     foreach ($all_variations_data as $var_data) {
 
-        $one_obj = [$var_data->attribute_summary, $var_data->get_parent_id(), $var_data->get_variation_id(), json_encode($var_data->attributes)];
+        $one_obj = [$var_data->attribute_summary, $var_data->get_parent_id(), $var_data->get_variation_id(), $var_data->get_sku(), json_encode($var_data->attributes)];
 
         // echo "<pre>";
         // print_r($var_data->attributes);
@@ -228,6 +227,7 @@ function get_product_content()
                 <div class="row">
                     <div class="col s12">
                         <?php
+                        if ($product->is_type("variable")) {
                         $values = $product->get_default_attributes();
                         $default_attr_str = "<b>Выбрано:</b> - ";
                         foreach ($values as $key => $value) {
@@ -238,6 +238,7 @@ function get_product_content()
                         }
                         ?>
                         <p class="rf_choose_product_str"><?php echo $default_attr_str ?></p>
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -352,8 +353,8 @@ function get_product_content()
                     <?php for ($i = 0; $i < count($all_variations_attributes); $i++) { ?>
                         <div class="rf_row_item">
                             <?php if ($i === 0) { ?><b><?php } ?>
-                                <?php echo $all_variations_attributes[$i]['title'] ?>
-                                <?php if ($i === 0) { ?></b><?php } ?>
+                            <?php echo $all_variations_attributes[$i]['title'] ?>
+                            <?php if ($i === 0) { ?></b><?php } ?>
                         </div>
                     <?php } ?>
                     <div class="rf_row_item">СТОИМОСТЬ:</div>
@@ -364,10 +365,13 @@ function get_product_content()
 
 
                     <?php $var_num++ ?>
-                    <div class="rf_col_item rf_variation <?php if ($var_num === 1) { ?> rf_first_col_variation <?php } ?>" data-desc="<?php echo $col_data[0] ?>">
-                        <?php for ($x = 3; $x < count($col_data); $x++) { ?>
 
-                            <?php if ($x == 3) { ?>
+
+                    <div class="rf_col_item rf_variation <?php if ($var_num === 1) { ?> rf_first_col_variation <?php } ?>" data-desc="<?php echo $col_data[0] ?>">
+                        
+                        <?php for ($x = 4; $x < count($col_data); $x++) { ?>
+
+                            <?php if ($x == 4) { ?>
                                 <div class="rf_row_item">
 
                                     <?php $var_img_id = get_post_thumbnail_id($col_data[2]) ?>
@@ -379,6 +383,12 @@ function get_product_content()
                                         <div class="rf_img_variation_in_table">
                                             <img alt="<?php echo $col_data[0] ?>" src="<?php echo $var_img_arr[0] ?>" />
                                         </div>
+                                    <?php } ?>
+                                    
+                                    <?php if ($col_data[3]) { ?>
+                                    <div class="rf_article_in_vars">
+                                        <span><b>Арт.</b> <?php echo $col_data[3] ?></span>
+                                    </div>
                                     <?php } ?>
 
                                     <?php $price_var = $col_data[sizeof($col_data) - 1]; ?>
@@ -396,9 +406,10 @@ function get_product_content()
                                 </div>
                             <?php } else { ?>
                                 <div class="rf_row_item">
-                                    <?php if ($x === 3) { ?> <b> <?php } ?>
+
+                                    <?php if ($x === 4) { ?> <b> <?php } ?>
                                         <?php echo $col_data[$x] ?>
-                                        <?php if ($x === 3) { ?> </b><?php } ?>
+                                    <?php if ($x === 4) { ?> </b><?php } ?>
                                 </div>
                             <?php } ?>
 

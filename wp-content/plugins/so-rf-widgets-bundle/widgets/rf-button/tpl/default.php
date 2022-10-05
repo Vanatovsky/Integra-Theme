@@ -22,7 +22,11 @@
 	<?php if ($onclick) { ?>
 		<b class="<?php echo $btn_size ?> <?php echo $btn_type ?>" onclick="<?php echo $onclick ?>" <?php foreach ($button_attributes as $name => $val) echo $name . '="' . esc_attr($val) . '" ' ?>><?= $text ?></b>
 	<?php } else { ?>
-		<a class="<?php echo $btn_size ?> <?php echo $btn_type ?>" <?php foreach ($button_attributes as $name => $val) echo $name . '="' . esc_attr($val) . '" ' ?> href="<?php echo sow_esc_url($href) ?>">
+		<a 
+		class="<?php echo $btn_size ?> <?php echo $btn_type ?> <?php if ($modal){ ?> modal-trigger <?php } ?>" 
+		href="<?php if ($modal) { ?>#<?php echo $modal; } else { ?><?php echo sow_esc_url($href) ?><?php } ?>"
+		<?php foreach ($button_attributes as $name => $val) echo $name . '="' . esc_attr($val) . '" ' ?> 
+		>
 			<?= $text ?>
 		</a>
 	<?php } ?>

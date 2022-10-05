@@ -1,132 +1,129 @@
 .rf_shop_loop {
-    // background: $color__light;
-    @media screen and (max-width: $sm) {
-        .rf-container {
-            padding-left: 15px;
-            padding-right: 15px;
-            max-width: 100%;
-            overflow: hidden;
-        }
+  // background: $color__light;
+  @media screen and (max-width: $sm) {
+    .rf-container {
+      padding-left: 15px;
+      padding-right: 15px;
+      max-width: 100%;
+      overflow: hidden;
     }
+  }
 }
 
 .products {
-    .product-category {
-        .rf_subcategory_item {
-            margin-right: 40px;
-            margin-bottom: 60px;
-            @media screen and (max-width: $sm) {
-                margin-right: 5px;
-                margin-left: 5px;
-                margin-bottom: 50px;
-            }
-            .rf_img_box {
-                position: relative;
-                img {
-                    display: table;
-                    margin: 0 auto;
-                }
-                span {
-                    transition: all .4s;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    margin: auto;
-                    background-image: url("/assets/images/rectangle-blue.svg");
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    transform: scale(0);
-                }
-            }
-            h2 {
-                font-size: 20px;
-                color: $color__primary;
-                border-top: 2px solid $color__light;
-                padding-top: 20px;
-                @media screen and (max-width: $sm) {
-                    padding-top: 10px;
-                    font-size: 18px;
-                    text-align: center;
-                    margin-bottom: 5px;
-                }
-                mark {
-                    display: none;
-                }
-            }
-            .list_brands {
-                @media screen and (max-width: $sm) {
-                    text-align: center;
-                }
-                a.rf_brand_link {
-                    color: $color__secondary;
-                    font-weight: $font__weight__bold;
-                    &:hover {
-                        color: $color__primary;
-                    }
-                    &::after {
-                        content: "|";
-                        display: inline-block;
-                        margin-left: 5px;
-                    }
-                    &:last-child {
-                        &::after {
-                            content: "";
-                        }
-                    }
-                    @media screen and (max-width: $sm) {
-                        font-size: 12px;
-                    }
-                }
-            }
-            &:hover {
-                .rf_img_box {
-                    span {
-                        transform: scale(1.1);
-                    }
-                }
-                h2 {
-                    color: $color__secondary;
-                }
-            }
+  .product-category {
+    .rf_subcategory_item {
+      margin-right: 40px;
+      margin-bottom: 60px;
+      @media screen and (max-width: $sm) {
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-bottom: 50px;
+      }
+      .rf_img_box {
+        position: relative;
+        img {
+          display: table;
+          margin: 0 auto;
         }
+        span {
+          transition: all 0.4s;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          background-image: url("/assets/images/rectangle-blue.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          transform: scale(0);
+        }
+      }
+      h2 {
+        font-size: 20px;
+        color: $color__primary;
+        border-top: 2px solid $color__light;
+        padding-top: 20px;
+        @media screen and (max-width: $sm) {
+          padding-top: 10px;
+          font-size: 18px;
+          text-align: center;
+          margin-bottom: 5px;
+        }
+        mark {
+          display: none;
+        }
+      }
+      .list_brands {
+        @media screen and (max-width: $sm) {
+          text-align: center;
+        }
+        a.rf_brand_link {
+          color: $color__secondary;
+          font-weight: $font__weight__bold;
+          &:hover {
+            color: $color__primary;
+          }
+          &::after {
+            content: "|";
+            display: inline-block;
+            margin-left: 5px;
+          }
+          &:last-child {
+            &::after {
+              content: "";
+            }
+          }
+          @media screen and (max-width: $sm) {
+            font-size: 12px;
+          }
+        }
+      }
+      &:hover {
+        .rf_img_box {
+          span {
+            transform: scale(1.1);
+          }
+        }
+        h2 {
+          color: $color__secondary;
+        }
+      }
     }
+  }
 }
 
 .woocommerce-products-header__title {
-    max-width: $width_work_box_desctop;
-    display: block;
-    margin: 0 auto 30px;
-    font-size: 32px;
-    @media screen and (max-width: $sm) {
-        font-size: 22px;
-        line-height: 28px;
-        //text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+  max-width: $width_work_box_desctop;
+  display: block;
+  margin: 0 auto 30px;
+  font-size: 32px;
+  @media screen and (max-width: $sm) {
+    font-size: 22px;
+    line-height: 28px;
+  }
 }
 
 .woocommerce-result-count {
-    @media screen and (max-width: $sm) {
-        font-size: 12px;
-        text-align: center;
-    }
+  @media screen and (max-width: $sm) {
+    font-size: 12px;
+  }
 }
 
 .rf_bottom_description_box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    @media screen and (max-width: $sm) {
-        grid-template-columns: 1fr;
-    }
-    .rf_item {
-        padding-right: 40px;
-        margin-top: 40px;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: $sm) {
+    grid-template-columns: 1fr;
+  }
+  .rf_item {
+    padding-right: 40px;
+    margin-top: 40px;
+  }
 }
 
 .rf_bottom_description_header_box {
-    margin-top: 80px;
+  margin-top: 80px;
 }

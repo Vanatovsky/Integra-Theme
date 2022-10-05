@@ -49,6 +49,10 @@
       color: $color__text__main;
       min-height: 60px;
       font-size: 12px;
+      @media screen and (max-width: $sm) {
+        margin-bottom: 20px;
+        font-size: 11px;
+      }
     }
     .rf_price {
       font-size: 20px;
@@ -57,7 +61,7 @@
       margin-bottom: 20px;
       @media screen and (max-width: $sm) {
         font-size: 17px;
-        text-align: center;
+        //text-align: center;
         margin-bottom: 10px;
       }
       .rf_know_price {

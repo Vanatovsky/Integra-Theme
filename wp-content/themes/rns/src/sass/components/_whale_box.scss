@@ -148,10 +148,12 @@
   right: -860px;
   padding: 0;
   transition: all 0.5s;
+
   @media screen and (max-width: $md) {
     top: 0;
     //width: 100vw;
   }
+
   &.open {
     right: 0px;
   }
@@ -168,10 +170,16 @@
     background-image: url("/assets/images/whale-whare-1.png");
     background-position: 151% 100%;
     background-repeat: no-repeat;
+    z-index: 100;
     @media screen and (max-width: $md) {
       width: 100vw;
       padding: 50px 20px 50px 50px;
     }
+    @media screen and (max-width: $sm) {
+      top: 160px;
+      height: calc(100vh - 160px);
+    }
+
     &.open {
       transition: all 0.3s;
       right: 0;
@@ -204,11 +212,15 @@
         font-size: 40px;
         line-height: 44px;
       }
+      @media screen and (max-width: $sm) {
+        font-size: 24px;
+        font-weight: $font__weight__bold;
+      }
     }
     .inside_content {
       padding: 20px 30px 20px 0;
       margin-bottom: 20px;
-      max-height: 50vh;
+      max-height: 40vh;
       overflow-y: auto;
       clear: both;
       p {
@@ -294,14 +306,14 @@
       }
     }
   }
-  .pages_level_2_closer {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(27, 120, 136, 0.3);
-  }
+}
+
+#pages_level_2_closer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100vw;
 }
 
 .dg.ac {
