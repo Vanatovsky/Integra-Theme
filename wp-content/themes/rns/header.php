@@ -126,7 +126,14 @@
 			<div class="rf_middle_box">
 				<div class="rf_item">
 					<a class="rf_catalog_menu btn-large waves-effect rf-third" href="<?php echo wc_get_page_permalink('shop') ?>">
-						<img alt="каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" /> Каталог
+						<img alt="каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" /> 
+						Каталог
+					</a>
+					<a class="rf_mobile_cart_in_catalog_wrapper " href="<?php echo wc_get_cart_url() ?>">
+						<div class="rf_mobile_cart_in_catalog waves-effect">
+							<p>Ваша корзина <span class="rf_bage"><?php echo WC()->cart->get_cart_contents_count(); ?></span></p>
+							<p class="rf_cart_price"><?php echo WC()->cart->get_cart_subtotal(); ?></p>
+						</div>
 					</a>
 					<div class="rf_catalog_navigation">
 						<?php wp_nav_menu([
@@ -147,7 +154,7 @@
 				</div>
 				<div class="rf_item rf_link_with_text">
 					<a href="<?php echo wc_get_cart_url() ?>" class="waves-effect waves-light">
-						<img alt="Запросить КП" src="/wp-content/themes/rns/assets/images/icons/cart.svg" />
+						<img alt="Корзина" src="/wp-content/themes/rns/assets/images/icons/cart.svg" />
 						<p>Ваша корзина <span class="rf_bage"><?php echo WC()->cart->get_cart_contents_count(); ?></span></p>
 						<p class="rf_cart_price"><?php echo WC()->cart->get_cart_subtotal(); ?></p>
 					</a>
@@ -161,6 +168,11 @@
 						</div>
 					</a>
 				</div>
+			</div>
+			<div class="rf_mobile_right_corner">
+				<a href="tel:<?php get_theme_mod("rns_tel") ?>">
+					<img alt="Позвонить" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/phone_arrow.svg" >
+				</a>
 			</div>
 		</div>
 

@@ -49,7 +49,7 @@
 			<div class="col m12 l6 xl3">
 				<div class="rf_footer_widget_with_icon">
 					<img alt="телефон" src="/wp-content/themes/rns/assets/images/icons/phone_dark.svg" />
-					<p>Горячая линия: <a href="tel:<?php echo get_theme_mod("rns_tel") ?>"><?php echo get_theme_mod("rns_tel") ?> (бесплатный)</a></p>
+					<p>Горячая линия: <a href="tel:<?php echo get_theme_mod("rns_tel") ?>"><?php echo get_theme_mod("rns_tel") ?> (бесп.)</a></p>
 					<p>Отдел продаж: <a href="tel:<?php echo get_theme_mod("rns_tel_2") ?>"><?php echo get_theme_mod("rns_tel_2") ?></a></p>
 					<p>Инженеры: <a href="tel:<?php echo get_theme_mod("rns_tel_3") ?>"><?php echo get_theme_mod("rns_tel_3") ?></a></p>
 					<p>Сервисная служба: <a href="tel:<?php echo get_theme_mod("rns_tel_4") ?>"><?php echo get_theme_mod("rns_tel_4") ?></a></p>

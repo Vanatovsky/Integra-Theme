@@ -210,11 +210,12 @@ export async function createLevel2Texts(
   const text_3 = new THREE.Mesh(textGeometry_3, textMaterial);
   text_3.layers.enable(settings.layer_bloom_scene);
   const text_3_plane_helper_mesh = new THREE.Mesh(
-    new THREE.PlaneBufferGeometry(1.8, 0.5, 2),
+    new THREE.PlaneBufferGeometry(1.5, 0.3, 2),
     materialPlaneHelterText
   );
   //text_3_plane_helper_mesh.layers.enable(settings.layer_bloom_scene)
-  text_3_plane_helper_mesh.position.x += 0.9;
+  text_3_plane_helper_mesh.position.x += 0.7;
+  text_3_plane_helper_mesh.position.y -= 0.1;
   text_3_group.position.x = settings.text_3_position_x;
   text_3_group.position.y = settings.text_3_position_y;
   text_3_group.position.z = settings.text_3_position_z;

@@ -36,49 +36,46 @@
 @import "components/datepicker";
 @import "components/timepicker";
 // Fix
-.input-field>input[type=text]+label,
-.input-field>textarea+label {
-    pointer-events: none;
+.input-field > input[type="text"] + label,
+.input-field > textarea + label {
+  pointer-events: none;
 }
 
 //Extra Classes
 .modal-small {
-    max-width: 600px;
-    .modal-content {
-        padding: 60px;
+  max-width: 600px;
+  .modal-content {
+    padding: 60px;
+    @media screen and (max-width: "992px") {
+      padding: 30px;
     }
+  }
 }
 
 .btn {
-    text-transform: none;
+  text-transform: none;
 }
 
 .c_primary {
-    @extend .blue,
-    .darken-4;
+  @extend .blue, .darken-4;
 }
 
 .c_secondary {
-    @extend .light-blue,
-    .darken-1;
+  @extend .light-blue, .darken-1;
 }
 
 .c_third {
-    @extend .teal,
-    .lighten-2;
+  @extend .teal, .lighten-2;
 }
 
 .c_primary_text {
-    @extend .blue-text,
-    .text-darken-4;
+  @extend .blue-text, .text-darken-4;
 }
 
 .c_secondary_text {
-    @extend .light-blue-text,
-    .text-darken-1;
+  @extend .light-blue-text, .text-darken-1;
 }
 
 .c_third_text {
-    @extend .teal-text,
-    .lighten-2;
+  @extend .teal-text, .lighten-2;
 }
