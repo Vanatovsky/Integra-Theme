@@ -19,11 +19,18 @@
 	<div class="rf_whale_level_1_modal_contacts">
 		<h2>Контакты</h2>
 
-		<span class="rf_close_item">+</span>
+		<span class="rf_close_item">
+			<img alt="Закрыть окно" src="/wp-content/themes/rns/assets/images/icons/close-blue.svg" />
+		</span>
 		<div class="rf_phones_links">
 			<a href="tel:<?php echo get_theme_mod("rns_tel") ?>"><?php echo get_theme_mod("rns_tel") ?> (бесплатно)</a>
 			<a href="tel:<?php echo get_theme_mod("rns_tel_2") ?>"><?php echo get_theme_mod("rns_tel_2") ?></a>
 		</div>
+		
+		<div class="rf_form_box">
+			<?php echo do_shortcode('[contact-form-7 id="5972" title="Главная контактная форма"]') ?>
+		</div>
+
 		<div class="rf_links_conts_list">
 			<ul>
 				<li>
@@ -52,15 +59,14 @@
 				</li>
 			</ul>
 		</div>
-		<div class="rf_form_box">
-			<?php echo do_shortcode('[contact-form-7 id="5972" title="Главная контактная форма"]') ?>
-		</div>
 	</div>
 
 
 	<div class="listing_uslug_level_3">
 
-		<span class="rf_close_item">+</span>
+		<span class="rf_close_item">
+			<img alt="закрыть" src="/wp-content/themes/rns/assets/images/icons/close-white.svg"/>
+		</span>
 
 		<h2>Услуги нашей <br /> компании</h2>
 		<p>«Интегра Инжиниринг» – это группа компаний,
@@ -99,7 +105,9 @@
 	<div class="pages_level_2">
 
 		<div id="text_4" class="rf_item">
-			<span class="rf_close_item">+</span>
+			<span class="rf_close_item">
+				<img alt="Закрыть окно" src="/wp-content/themes/rns/assets/images/icons/close-white.svg" />
+			</span>
 			<h2>Системы очистки воды <br />(водоподготовки)</h2>
 			<div class="inside_content">
 				<div class="rf_category_listing_whale">
@@ -148,7 +156,9 @@
 		</div>
 
 		<div id="text" class="rf_item">
-			<span class="rf_close_item">+</span>
+		<span class="rf_close_item">
+				<img alt="Закрыть окно" src="/wp-content/themes/rns/assets/images/icons/close-white.svg" />
+			</span>
 			<h2>Системы<br /> Автоматизации</h2>
 			<div class="inside_content">
 
@@ -199,7 +209,9 @@
 		</div>
 
 		<div id="text_5" class="rf_item">
-			<span class="rf_close_item">+</span>
+			<span class="rf_close_item">
+				<img alt="Закрыть окно" src="/wp-content/themes/rns/assets/images/icons/close-white.svg" />
+			</span>
 			<h2>Отопление и котельные</h2>
 			<!-- <p class="rf_after_header">Главное - надежность!</p> -->
 			<div class="inside_content">
@@ -250,7 +262,9 @@
 		</div>
 
 		<div id="text_2" class="rf_item">
-			<span class="rf_close_item">+</span>
+			<span class="rf_close_item">
+				<img alt="Закрыть окно" src="/wp-content/themes/rns/assets/images/icons/close-white.svg" />
+			</span>
 			<h2>Системы очистки<br /> стоков</h2>
 			<div class="inside_content">
 				<div class="rf_category_listing_whale">
@@ -300,7 +314,9 @@
 		</div>
 
 		<div id="text_3" class="rf_item">
-			<span class="rf_close_item">+</span>
+			<span class="rf_close_item">
+				<img alt="Закрыть окно" src="/wp-content/themes/rns/assets/images/icons/close-white.svg" />
+			</span>
 			<h2>Насосное<br /> оборудование</h2>
 			<div class="inside_content">
 				<div class="rf_category_listing_whale">

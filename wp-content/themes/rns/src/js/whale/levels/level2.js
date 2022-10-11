@@ -25,71 +25,80 @@ export function raycasterListenerTextesLevel2(
   pointCursorGroup,
   level_2_group
 ) {
-  let intersects = raycaster.intersectObjects(text_objs_for_raycaster);
+  if (!settings.opening_page_level_2) {
+    let intersects = raycaster.intersectObjects(text_objs_for_raycaster);
 
-  for (const planes_helper_text of text_objs_for_raycaster) {
-    planes_helper_text.parent.children[0].material = textMaterial;
-  }
-
-  if (intersects.length > 0 && settings.whale_home) {
-    console.log("settings.whale_home", settings.whale_home);
-
-    $("canvas").css("cursor", "pointer");
-
-    for (const intersect_group of intersects) {
-      intersect_group.object.parent.children[0].material = textHoverMaterial;
-
-      if (
-        settings.active_text_group_level_2_name !==
-          intersect_group.object.parent.name &&
-        settings.whale_home
-      ) {
-        settings.active_text_group_level_2_name =
-          intersect_group.object.parent.name;
-
-        if (settings.cursor_can_move) {
-          animate_cursor_move = new TWEEN.Tween(pointCursorGroup.position)
-            .to(
-              {
-                x: intersect_group.object.parent.position.x - 0.2,
-                y: intersect_group.object.parent.position.y + 0.05,
-                z: intersect_group.object.parent.position.z,
-              },
-              1000
-            )
-            .easing(TWEEN.Easing.Circular.Out)
-            .start();
-        }
-
-        //console.log(settings.cursor_can_move);
-
-        active_text_group = intersect_group.object.parent;
-      }
-
-      if (!settings.mobile_version) {
-        document.querySelector("canvas.webgl").addEventListener("click", () => {
-          settings.cursor_can_move = false;
-          openLevel2Page(settings, scene);
-        });
-      } else {
-        if (!settings.opening_page_level_2) {
-          settings.cursor_can_move = false;
-          settings.opening_page_level_2 = true;
-          openLevel2Page(settings, scene);
-        }
-      }
+    for (const planes_helper_text of text_objs_for_raycaster) {
+      planes_helper_text.parent.children[0].material = textMaterial;
     }
-  } else {
-    $("canvas").css("cursor", "default");
-    settings.active_text_group_level_2_name = "";
-    if (!settings.mobile_version) {
-      settings.cursor_can_move = true;
-      document
-        .querySelector("canvas.webgl")
-        .removeEventListener("click", openLevel2Page(settings, scene));
+
+    if (intersects.length > 0) {
+      console.log("We have instance. settings.whale_home", settings.whale_home);
+
+      //$("canvas").css("cursor", "pointer");
+      document.querySelector("canvas.webgl").style.cursor = "pointer";
+
+      for (const intersect_group of intersects) {
+        intersect_group.object.parent.children[0].material = textHoverMaterial;
+
+        if (
+          settings.active_text_group_level_2_name !==
+            intersect_group.object.parent.name &&
+          settings.whale_home
+        ) {
+          settings.active_text_group_level_2_name =
+            intersect_group.object.parent.name;
+
+          if (settings.cursor_can_move) {
+            animate_cursor_move = new TWEEN.Tween(pointCursorGroup.position)
+              .to(
+                {
+                  x: intersect_group.object.parent.position.x - 0.2,
+                  y: intersect_group.object.parent.position.y + 0.05,
+                  z: intersect_group.object.parent.position.z,
+                },
+                1000
+              )
+              .easing(TWEEN.Easing.Circular.Out)
+              .start();
+          }
+
+          //console.log(settings.cursor_can_move);
+
+          active_text_group = intersect_group.object.parent;
+        }
+
+        if (!settings.mobile_version) {
+          document
+            .querySelector("canvas.webgl")
+            .addEventListener("click", () => {
+              settings.cursor_can_move = false;
+              openLevel2Page(settings, scene);
+            });
+        } else {
+          if (!settings.opening_page_level_2) {
+            document.querySelector("canvas.webgl");
+            settings.cursor_can_move = false;
+            openLevel2Page(settings, scene);
+          }
+        }
+      }
+    } else {
+      $("canvas").css("cursor", "default");
+      settings.active_text_group_level_2_name = "";
+      if (!settings.mobile_version) {
+        settings.cursor_can_move = true;
+        document
+          .querySelector("canvas.webgl")
+          .removeEventListener("click", openLevel2Page);
+      }
     }
   }
 }
+
+/**
+ * Text menu group
+ */
 
 export async function createLevel2Texts(
   gui,
@@ -541,11 +550,23 @@ export async function createLevel2Texts(
 export function openLevel2Page(settings, scene) {
   //document.removeEventListener("click", openLevel2Page);
 
-  console.group("openLevel2Page func");
-  console.log("We start doing this function");
-  console.groupEnd();
+  // console.group("openLevel2Page func");
+  // console.log("We start doing this function");
+  // console.log(
+  //   "settings.whale_home",
+  //   settings.whale_home,
+  //   settings.mobile_version,
+  //   settings.opening_page_level_2
+  // );
+  // console.groupEnd();
 
-  if (settings.active_text_group_level_2_name) {
+  if (
+    settings.active_text_group_level_2_name &&
+    settings.whale_home &&
+    !settings.opening_page_level_2
+  ) {
+    settings.opening_page_level_2 = true;
+
     /**
      * Background closer
      */
@@ -633,9 +654,7 @@ export function openLevel2Page(settings, scene) {
       .to({ x: -0.1, y: -0.3, z: 0.8 }, 500)
       .start();
 
-    setTimeout(() => {
-      settings.opening_page_level_2 = false;
-    }, 1000);
+    settings.active_text_group_level_2_name = "";
   }
 }
 
@@ -696,5 +715,6 @@ export function closeLevel2Page(settings, scene) {
     .start()
     .onComplete(() => {
       settings.cursor_can_move = true;
+      settings.opening_page_level_2 = false;
     });
 }

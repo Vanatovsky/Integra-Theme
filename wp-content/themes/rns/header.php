@@ -91,7 +91,7 @@
 
 		#rf_loader_box .preloader-wrapper.loaded {
 			transform: scale(0);
-			top: -500px;
+			top: -800px;
 		}
 	</style>
 

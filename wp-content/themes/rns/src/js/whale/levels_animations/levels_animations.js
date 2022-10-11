@@ -78,6 +78,7 @@ export function firstAnimationWhaleAndCamera(
       mixer.clipAction(animations[0]).play();
       document.querySelector("#bottom_buttons_whale").classList.add("open");
       settings.camera_look_at_center = true;
+      settings.active_level = 2;
       settings.whale_home = true;
     });
 

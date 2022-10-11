@@ -28,6 +28,11 @@ const sizes = {
   width: box_canvas.clientWidth / 2,
   height: 250,
 };
+if (document.documentElement.clientWidth <= 768) {
+  sizes.width = box_canvas.clientWidth;
+  sizes.height = 250;
+}
+console.log("document width", document.documentElement.clientWidth);
 
 let windowHalfX = sizes.width / 2;
 let windowHalfY = sizes.height / 2;
@@ -54,7 +59,7 @@ if (window.innerWidth <= 960) {
 
 // Canvas
 const canvas = document.querySelector("canvas.whale_product_webgl");
-const container = document.getElementById("rf_integra_main_whale_box");
+//const container = document.getElementById("rf_integra_main_whale_box");
 
 // Scene
 const scene = new THREE.Scene();
@@ -69,7 +74,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   30
 );
-camera.name = "camera1";
+camera.name = "camera2";
 camera.position.set(0, 0, 1.7);
 scene.add(camera);
 
@@ -90,15 +95,15 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.autoClear = false;
+//renderer.autoClear = false;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-const renderScene = new RenderPass(scene, camera);
+//const renderScene = new RenderPass(scene, camera);
 
 window.addEventListener("resize", () => {
   // Update sizes
-  sizes.width = document.querySelector(".rf_box_with_whale_white").width;
-  sizes.height = 250;
+  // sizes.width = document.width;
+  // sizes.height = 350;
 
   // Update camera
   camera.aspect = sizes.width / sizes.height;
@@ -113,7 +118,7 @@ window.addEventListener("resize", () => {
 
 const init = () => {
   // Events
-  document.addEventListener("mousemove", onDocumentMouseMove);
+  //document.addEventListener("mousemove", onDocumentMouseMove);
 
   /**
    * Lights
@@ -139,6 +144,7 @@ const init = () => {
 
   whale_mesh.material = whale_material;
   whale_model.rotation.y = Math.PI / 2.05;
+
   whale_model.position.x = -0.3;
   scene.add(whale_model);
 
@@ -147,6 +153,12 @@ const init = () => {
   console.log(whale_mesh_2);
   whale_mesh_2.material = whale_material_2;
   scene.add(whale_model_2);
+
+  if (document.documentElement.clientWidth <= 768) {
+    whale_model.rotation.y = Math.PI / 3.2;
+    camera.position.z = 2.3;
+    camera.position.x = 0.3;
+  }
 
   /**
    * Whale sceleton animations

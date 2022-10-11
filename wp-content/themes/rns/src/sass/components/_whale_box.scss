@@ -185,17 +185,12 @@
       right: 0;
     }
     .rf_close_item {
-      transform: rotate(45deg);
-      font-family: "Times New Roman";
       position: absolute;
       right: 25px;
-      top: 0;
-      font-size: 120px;
-      font-weight: 100;
-      color: #fff;
+      top: 25px;
       cursor: pointer;
       @media screen and (max-width: $md) {
-        top: -40px;
+        top: 20px;
       }
     }
     .rf_after_header {
@@ -322,7 +317,7 @@
 
 .rf_whale_level_1_modal_contacts {
   border-radius: $border__radius__classic__box;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 80px;
   position: fixed;
   right: 50px;
@@ -334,6 +329,9 @@
     @media screen and (max-width: $md) {
       top: 0;
     }
+    @media screen and (max-width: $sm) {
+      top: 160px;
+    }
   }
   @media screen and (max-width: $md) {
     padding: 0 15px 50px 50px;
@@ -342,14 +340,9 @@
     border-radius: 0;
   }
   .rf_close_item {
-    transform: rotate(45deg);
-    font-family: "Times New Roman";
     position: absolute;
     right: 25px;
     top: 54px;
-    font-size: 120px;
-    font-weight: 100;
-    color: $color__secondary;
     cursor: pointer;
     @media screen and (max-width: $md) {
       top: -40px;
@@ -369,6 +362,7 @@
   }
   .rf_links_conts_list {
     margin-bottom: 30px;
+    margin-top: 30px;
     ul {
       display: flex;
       justify-content: space-around;
@@ -383,6 +377,9 @@
         span {
           clear: both;
           font-size: 12px;
+          @media screen and (max-width: $sm) {
+            font-size: 10px;
+          }
         }
       }
     }
@@ -429,16 +426,14 @@
     padding: 50px 15px 50px 50px;
     overflow-x: hidden;
   }
+  @media screen and (max-width: $sm) {
+    height: calc(100vh - 160px);
+    top: 160px;
+  }
   .rf_close_item {
-    transform: rotate(45deg);
-    font-family: "Times New Roman";
     position: absolute;
     right: 25px;
-    right: 75px;
     top: 135px;
-    font-size: 120px;
-    font-weight: 100;
-    color: #fff;
     cursor: pointer;
     @media screen and (max-width: $md) {
       top: -40px;
@@ -483,12 +478,6 @@
           }
         }
       }
-      // &:nth-of-type(2n) {
-      //     background-color: $color__light;
-      //     h3 {
-      //         //border-bottom: 2px solid #fff;
-      //     }
-      // }
     }
   }
 }
