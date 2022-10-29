@@ -31,6 +31,10 @@
 			<?php echo do_shortcode('[contact-form-7 id="5972" title="Главная контактная форма"]') ?>
 		</div>
 
+		<div class="rf_y_map_in_cont">
+		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0ed84af1f79594ce4473f27f450b253648b3f06d97c6dc779743d867101a0a9e&amp;width=90%&amp;height=250&amp;lang=ru_RU&amp;scroll=false"></script>
+		</div>
+
 		<div class="rf_links_conts_list">
 			<ul>
 				<li>

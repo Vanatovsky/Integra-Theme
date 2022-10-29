@@ -42,6 +42,7 @@
       z-index: 10;
       @media screen and (max-width: $md) {
         right: 0;
+        display: none !important;
       }
     }
     .xwc--ls-input {
@@ -64,7 +65,8 @@
     }
   }
   .xwc--ls-button {
-    top: 6px !important;
+    top: 0px !important;
+    opacity: 0.3;
     background-image: url("/assets/images/icons/search.svg") !important;
   }
   .xwc--ls-results {

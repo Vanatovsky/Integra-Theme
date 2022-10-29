@@ -1,91 +1,99 @@
 .rf_journal_blocks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    @media screen and (max-width: $sm) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: $sm) {
+    grid-template-columns: 1fr;
+  }
+  .rf_main_content {
+    .rf_lil_header {
+      font-size: 14px;
+      font-weight: $font__weight__bold;
+      color: $color__text__gray;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 60px;
+      margin-bottom: 60px;
+      margin-top: 0;
+      color: $color__secondary;
+      @media screen and (max-width: $sm) {
+        font-size: 40px;
+      }
+    }
+    .rf_mini_blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      @media screen and (max-width: $sm) {
         grid-template-columns: 1fr;
+      }
+      .rf_item {
+        padding-right: 50px;
+        @media screen and (max-width: $sm) {
+          margin-bottom: 40px;
+        }
+        .rf_item_header {
+          font-size: 22px;
+          color: $color__secondary;
+          margin-bottom: 20px;
+        }
+        .rf_item_text {
+          font-size: 16px;
+        }
+      }
     }
+  }
+  .rf_extra_content {
+    padding: 0;
+
+    .rf_media_image {
+      display: table;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .rf_extra_links {
+      padding-top: 180px;
+      text-align: center;
+      @media screen and (max-width: $sm) {
+        padding-top: 40px !important;
+      }
+      a,
+      b {
+        font-size: 16px;
+        color: $color__secondary;
+        max-width: 600px;
+        display: block;
+        text-align: right;
+        margin-bottom: 15px;
+        &:hover {
+          filter: grayscale(1);
+        }
+      }
+      img {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 0 20px;
+        position: relative;
+        top: 8px;
+      }
+    }
+  }
+  &.rf_white_theme {
     .rf_main_content {
-        .rf_lil_header {
-            font-size: 14px;
-            font-weight: $font__weight__bold;
-            color: $color__text__gray;
-            margin-bottom: 10px;
+      .rf_lil_header {
+        color: #fff;
+      }
+      h2 {
+        color: #fff;
+      }
+      .rf_mini_blocks {
+        .rf_item {
+          .rf_item_header,
+          .rf_item_text {
+            color: #fff;
+          }
         }
-        h2 {
-            font-size: 60px;
-            margin-bottom: 60px;
-            margin-top: 0;
-            @media screen and (max-width: $sm) {
-                font-size: 40px;
-            }
-        }
-        .rf_mini_blocks {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            @media screen and (max-width: $sm) {
-                grid-template-columns: 1fr;
-            }
-            .rf_item {
-                padding-right: 50px;
-                .rf_item_header {
-                    font-size: 22px;
-                    color: $color__secondary;
-                    margin-bottom: 20px;
-                }
-                .rf_item_text {
-                    font-size: 14px;
-                }
-            }
-        }
+      }
     }
-    .rf_extra_content {
-        padding: 0;
-        .rf_media_image {
-            display: table;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        .rf_extra_links {
-            padding-top: 180px;
-            text-align: center;
-            a,
-            b {
-                font-size: 16px;
-                color: $color__secondary;
-                max-width: 600px;
-                display: block;
-                text-align: right;
-                margin-bottom: 15px;
-                &:hover {
-                    filter: grayscale(1);
-                }
-            }
-            img {
-                display: inline-block;
-                width: 30px;
-                height: 30px;
-                margin: 0 20px;
-                position: relative;
-                top: 8px;
-            }
-        }
-    }
-    &.rf_white_theme {
-        .rf_main_content {
-            .rf_lil_header {
-                color: #fff;
-            }
-            h2 {
-                color: #fff;
-            }
-            .rf_mini_blocks {
-                .rf_item {
-                    .rf_item_header,
-                    .rf_item_text {
-                        color: #fff;
-                    }
-                }
-            }
-        }
-    }
+  }
 }

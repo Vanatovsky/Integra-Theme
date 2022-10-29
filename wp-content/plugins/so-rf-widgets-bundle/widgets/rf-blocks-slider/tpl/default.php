@@ -58,7 +58,9 @@
 				<?php if ($img_before_arr) { ?>
 					<img class="rf_img_before" src="<?php echo $img_before_arr[0] ?>" />
 				<?php } ?>
+				<?php if ($section['header']) {  ?>
 				<h2><?php echo $section['header'] ?></h2>
+				<?php } ?>
 				<?php echo $section['text'] ?>
 				<?php if ($img_after_arr) { ?>
 					<img class="rf_img_after" src="<?php echo $img_after_arr[0] ?>" />
@@ -131,7 +133,9 @@
 				<?php if ($img_before_arr) { ?>
 					<img class="rf_img_before" src="<?php echo $img_before_arr[0] ?>" />
 				<?php } ?>
+				<?php if ($section['header']) {  ?>
 				<h2><?php echo $section['header'] ?></h2>
+				<?php } ?>
 				<?php echo $section['text'] ?>
 				<?php if ($img_after_arr) { ?>
 					<img class="rf_img_after" src="<?php echo $img_after_arr[0] ?>" />

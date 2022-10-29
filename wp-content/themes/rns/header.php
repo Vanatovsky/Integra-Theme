@@ -171,7 +171,7 @@
 			</div>
 			<div class="rf_mobile_right_corner">
 				<a href="tel:<?php get_theme_mod("rns_tel") ?>">
-					<img alt="Позвонить" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/phone_arrow.svg" >
+					<img alt="Позвонить" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/phone-white-2.svg" >
 				</a>
 			</div>
 		</div>

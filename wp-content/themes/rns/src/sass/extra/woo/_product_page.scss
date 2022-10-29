@@ -12,6 +12,9 @@
     overflow: hidden;
   }
   .rf_right {
+    @media screen and (max-width: $sm) {
+      order: 0;
+    }
     padding-left: 0px;
     //background: $color__light;
     .rf_sku {
@@ -28,6 +31,7 @@
 
     .owl-carousel-product-page {
       position: relative;
+      margin-bottom: 40px;
       .rf-item-slider {
         max-width: 100%;
         width: auto;
@@ -118,18 +122,21 @@
   .rf_left {
     padding: 0 40px 0 0;
     @media screen and (max-width: $sm) {
-      padding: 0 20px;
+      padding: 0;
+      order: 1;
     }
     h1 {
       font-size: 42px;
       line-height: 40px;
-      margin-top: 0;
+      margin-top: 20px;
       margin-bottom: 60px;
       @media screen and (max-width: $md) {
         font-size: 32px;
       }
     }
-
+    .rf_excerpt {
+      font-size: 16px;
+    }
     .short_desc {
       line-height: 1.6;
     }
@@ -302,19 +309,27 @@
   padding: 60px 0;
 
   .rf_product_text_content {
+    font-size: 16px;
+    line-height: 1.4;
     .rf_header {
-      font-size: 44px;
+      font-size: 42px;
+      @media screen and (max-width: $md) {
+        font-size: 32px;
+        line-height: 1.2;
+      }
     }
+
     p {
       margin-bottom: 20px;
     }
     .rf_box_with_whale_white {
       canvas {
-        max-width: 100%;
+        max-width: calc(100% - 40px);
       }
     }
     .rf_box_with_content_text {
       padding-top: 100px;
+
       @media screen and (max-width: 768px) {
         padding-top: 0;
       }
@@ -329,6 +344,7 @@
   color: #fff;
   max-width: $width_work_box_desctop;
   margin: 0 auto 80px;
+
   a {
     color: #fff;
     font-weight: bold;
@@ -386,31 +402,32 @@
       &:nth-of-type(1) {
         flex-grow: 0;
         position: absolute;
-        left: 25px;
+        left: 0px;
         width: 360px;
         max-width: 360px;
         @media screen and (max-width: $sm) {
-          width: 180px;
-          max-width: 180px;
+          width: 240px;
+          max-width: 240px;
         }
         .rf_row_item {
           white-space: normal;
           font-size: 11px;
-          line-height: 30px;
+          line-height: 1.1;
           height: 35px;
           padding-top: 5px;
           padding-left: 10px;
           text-align: left;
           @media screen and (max-width: $sm) {
             height: 45px;
-            white-space: nowrap;
+            padding-top: 12px;
+            //white-space: nowrap;
           }
         }
       }
       &:nth-of-type(2) {
         margin-left: 360px;
         @media screen and (max-width: $sm) {
-          margin-left: 165px;
+          margin-left: 240px;
         }
       }
       &.rf_first_col_variation {
@@ -512,6 +529,10 @@
       //font-weight: $font__weight__bold;
       margin-bottom: 20px;
       cursor: pointer;
+      @media screen and (max-width: $md) {
+        font-size: 32px;
+        line-height: 1.2;
+      }
       &::after {
         content: "–";
         display: table;
@@ -538,13 +559,17 @@
         p {
           line-height: 1.5;
           margin-bottom: 15px;
-          font-size: 14px;
+          font-size: 16px;
         }
         .rf_right {
           padding-right: 20px;
         }
         img {
           height: auto !important;
+        }
+        h6 {
+          font-size: 18px;
+          font-weight: $font__weight__bold;
         }
         ul,
         ol {

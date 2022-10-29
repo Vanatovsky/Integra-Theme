@@ -318,10 +318,12 @@
 .rf_whale_level_1_modal_contacts {
   border-radius: $border__radius__classic__box;
   background-color: rgba(255, 255, 255, 0.6);
+  max-height: calc(100vh - 160px);
   padding: 80px;
+  overflow-y: scroll;
   position: fixed;
   right: 50px;
-  top: -1200px;
+  top: -2200px;
   width: 700px;
   transition: all 1.5s;
   &.open {
@@ -385,8 +387,6 @@
     }
   }
   .rf_form_box {
-    max-height: 45vh;
-    overflow-y: auto;
     padding-right: 25px;
     .waves-input-wrapper {
       display: block;

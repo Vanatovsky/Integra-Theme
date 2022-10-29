@@ -3,8 +3,8 @@ import * as THREE from "three";
 import * as dat from "dat.gui";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Settings } from "./settings/main_settings";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import { Vector3 } from "three";
+import * as SkeletonUtils from "three/examples/jsm/utils/SceneUtils";
+import cloneController from "./controllers/clone.controller";
 
 let mouseX, mouseY;
 let mouse_ray = new THREE.Vector2();
@@ -54,6 +54,92 @@ if (window.innerWidth <= 960) {
 }
 
 /**
+ * Loading assets
+ */
+const loaderManager = new THREE.LoadingManager(
+  // loaded
+  () => {
+    init();
+  },
+  // Process
+  (itemUrl, itemsLoaded, itemsTotal) => {
+    // console.log('itemsTotal', itemsTotal)
+    // console.log('itemsLoaded', itemsLoaded)
+    // console.log('itemUrl', itemUrl)
+  }
+);
+
+const gltfLoader = new GLTFLoader(loaderManager);
+gltfLoader.load("/wp-content/themes/rns/assets/models/whale.glb", (gltf) => {
+  whale_model = gltf.scene;
+
+  whale_model.traverse(function (object) {
+    if (object.isMesh) {
+      whale_mesh = object;
+    }
+  });
+
+  /**
+   * Create White Whale
+   */
+  // Add Original Model
+  const whale_material = new THREE.MeshStandardMaterial({
+    metalness: 0,
+    roughness: 1,
+    wireframe: false,
+    flatShading: true,
+    color: 0x0289d7,
+  });
+
+  const whale_material_2 = new THREE.MeshStandardMaterial({
+    color: 0x0289d7,
+  });
+
+  whale_model.scale.x = 1.05;
+  whale_model.scale.y = 1.05;
+  whale_model.scale.z = 1.05;
+
+  whale_mesh.material = whale_material;
+  whale_model.rotation.y = Math.PI / 2.95;
+  whale_model.position.x = -0.3;
+  scene.add(whale_model);
+
+  // // Add Clone Model
+  // whale_model_2 = cloneController.cloneAny(whale_model);
+
+  // whale_model_2.traverse(function (object) {
+  //   if (object.isMesh) {
+  //     whale_mesh_2 = object;
+  //     console.group("YYYYYY-----");
+  //     console.log("whale_mesh_2", whale_mesh_2);
+  //     console.groupEnd();
+  //   }
+  // });
+  // //whale_mesh_2 = whale_model_2.children[0].children[2];
+  // whale_mesh_2.material = whale_material_2;
+  // whale_mesh_2.position.z -= 0.7;
+  // whale_model_2.scale.set(0.15, 0.15, 0.15);
+  // //console.log("whale_model_2.scale", whale_model_2.scale);
+  // scene.add(whale_model_2);
+
+  if (document.documentElement.clientWidth <= 768) {
+    whale_model.rotation.y = Math.PI / 3.2;
+    camera.position.z = 2.5;
+    camera.position.x = 0.3;
+  }
+
+  /**
+   * Whale sceleton animations
+   */
+  // mixer.clipAction(animations[0]).stop();
+
+  mixer = new THREE.AnimationMixer(whale_model);
+  animations = gltf.animations;
+
+  mixer.clipAction(animations[0]).play();
+});
+
+/**
  * Base
  */
 
@@ -75,7 +161,7 @@ const camera = new THREE.PerspectiveCamera(
   30
 );
 camera.name = "camera2";
-camera.position.set(0, 0, 1.7);
+camera.position.set(0, 0, 1.9);
 scene.add(camera);
 
 // const cameraDebugFolder = gui.addFolder('Camera')
@@ -124,84 +210,22 @@ const init = () => {
    * Lights
    */
 
-  const light = new THREE.AmbientLight(0xffffff); // soft white light
+  const light = new THREE.PointLight(0xcccccc, 2, 15); // soft white light
+  light.position.x = 0;
+  light.position.y = 2;
+  light.position.z = 6;
+
   scene.add(light);
 
-  /**
-   * Create White Whale
-   */
-  // Whale
-  const whale_material = new THREE.MeshStandardMaterial({
-    metalness: 0,
-    roughness: 1,
-    wireframe: true,
-    color: 0xffffff,
-  });
+  const light_2 = new THREE.AmbientLight(0x0289d7);
 
-  const whale_material_2 = new THREE.MeshStandardMaterial({
-    color: 0x0289d7,
-  });
-
-  whale_mesh.material = whale_material;
-  whale_model.rotation.y = Math.PI / 2.05;
-
-  whale_model.position.x = -0.3;
-  scene.add(whale_model);
-
-  const whale_mesh_2 = whale_model_2.children[0].children[2];
-  // whale_mesh_2.scale.set(new Vector3(1.9, 1.9, 1.9));
-  console.log(whale_mesh_2);
-  whale_mesh_2.material = whale_material_2;
-  scene.add(whale_model_2);
-
-  if (document.documentElement.clientWidth <= 768) {
-    whale_model.rotation.y = Math.PI / 3.2;
-    camera.position.z = 2.3;
-    camera.position.x = 0.3;
-  }
-
-  /**
-   * Whale sceleton animations
-   */
-  mixer.clipAction(animations[1]).stop();
-  mixer.clipAction(animations[0]).play();
+  scene.add(light_2);
 
   //Animation
   tick();
 };
 
-/**
- * Loading assets
- */
-const loaderManager = new THREE.LoadingManager(
-  // loaded
-  () => {
-    init();
-  },
-
-  // Process
-  (itemUrl, itemsLoaded, itemsTotal) => {
-    // console.log('itemsTotal', itemsTotal)
-    // console.log('itemsLoaded', itemsLoaded)
-    // console.log('itemUrl', itemUrl)
-  }
-);
-
-const gltfLoader = new GLTFLoader(loaderManager);
 // const textureLoader = new THREE.TextureLoader(loaderManager)
-
-gltfLoader.load("/wp-content/themes/rns/assets/models/whale.glb", (gltf) => {
-  whale_model = gltf.scene;
-  whale_model_2 = gltf.scene.clone();
-  whale_gltf = gltf;
-  whale_model.traverse(function (object) {
-    if (object.isMesh) {
-      whale_mesh = object;
-    }
-  });
-  mixer = new THREE.AnimationMixer(whale_model);
-  animations = gltf.animations;
-});
 
 /**
  * Tick Function
@@ -221,6 +245,9 @@ const tick = () => {
   }
 
   //controls.update();
+  //whale_mesh.rotation.y += prevTime;
+  whale_model.rotation.y =
+    Math.PI / 2.95 + Math.sin((time - elapsedTime) * 0.0001) / 4 + 0.3;
 
   renderer.render(scene, camera);
 
@@ -229,9 +256,9 @@ const tick = () => {
 
 //tick()
 
-function onDocumentMouseMove(event) {
-  mouseX = event.clientX - windowHalfX;
-  mouseY = event.clientY - windowHalfY;
-  mouse_ray.x = (event.clientX / sizes.width) * 2 - 1;
-  mouse_ray.y = -((event.clientY / sizes.height) * 2 - 1);
-}
+// function onDocumentMouseMove(event) {
+//   mouseX = event.clientX - windowHalfX;
+//   mouseY = event.clientY - windowHalfY;
+//   mouse_ray.x = (event.clientX / sizes.width) * 2 - 1;
+//   mouse_ray.y = -((event.clientY / sizes.height) * 2 - 1);
+// }

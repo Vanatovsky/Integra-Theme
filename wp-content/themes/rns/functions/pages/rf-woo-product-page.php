@@ -556,7 +556,7 @@ function get_product_content()
                     <canvas class="whale_product_webgl"></canvas>
 
                 </div>
-                <div class="col s12 m6 rf_box_with_content_text"><?php the_content() ?></div>
+                <div class="col s12 m6 rf_box_with_content_text  rf-typography"><?php the_content() ?></div>
             </div>
         </div>
     </div>
@@ -577,7 +577,7 @@ function get_product_content()
                         <?php echo $tab->name ?>
                     </div>
 
-                    <div class="rf_content_tab">
+                    <div class="rf_content_tab  rf-typography">
                         <div class="rf_tab_item">
                             <?php echo $tab->left ?>
                         </div>

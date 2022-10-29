@@ -50,7 +50,7 @@ jQuery(function ($) {
         "font-family font-size font-weight font-style text-decoration text-transform",
       tabfocus_elements: ":prev,:next",
       plugins:
-        "charmap,hr,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpeditimage,wpgallery,wplink,wpdialogs,wpview",
+        "charmap,hr,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpeditimage,wpgallery,wplink,wpdialogs,wpview,lists",
       resize: "vertical",
       menubar: false,
       indent: false,

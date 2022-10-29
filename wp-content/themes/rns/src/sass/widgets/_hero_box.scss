@@ -1,110 +1,108 @@
 .hero_box {
-    padding: 110px 0 110px;
-    background-position: center center;
-    background-size: cover;
-    @media screen and (max-width: $sm){
-        padding: 80px 0;
+  padding: 110px 0 110px;
+  background-position: center center;
+  background-size: cover;
+  @media screen and (max-width: $sm) {
+    padding: 80px 0;
+  }
+
+  &.rf_attachment_background {
+    background-attachment: fixed;
+    @media screen and (max-width: $md) {
+      background-attachment: inherit;
     }
+  }
 
+  // <<<<<<<<< Для рабаты v2
+  .rf_hero_side_img_box {
+    display: table;
+    height: 100%;
+    float: left;
+    margin-right: 50px;
+  }
 
-    &.rf_attachment_background{
-        background-attachment: fixed;
-        @media screen and (max-width: $md) {
-            background-attachment: inherit;
-        }
+  .rf_hero_texts_box {
+    display: table;
+  }
+
+  // Для рабаты v2 >>>>>>
+
+  p,
+  h1,
+  h2 {
+    margin-bottom: $margin__text__middle;
+    img {
+      display: inline-block;
     }
+  }
 
-    // <<<<<<<<< Для рабаты v2
-    .rf_hero_side_img_box {
-        display: table;
-        height: 100%;
-        float: left;
-        margin-right: 50px;
+  .hero_light_bold_text {
+    color: #fff;
+    font-weight: $font__weight__bold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .hero_dark_bold_text {
+    color: $color__text__main;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: $font__weight__bold;
+
+    &.hero_middle_text {
+      font-weight: $font__weight__bold;
     }
+  }
 
-    .rf_hero_texts_box {
-        display: table;
-    }
+  .hero_dark_thin_text {
+    color: $color__text__main;
+    font-weight: $font__weight__regular;
+  }
 
+  .hero_light_thin_text {
+    color: #fff;
+    font-weight: $font__weight__light;
+  }
 
+  .hero_big_text {
+    font-size: 60px !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase;
+  }
 
-    // Для рабаты v2 >>>>>>
+  .hero_middle_text {
+    font-size: 30px !important;
+    line-height: 1 !important;
+  }
 
-    p, h1, h2 {
-        margin-bottom: $margin__text__middle;
-        img{
-            display: inline-block;
-        }
-    }
+  .hero_small_text {
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
 
-    .hero_light_bold_text {
-        color: #fff;
-        font-weight: $font__weight__bold;
-        text-shadow: 0px 4px 4px rgba(0,0,0, .25);
-    }
-
-    .center{
-        text-align: center;
-    }
-
-    .hero_dark_bold_text {
-
-        color: $color__text__main;
-        text-shadow: 0px 4px 4px rgba(0,0,0, .25);
-        font-weight: $font__weight__bold;
-
-        &.hero_middle_text {
-            font-weight: $font__weight__bold;
-        }
-    }
-
-    .hero_dark_thin_text {
-        color: $color__text__main;
-        font-weight: $font__weight__regular;
-    }
-
-    .hero_light_thin_text {
-        color: #fff;
-        font-weight: $font__weight__light;
-    }
-
-    .hero_big_text {
-        font-size: 60px !important;
-        line-height: 1.1 !important;
-        text-transform: uppercase;
-    }
-
-    .hero_middle_text {
-        font-size: 30px !important;
-        line-height: 1 !important;
-    }
-
-    .hero_small_text {
-        font-size: 16px !important;
-        line-height: 24px !important;
-    }
-
-    .rf-btn {
-        margin-top: 40px !important;
-        display: table;
-    }
+  .rf-btn {
+    margin-top: 40px !important;
+    display: table;
+  }
 }
 
 @media screen and (max-width: $md) {
-    .hero_box {
-        .hero_big_text {
-            font-size: 30px !important;
-            line-height: 38px !important;
-        }
-
-        .hero_middle_text {
-            font-size: 26px !important;
-            line-height: 32px !important;
-        }
-
-        .hero_small_text {
-            font-size: 16px !important;
-            line-height: 22px !important;
-        }
+  .hero_box {
+    .hero_big_text {
+      font-size: 30px !important;
+      line-height: 38px !important;
     }
+
+    .hero_middle_text {
+      font-size: 22px !important;
+      line-height: 28px !important;
+    }
+
+    .hero_small_text {
+      font-size: 16px !important;
+      line-height: 22px !important;
+    }
+  }
 }

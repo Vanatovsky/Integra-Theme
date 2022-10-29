@@ -119,8 +119,8 @@ jQuery(function () {
     navigation: true,
     nav: true,
     navText: [
-      '<img alt="Стрелка влево" src="/wp-content/themes/rns/image/ArrowLeft.svg" />',
-      '<img alt="Стрелка вправо" src="/wp-content/themes/rns/image/ArrowRight.svg" />',
+      '<img alt="Стрелка влево" src="/wp-content/themes/rns/assets/images/icons/Left.svg" />',
+      '<img alt="Стрелка вправо" src="/wp-content/themes/rns/assets/images/icons/Right.svg" />',
     ],
     dots: false,
   });
@@ -223,8 +223,8 @@ jQuery(function () {
     loop: true,
     nav: true,
     navText: [
-      '<img alt="Стрелка влево" src="/wp-content/themes/rns/image/ArrowLeft.svg" />',
-      '<img alt="Стрелка вправо" src="/wp-content/themes/rns/image/ArrowRight.svg" />',
+      '<img alt="Стрелка влево" src="/wp-content/themes/rns/assets/images/icons/Left.svg" />',
+      '<img alt="Стрелка вправо" src="/wp-content/themes/rns/assets/images/icons/Right.svg" />',
     ],
     responsive: {
       0: {
@@ -266,7 +266,7 @@ jQuery(function () {
     dots: false,
     responsive: {
       0: {
-        items: 2,
+        items: 3,
       },
       768: {
         items: 4,
@@ -798,8 +798,8 @@ function openImageWindow(e) {
       nav: true,
       navigation: true,
       navText: [
-        '<img alt="Стрелка влево" src="/wp-content/themes/rns/image/ArrowLeft.svg" />',
-        '<img alt="Стрелка вправо" src="/wp-content/themes/rns/image/ArrowRight.svg" />',
+        '<img alt="Стрелка влево" src="/wp-content/themes/rns/assets/images/icons/Left.svg" />',
+        '<img alt="Стрелка вправо" src="/wp-content/themes/rns/assets/images/icons/Right.svg" />',
       ],
       //autoplayTimeout: 5000, //Время смены слайда
       loop: true,
