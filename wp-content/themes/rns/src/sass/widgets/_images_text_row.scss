@@ -1,26 +1,30 @@
 .rf_icons_row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  .rf_item {
+    flex-grow: 1;
+    img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    span {
+      display: table;
+      width: 100%;
+      color: #fff;
+      font-size: 16px;
+      max-width: 300px;
+    }
+  }
+  @media screen and (max-width: $sm) {
+    display: grid;
+    grid-template-columns: 1fr;
     .rf_item {
-        flex-grow: 1;
-        img {
-            max-width: 100%;
-            margin-bottom: 20px;
-        }
-        span {
-            display: table;
-            width: 100%;
-            color: #fff;
-            font-size: 16px;
-            max-width: 300px;
-        }
+      margin-bottom: 80px;
+      flex-grow: inherit;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-    @media screen and (max-width: $sm) {
-        display: grid;
-        grid-template-columns: 1fr;
-        .rf_item {
-            flex-grow: inherit;
-        }
-    }
+  }
 }

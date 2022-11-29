@@ -32,9 +32,18 @@
 	<div class="rf_central_offer_bottom_btns">
 		<?php foreach ($buttons as $btn) { ?>
 			<?php if ($btn['onclick']) { ?>
-				<b class="btn waves-effect <?php echo $btn['button_type'] ?>"><?php echo $btn['text_button'] ?> </b>
+				<b class="btn-large waves-effect <?php echo $btn['button_type'] ?>"><?php echo $btn['text_button'] ?> </b>
 			<?php } else { ?>
-				<a class="btn waves-effect <?php echo $btn['button_type'] ?>" href="<?php echo sow_esc_url($btn['link']) ?>"><?php echo $btn['text_button'] ?></a>
+				<a class="btn-large waves-effect <?php echo $btn['button_type'] ?> <?php if ($btn['btn_modal']) { ?> modal-trigger <?php } ?>" 
+				href="<?php
+				if ($btn['btn_modal']){
+					echo "#".$btn['btn_modal'];
+				} else {
+					echo sow_esc_url($btn['link']);
+				}
+				 ?>">
+				<?php echo $btn['text_button'] ?>
+			</a>
 			<?php } ?>
 		<?php } ?>
 	</div>

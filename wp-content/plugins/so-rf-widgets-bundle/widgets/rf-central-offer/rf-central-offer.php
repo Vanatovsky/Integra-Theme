@@ -67,6 +67,10 @@ class SiteOrigin_Widget_Rf_Central_Offer_Widget extends SiteOrigin_Widget
 						'type' => 'text',
 						'label' => 'Событие клика'
 					),
+					'btn_modal' => array(
+						'type' => 'text',
+						'label' => 'Модальное окно',
+					),
 					'button_type' => array(
 						'type' => 'select',
 						'label' => 'Тип кнопки',

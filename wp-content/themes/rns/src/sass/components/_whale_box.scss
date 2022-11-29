@@ -481,3 +481,14 @@
     }
   }
 }
+
+.input-field {
+  input,
+  label {
+    position: relative;
+    z-index: 1;
+  }
+  label {
+    z-index: 0;
+  }
+}

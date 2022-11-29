@@ -1,7 +1,13 @@
 import * as SpriteSpin from "spritespin";
 import { $ } from "spritespin/release/src/utils";
+import Inputmask from "inputmask";
 
 jQuery(function () {
+  //input Mascs
+  const selector_imt = document.getElementsByClassName("rf-phone");
+  const imt = new Inputmask("+7(999)999-99-99");
+  imt.mask(selector_imt);
+
   //Materialize Initializations
   $(".modal").modal();
   $(".rf-btn").addClass("waves-effect");
@@ -267,6 +273,7 @@ jQuery(function () {
     responsive: {
       0: {
         items: 3,
+        margin: 20,
       },
       768: {
         items: 4,

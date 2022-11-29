@@ -69,7 +69,7 @@
 				</div>
 			</div>
 			<div class="col m12 l6 xl3">
-				<a href="#modal_question" class="rf_callback_form btn-large modal-trigger">Обратная связь</a>
+				<a href="#modal_feedback" class="rf_callback_form btn-large modal-trigger">Обратная связь</a>
 				<a class="rf_youtube_bottom_link" href="https://www.youtube.com/channel/UCn8Y9xWMRu1kreeXyCIxUKw" target="_blank">
 					<img alt="YouTube канал Интегра Инжиниринг" src="/wp-content/themes/rns/assets/images/youtube_logo.svg" />
 				</a>
@@ -113,7 +113,7 @@
 <div id="modal_question" class="modal modal-fixed-footer modal-small">
 	<div class="modal-content">
 		<h4>Вопрос по продукции</h4>
-		<p>Задайте любой вопрос по продукции и наш специалист свяжется с вами</p>
+		
 		<?php echo do_shortcode('[contact-form-7 id="5972" title="Главная контактная форма"]') ?>
 	</div>
 	<div class="modal-footer">
@@ -122,12 +122,22 @@
 </div>
 
 
-<!-- Modal Com offer -->
-<div id="modal_offer" class="modal modal-fixed-footer modal-small">
+<!-- Modal Feedback -->
+<div id="modal_feedback" class="modal modal-fixed-footer modal-small">
 	<div class="modal-content">
-		<h4>Получить коммерческое предложение</h4>
-		<p>Быстрый запрос коммерческого предложения</p>
+		<h4>Обратная связь</h4>
 		<?php echo do_shortcode('[contact-form-7 id="5972" title="Главная контактная форма"]') ?>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect btn-flat">Закрыть окно</a>
+	</div>
+</div>
+
+<!-- Modal Ingener Question -->
+<div id="modal_ingener" class="modal modal-fixed-footer modal-small">
+	<div class="modal-content">
+		<h4>Вопрос инженеру</h4>
+		<?php echo do_shortcode('[contact-form-7 id="7073" title="Вопрос инженеру"]') ?>
 	</div>
 	<div class="modal-footer">
 		<a href="#!" class="modal-close waves-effect btn-flat">Закрыть окно</a>
@@ -138,7 +148,7 @@
 <div id="modal_service_order" class="modal modal-fixed-footer modal-small">
 	<div class="modal-content">
 		<h4>Заявка на услугу</h4>
-		<?php echo do_shortcode('[contact-form-7 id="5972" title="Главная контактная форма"]') ?>
+		<?php echo do_shortcode('[contact-form-7 id="7074" title="Оставить заявку"]') ?>
 	</div>
 	<div class="modal-footer">
 		<a href="#!" class="modal-close waves-effect btn-flat">Закрыть окно</a>

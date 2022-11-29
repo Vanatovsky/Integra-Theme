@@ -125,6 +125,27 @@ function rns_customize_register($wp_customize)
 
 	// ----------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+	// <<<<<<<<<<<<<<<<<<<<<<-----------------------------------
+	//Панель метрик
+	$wp_customize->add_section('metric_section', array(
+		'title'      => 'Run Fun метрики',
+		'priority'   => 12,
+	));
+	$wp_customize->add_setting('rns_yandex_metric', [
+		'default' => '',
+	]);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'rns_yandex_metric',
+			[
+				'label' => 'Номер счетчика Yandex Метрики',
+				'type' => 'text',
+				'section' => 'metric_section',
+				'setting' => 'rns_yandex_metric'
+			]
+		)
+	);
 
 	// <<<<<<<<<<<<<<<<<<<<<<-----------------------------------
 	//Панель настроек социальных сетей

@@ -24,4 +24,12 @@
   a {
     margin: 0 10px;
   }
+  @media screen and (max-width: $sm) {
+    display: block;
+    b,
+    a {
+      margin: 15px 0;
+      width: 100%;
+    }
+  }
 }
