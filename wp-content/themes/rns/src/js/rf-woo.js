@@ -5,6 +5,7 @@ $(document).ready(function () {
   $("#rf_custom_add_to_cart_box").append(
     $(".woocommerce-variation-add-to-cart .quantity")
   );
+
   $("#rf_custom_add_to_cart_box").append(
     $(".woocommerce-variation-add-to-cart .single_add_to_cart_button")
   );
@@ -82,6 +83,22 @@ $(document).ready(function () {
     //Поменяем класс активной вариации в списке
     $(".rf_col_item.rf_variation").removeClass("rf_first_col_variation");
     $(this).addClass("rf_first_col_variation");
+
+    //Обновление формы добавления товара (woo)
+    const all_data_variation = $(".variations_form.cart").data(
+      "product_variations"
+    );
+
+    const need_variation = all_data_variation.find(
+      (variation) => variation.variation_id === var_id
+    );
+
+    for (const key in need_variation.attributes) {
+      console.log(key);
+      const select_id = key.replace("attribute_", "");
+
+      SelectElement(select_id, need_variation.attributes[key]);
+    }
   });
 
   $("#rf_add_to_cart_trigger").on("click", () => {
@@ -97,3 +114,8 @@ $(document).ready(function () {
     input_quantity.change();
   });
 });
+
+function SelectElement(id, valueToSelect) {
+  var element = document.getElementById(id);
+  element.value = valueToSelect;
+}
