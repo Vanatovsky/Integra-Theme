@@ -1,0 +1,163 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+}
+
+h1 {
+    font-size: $h1__size;
+    line-height: $h1__size__line__height;
+}
+
+h2 {
+    font-size: $h2__size;
+    line-height: $h2__size__line__height;
+}
+
+h3 {
+    font-size: $h3__size;
+    line-height: $h3__size__line__height;
+}
+
+h4 {
+    font-size: $h4__size;
+    line-height: $h4__size__line__height;
+}
+
+h5 {
+    font-size: $h5__size;
+    line-height: $h5__size__line__height;
+}
+
+h6 {
+    font-size: $h6__size;
+    line-height: $h6__size__line__height;
+}
+
+.with_img {
+    position: relative;
+    font-weight: $font__weight__bold;
+    color: $color__text__main;
+    line-height: 1.3 !important;
+    &::before {
+        content: '';
+        width: 40px;
+        display: inline-block;
+        height: 40px;
+        //background-image: url("/wp-content/themes/rns/image/icons/favicone.png");
+        background-size: cover;
+        position: relative;
+        margin-right: 8px;
+        @media screen and (max-width: $sm) {
+            display: none !important;
+        }
+    }
+    @media screen and (max-width: $sm) {
+        margin-left: 0px !important;
+    }
+}
+
+@media screen and (max-width: $xl) {
+    .with_img {
+        margin-left: 55px;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .with_img {
+        font-size: 22px;
+        &::before {
+            top: 8px;
+        }
+    }
+}
+
+.rf_thin_h {
+    font-size: 42px;
+    font-weight: $font__weight__light;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: $sm) {
+    .rf_thin_h {
+        font-size: 28px;
+        font-weight: $font__weight__light;
+        letter-spacing: 1px;
+    }
+}
+
+.classic_h {
+    color: $color__text__main;
+    // font-weight: $font__weight__bold;
+    // line-height: 54px;
+    margin-bottom: 0;
+    &.rf_white {
+        color: #fff;
+    }
+    @media screen and (max-width:$sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+h2.classic_h,
+h1.with_img {
+    font-size: 40px;
+    line-height: 50px;
+    @media screen and (max-width: $sm) {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+h2.with_img::before,
+h1.with_img::before {
+    top: 8px;
+}
+
+h3.classic_h {
+    font-size: 32px;
+    line-height: 44px;
+    @media screen and (max-width: $sm) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+h4.classic_h {
+    font-size: 24px;
+    line-height: 28px;
+    @media screen and (max-width: $sm) {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+
+h4.with_img::before {
+    top: -7px;
+}
+
+h5.classic_h {
+    font-size: 24px;
+}
+
+h6.classic_h {
+    font-size: 20px;
+}
+
+@media screen and (max-width: $sm) {
+    .classic_h {
+        font-size: 22px;
+        line-height: 30px;
+    }
+}
+
+.classic_mini_primary_h {
+    color: $color__primary__dark;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 15px;
+}

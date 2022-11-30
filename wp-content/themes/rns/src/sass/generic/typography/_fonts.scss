@@ -1,0 +1,27 @@
+// @font-face {
+//     font-family: 'Montserrat';
+//     src: url("./fonts/NotoSans-Black.ttf");
+//     font-weight: $font__weight__black;
+//     font-style: normal;
+// }
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./fonts/NotoSans-Regular.ttf");
+  font-weight: $font__weight__regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./fonts/NotoSans-Bold.ttf");
+  font-weight: $font__weight__bold;
+  font-style: normal;
+}
+
+// @font-face {
+//     font-family: 'Montserrat';
+//     src: url("./fonts/NotoSans-Light.ttf");
+//     font-weight: $font__weight__light;
+//     font-style: normal;
+// }

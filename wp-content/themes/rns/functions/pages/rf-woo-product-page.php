@@ -230,11 +230,15 @@ function get_product_content()
                         if ($product->is_type("variable")) {
                         $values = $product->get_default_attributes();
                         $default_attr_str = "<b>Выбрано:</b> - ";
+                        $xx = 0;
                         foreach ($values as $key => $value) {
-                            $name_attr = wc_attribute_label($key);
-                            $term_attr = get_term_by("slug", $value, $key);
-                            $name_term = $term_attr->name;
-                            $default_attr_str .= "<i>" . $name_attr . ":</i> " . $name_term . "; ";
+                            $xx++;
+                            if ($xx < 1){
+                                $name_attr = wc_attribute_label($key);
+                                $term_attr = get_term_by("slug", $value, $key);
+                                $name_term = $term_attr->name;
+                                $default_attr_str .= "<i>" . $name_attr . ":</i> " . $name_term . "; ";
+                            }
                         }
                         ?>
                         <p class="rf_choose_product_str"><?php echo $default_attr_str ?></p>
@@ -552,9 +556,7 @@ function get_product_content()
             <div class="row rf_product_text_content">
                 <div class="col s12 m6 rf_box_with_whale_white">
                     <p class="rf_header">Подробное описание</p>
-
                     <canvas class="whale_product_webgl"></canvas>
-
                 </div>
                 <div class="col s12 m6 rf_box_with_content_text  rf-typography"><?php the_content() ?></div>
             </div>

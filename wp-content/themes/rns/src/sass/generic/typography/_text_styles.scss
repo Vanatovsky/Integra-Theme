@@ -1,0 +1,57 @@
+.text-center {
+  text-align: center;
+}
+
+.text-dark-bold {
+  color: $color__text__main;
+  font-weight: $font__weight__bold;
+}
+
+.small_classic_text {
+  font-size: 16px;
+  line-height: 24px;
+  color: $color__text__main;
+
+  p {
+    margin-bottom: 8px;
+  }
+}
+
+.micro-text {
+  font-size: 12px;
+  line-height: 14px;
+  color: $color__text__main;
+}
+
+.rf-typography {
+  b,
+  strong {
+    font-weight: $font__weight__bold;
+  }
+
+  a {
+    color: $color__primary;
+    text-decoration: none;
+    font-weight: $font__weight__bold;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 30px;
+    margin-top: 15px;
+  }
+
+  ul,
+  ol {
+    margin-left: 25px;
+    margin-bottom: 30px;
+    list-style: circle;
+    li {
+      margin-bottom: 15px;
+      list-style-type: disc !important;
+    }
+  }
+}
