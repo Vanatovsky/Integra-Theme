@@ -23,19 +23,16 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<meta name="yandex-verification" content="d70349a0f0b060a5" />
 	<?php wp_head(); ?>
-</head>
 
+</head>
 
 <body <?php body_class(); ?>>
 
 	<?php wp_body_open(); ?>
 
 	<?php
-
 	$yandex_metric = get_theme_mod("rns_yandex_metric");
-
 	if ($yandex_metric) { ?>
-
 	<!-- Yandex.Metrika counter -->
 		<script type="text/javascript" >
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -52,8 +49,7 @@
 		});
 		</script>
 		<noscript><div><img src="https://mc.yandex.ru/watch/91027094" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
-
+		<!-- /Yandex.Metrika counter -->
 	<?php } ?>
 
 	<style>

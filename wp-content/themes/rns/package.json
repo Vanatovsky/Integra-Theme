@@ -22,7 +22,6 @@
         "dat.gui": "^0.7.9"
     },
     "dependencies": {
-        "inputmask": "^5.0.7",
         "materialize-css": "^1.0.0-rc.2",
         "spritespin": "^4.1.0",
         "three": "^0.141.0"
