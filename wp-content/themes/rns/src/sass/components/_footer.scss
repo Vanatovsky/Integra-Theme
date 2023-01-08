@@ -6,6 +6,11 @@
     padding-top: 40px;
     padding-bottom: 40px;
     border-bottom: 2px solid $color__light;
+    .rf_footer_logobox {
+      img {
+        width: 235px;
+      }
+    }
     .rf_top_footer_menu {
       padding-top: 10px;
       ul {

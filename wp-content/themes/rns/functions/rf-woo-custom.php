@@ -212,3 +212,73 @@ function rf_attribute_var_id($product, $attribute_name, $attribute_slug)
     }
     return $var_id;
 }
+
+
+
+function get_catalog_main_categories()
+{
+    $categories_list = "";
+    $get_categories_product = get_categories([
+        'taxonomy' => "product_cat",
+        "parent" => 0,
+        "hide_empty" => 1, // Скрывать пустые. 1 - да, 0 - нет.
+    ]);
+
+
+
+
+    if (count($get_categories_product) > 0) {
+  
+        $categories_list = '<ul class="rf_catalog_list_main_categories">';
+
+        foreach ($get_categories_product as $categories_item) {
+  
+            $short_descr = get_field('short_description', $categories_item);
+            
+            if ($short_descr) {
+
+                $active = '';
+                $in = strpos($_SERVER['REQUEST_URI'], $categories_item->slug);
+                if ($in) {
+                    $active = 'class="active"';
+                }
+
+
+                // получим ID картинки из метаполя термина
+                $thumb_ID = get_term_meta($categories_item->term_id, 'thumbnail_id', true);
+                $cat_img = "";
+                if ($thumb_ID) {
+                    $image_url = wp_get_attachment_image_url($thumb_ID, 'medium');
+                    $cat_img = "<div class='img_box'><img class='rf_img_cat' src='" . $image_url . "' alt='" . esc_html($categories_item->name) . "' /></div> ";
+                }
+
+
+
+                $subcats = get_categories([
+                    'taxonomy' => "product_cat",
+                    "hide_empty" => 1, // Скрывать пустые. 1 - да, 0 - нет.
+                    "parent" => $categories_item->term_id
+                ]);
+
+                $subcats_list = "";
+
+                foreach ($subcats as $subcat) {
+                    $subcats_list .= "<a href='" . esc_url(get_term_link((int)$subcat->term_id)) . "'>" . esc_html($subcat->name) . "</a>";
+                }
+
+                $categories_list .= '<li ' . $active . '>'
+                    . '<a class="main_link" href="' . esc_url(get_term_link((int)$categories_item->term_id)) . '"></a>'
+                    . $cat_img
+                    . '<span class="rf_cat_name">' . esc_html($categories_item->name)
+                    . ' </span>'
+                    . '<div class="rf_short_desc">' . $short_descr . '</div>'
+                    . '<div class="rf_subcats">' . $subcats_list . '</div>'
+                    . ' </li>';
+            }
+        }
+
+        $categories_list .= '</ul>';
+    }
+
+    return $categories_list;
+}

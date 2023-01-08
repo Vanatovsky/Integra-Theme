@@ -16,7 +16,7 @@
   .rf_product_prew_item {
     border-bottom: 3px solid $color__light;
     margin-right: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     padding-bottom: 20px;
     position: relative;
     &::after {
@@ -47,7 +47,7 @@
     }
     .rf_descr {
       color: $color__text__main;
-      min-height: 60px;
+      min-height: 96px;
       font-size: 12px;
       @media screen and (max-width: $sm) {
         margin-bottom: 20px;
@@ -96,7 +96,7 @@
 
 .rf-container:not(.rf_subcategories) {
   .products {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     @media screen and (max-width: $md) {
       grid-template-columns: 1fr 1fr 1fr;
     }

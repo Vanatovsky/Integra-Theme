@@ -446,9 +446,14 @@ const loaderManager = new THREE.LoadingManager(
 
   // Process
   (itemUrl, itemsLoaded, itemsTotal) => {
-    // console.log('itemsTotal', itemsTotal)
-    // console.log('itemsLoaded', itemsLoaded)
-    // console.log('itemUrl', itemUrl)
+    const percent_box = document.querySelector("#gh_loader_percent span");
+
+    const percent = Math.round((100 / itemsTotal) * itemsLoaded);
+
+    percent_box.innerHTML = percent;
+    // console.log("itemsTotal", itemsTotal);
+    // console.log("itemsLoaded", itemsLoaded);
+    // console.log("itemUrl", itemUrl);
   }
 );
 

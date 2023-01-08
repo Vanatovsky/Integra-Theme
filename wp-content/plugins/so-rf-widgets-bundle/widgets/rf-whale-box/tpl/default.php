@@ -120,7 +120,7 @@
 							<?php
 							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
 							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
-							$brands = get_field('cat_brands', $cat);
+							
 							$post_link = get_term_link($cat, 'product_cat');
 
 							?>
@@ -133,30 +133,14 @@
 										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
 									</div>
 								</div>
-								<div class="rf_bottom">
-									<ul class="rf_list_extra_links">
-										<?php foreach ($brands as $br) { ?>
-											<li>
-												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
-													<?php echo $br->name ?>
-												</a>
-											</li>
-										<?php } ?>
-									</ul>
-								</div>
+
 							</li>
 						<?php } ?>
 					</ul>
 				</div>
 			</div>
 
-			<div class="rf_bottom_button_box">
-				<?php $shop_page_url = get_permalink(wc_get_page_id("shop")); ?>
-				<a href="<?php echo $shop_page_url ?>" class="btn-large rf_third rf-btn-left-icon waves-effect waves-light pulse">
-					<img alt="Каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" />
-					Полный каталог
-				</a>
-			</div>
+
 		</div>
 
 		<div id="text" class="rf_item">
@@ -172,7 +156,7 @@
 							<?php
 							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
 							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
-							$brands = get_field('cat_brands', $cat);
+							
 							$post_link = get_term_link($cat, 'product_cat');
 
 							?>
@@ -185,31 +169,13 @@
 										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
 									</div>
 								</div>
-								<div class="rf_bottom">
-									<ul class="rf_list_extra_links">
-										<?php foreach ($brands as $br) { ?>
-											<li>
-												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
-													<?php echo $br->name ?>
-												</a>
-											</li>
-										<?php } ?>
-									</ul>
-								</div>
+
 							</li>
 						<?php } ?>
 					</ul>
 				</div>
 			</div>
-			<div class="rf_bottom_button_box">
-				<?php
-				$shop_page_url = get_permalink(wc_get_page_id("shop"));
-				?>
-				<a href="<?php echo $shop_page_url ?>" class="btn-large rf_third rf-btn-left-icon waves-effect waves-light pulse">
-					<img alt="Каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" />
-					Полный каталог
-				</a>
-			</div>
+
 		</div>
 
 		<div id="text_5" class="rf_item">
@@ -225,7 +191,7 @@
 							<?php
 							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
 							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
-							$brands = get_field('cat_brands', $cat);
+							
 							$post_link = get_term_link($cat, 'product_cat');
 
 							?>
@@ -238,31 +204,13 @@
 										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
 									</div>
 								</div>
-								<div class="rf_bottom">
-									<ul class="rf_list_extra_links">
-										<?php foreach ($brands as $br) { ?>
-											<li>
-												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
-													<?php echo $br->name ?>
-												</a>
-											</li>
-										<?php } ?>
-									</ul>
-								</div>
+
 							</li>
 						<?php } ?>
 					</ul>
 				</div>
 			</div>
-			<div class="rf_bottom_button_box">
-				<?php
-				$shop_page_url = get_permalink(wc_get_page_id("shop"));
-				?>
-				<a href="<?php echo $shop_page_url ?>" class="btn-large rf_third rf-btn-left-icon waves-effect waves-light pulse">
-					<img alt="Каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" />
-					Полный каталог
-				</a>
-			</div>
+
 		</div>
 
 		<div id="text_2" class="rf_item">
@@ -277,7 +225,7 @@
 							<?php
 							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
 							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
-							$brands = get_field('cat_brands', $cat);
+							
 							$post_link = get_term_link($cat, 'product_cat');
 
 							?>
@@ -290,31 +238,13 @@
 										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
 									</div>
 								</div>
-								<div class="rf_bottom">
-									<ul class="rf_list_extra_links">
-										<?php foreach ($brands as $br) { ?>
-											<li>
-												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
-													<?php echo $br->name ?>
-												</a>
-											</li>
-										<?php } ?>
-									</ul>
-								</div>
+
 							</li>
 						<?php } ?>
 					</ul>
 				</div>
 			</div>
-			<div class="rf_bottom_button_box">
-				<?php
-				$shop_page_url = get_permalink(wc_get_page_id("shop"));
-				?>
-				<a href="<?php echo $shop_page_url ?>" class="btn-large btn_third rf-btn-left-icon waves-effect waves-light pulse">
-					<img alt="Каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" />
-					Полный каталог
-				</a>
-			</div>
+
 		</div>
 
 		<div id="text_3" class="rf_item">
@@ -329,7 +259,7 @@
 							<?php
 							$thumb_ID = get_term_meta($cat->term_id, 'thumbnail_id', true);
 							$img_url = wp_get_attachment_image_url($thumb_ID, 'medium');
-							$brands = get_field('cat_brands', $cat);
+							
 							$post_link = get_term_link($cat, 'product_cat');
 
 							?>
@@ -342,31 +272,13 @@
 										<a href="<?php echo $post_link ?>"><?php echo $cat->name ?></a>
 									</div>
 								</div>
-								<div class="rf_bottom">
-									<ul class="rf_list_extra_links">
-										<?php foreach ($brands as $br) { ?>
-											<li>
-												<a href="<?php echo get_term_link($br, 'product_brand') ?>">
-													<?php echo $br->name ?>
-												</a>
-											</li>
-										<?php } ?>
-									</ul>
-								</div>
+
 							</li>
 						<?php } ?>
 					</ul>
 				</div>
 			</div>
-			<div class="rf_bottom_button_box">
-				<?php
-				$shop_page_url = get_permalink(wc_get_page_id("shop"));
-				?>
-				<a href="<?php echo $shop_page_url ?>" class="btn-large rf_third rf-btn-left-icon waves-effect waves-light pulse">
-					<img alt="Каталог" src="/wp-content/themes/rns/assets/images/icons/catalog-icon.svg" />
-					Полный каталог
-				</a>
-			</div>
+
 		</div>
 
 		<div id="pages_level_2_closer"></div>

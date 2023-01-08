@@ -1,12 +1,12 @@
 import * as SpriteSpin from "spritespin";
 import { $ } from "spritespin/release/src/utils";
-import Inputmask from "inputmask";
+// import Inputmask from "./inputmask";
 
 jQuery(function () {
   //input Mascs
   const selector_imt = document.getElementsByClassName("rf-phone");
-  const imt = new Inputmask("+7(999)999-99-99");
-  imt.mask(selector_imt);
+  // const imt = new Inputmask("+7(999)999-99-99");
+  // imt.mask(selector_imt);
 
   //Materialize Initializations
   $(".modal").modal();

@@ -344,6 +344,7 @@ export function goToLevel2(
       mixer.clipAction(animations[1]).stop();
       mixer.clipAction(animations[0]).play();
       settings.opening_page_level_2 = false;
+      settings.whale_home = true;
     });
 
   /**

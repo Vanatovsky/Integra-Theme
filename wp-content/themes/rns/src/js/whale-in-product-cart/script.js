@@ -25,8 +25,8 @@ let text_objs_for_raycaster = [];
 const box_canvas = document.querySelector(".rf_box_with_whale_white");
 
 const sizes = {
-  width: box_canvas.clientWidth / 2,
-  height: 250,
+  width: box_canvas.clientWidth,
+  height: 350,
 };
 if (document.documentElement.clientWidth <= 768) {
   sizes.width = box_canvas.clientWidth;

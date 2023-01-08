@@ -199,11 +199,18 @@
       }
     }
     .rf_add_to_cart_info_wrapper {
-      padding: 40px 40px 10px 40px;
+      padding: 40px 40px 30px 40px;
       margin-top: 60px;
       margin-bottom: 60px;
-      border-radius: $border__radius__classic__box;
       background-color: $color__secondary__light;
+      clip-path: polygon(
+        45px 0,
+        100% 0,
+        100% calc(100% - 45px),
+        calc(100% - 45px) 100%,
+        0 100%,
+        0 45px
+      );
       .rf_delivery_str {
         img {
           position: relative;
@@ -442,7 +449,14 @@
           background-color: $color__secondary__light;
           top: -20px;
           left: 10px;
-          border-radius: $border__radius__classic__box;
+          clip-path: polygon(
+            25px 0,
+            100% 0,
+            100% calc(100% - 25px),
+            calc(100% - 25px) 100%,
+            0 100%,
+            0 25px
+          );
         }
       }
       &.rf_variation:hover {

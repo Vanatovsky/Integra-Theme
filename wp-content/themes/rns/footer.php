@@ -175,7 +175,7 @@
 				<img alt="<?php echo bloginfo('name') ?>" src="/wp-content/themes/rns/assets/images/logo-integra-white.svg" />
 			</div>
 			<div class="col s6">
-				<b class="rf_city">Нижний Новгород</b>
+				<!-- <b class="rf_city">Нижний Новгород</b> -->
 			</div>
 		</div>
 

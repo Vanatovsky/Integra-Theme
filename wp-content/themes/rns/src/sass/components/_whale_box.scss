@@ -44,8 +44,6 @@
     background-color: rgba(57, 120, 136, 0.93);
     display: table;
     padding: 20px;
-    border-top-right-radius: 36px;
-    border-top-left-radius: 36px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     @media screen and (max-width: $md) {
       padding: 5px;
@@ -56,12 +54,11 @@
       position: relative;
       font-size: 16px;
       margin-right: 40px;
-      border-radius: 36px;
       cursor: pointer;
       font-weight: $font__weight__bold;
       text-transform: uppercase;
       background-color: #fff;
-      border: 1px solid $color__primary;
+      // border: 1px solid $color__primary;
       color: $color__primary;
       img {
         display: inline-block;
@@ -159,6 +156,7 @@
   }
   .rf_item {
     position: absolute;
+    overflow-y: auto;
     top: 0;
     right: -860px;
     width: 700px;
@@ -215,8 +213,7 @@
     .inside_content {
       padding: 20px 30px 20px 0;
       margin-bottom: 20px;
-      max-height: 40vh;
-      overflow-y: auto;
+
       clear: both;
       p {
         margin-bottom: 20px;
@@ -233,22 +230,22 @@
       .rf_category_listing_whale {
         & > ul {
           & > li {
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             .rf_top {
               display: flex;
               justify-content: left;
               .rf_img_box {
                 img {
-                  height: 135px;
-                  width: 135px;
+                  height: 80px;
+                  width: 80px;
                   max-width: none;
                   @media screen and (max-width: $md) {
                   }
                 }
               }
               .rf_category_title {
-                font-size: 19px;
-                padding: 29px 50px 0 25px;
+                font-size: 18px;
+                padding: 24px 0px 0 20px;
                 a {
                   color: #fff;
                   position: relative;
